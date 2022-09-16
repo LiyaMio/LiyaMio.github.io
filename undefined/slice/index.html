@@ -408,7 +408,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">739</span> In Total
+              Words <span class="post-count">753</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -470,8 +470,18 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2><span id="slice">slice</span><a href="#slice" class="header-anchor">#</a></h2><p>[TOC]</p>
-<h3><span id="1-sui-xie">1.随写</span><a href="#1-sui-xie" class="header-anchor">#</a></h3><ol>
+        <h2><span id="slice">slice</span><a href="#slice" class="header-anchor">null</a></h2><div class="toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#1-sui-xie">1.随写</a></li>
+<li><a href="#2-chuang-jian-fang-shi">2.创建方式</a></li>
+<li><a href="#3-qie-pian-cao-zuo">3.切片操作</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<h3><span id="1-sui-xie">1.随写</span><a href="#1-sui-xie" class="header-anchor">null</a></h3><ol>
 <li><p>切片：引用类型，是对数组的一个引用</p>
 </li>
 <li><p>底层是结构体</p>
@@ -486,8 +496,8 @@
 <li>nil切片地址指向nil，空切片地址存在数据为空</li>
 </ol>
 <hr>
-<h3><span id="2-chuang-jian-fang-shi">2.创建方式</span><a href="#2-chuang-jian-fang-shi" class="header-anchor">#</a></h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.声明切片</span></span><br><span class="line">   <span class="keyword">var</span> s1 []<span class="keyword">int</span></span><br><span class="line">   <span class="keyword">if</span> s1 == <span class="literal">nil</span> &#123;</span><br><span class="line">      fmt.Println(<span class="string">&quot;是空&quot;</span>)</span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      fmt.Println(<span class="string">&quot;不是空&quot;</span>)</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">// 2.:=</span></span><br><span class="line">   s2 := []<span class="keyword">int</span>&#123;&#125;</span><br><span class="line">   <span class="comment">// 3.make()</span></span><br><span class="line">   <span class="keyword">var</span> s3 []<span class="keyword">int</span> = <span class="built_in">make</span>([]<span class="keyword">int</span>, <span class="number">0</span>)</span><br><span class="line">   fmt.Println(s1, s2, s3)</span><br><span class="line">   <span class="comment">//var slice []type = make([]type, len)</span></span><br><span class="line">   <span class="comment">//slice  := make([]type, len)</span></span><br><span class="line">   <span class="comment">//slice  := make([]type, len, cap)</span></span><br><span class="line">   <span class="comment">// 4.初始化赋值</span></span><br><span class="line">   <span class="keyword">var</span> s4 []<span class="keyword">int</span> = <span class="built_in">make</span>([]<span class="keyword">int</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">   fmt.Println(s4)</span><br><span class="line">   s5 := []<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">   fmt.Println(s5)</span><br><span class="line">   <span class="comment">// 5.从数组切片</span></span><br><span class="line">   arr := [<span class="number">5</span>]<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;</span><br><span class="line">   <span class="keyword">var</span> s6 []<span class="keyword">int</span></span><br><span class="line">   <span class="comment">// 前包后不包</span></span><br><span class="line">   s6 = arr[<span class="number">1</span>:<span class="number">4</span>]<span class="comment">//</span></span><br><span class="line">   fmt.Println(s6)</span><br></pre></td></tr></table></figure>
-<h3><span id="3-qie-pian-cao-zuo">3.切片操作</span><a href="#3-qie-pian-cao-zuo" class="header-anchor">#</a></h3><ol>
+<h3><span id="2-chuang-jian-fang-shi">2.创建方式</span><a href="#2-chuang-jian-fang-shi" class="header-anchor">null</a></h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.声明切片</span></span><br><span class="line">   <span class="keyword">var</span> s1 []<span class="keyword">int</span></span><br><span class="line">   <span class="keyword">if</span> s1 == <span class="literal">nil</span> &#123;</span><br><span class="line">      fmt.Println(<span class="string">&quot;是空&quot;</span>)</span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      fmt.Println(<span class="string">&quot;不是空&quot;</span>)</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">// 2.:=</span></span><br><span class="line">   s2 := []<span class="keyword">int</span>&#123;&#125;</span><br><span class="line">   <span class="comment">// 3.make()</span></span><br><span class="line">   <span class="keyword">var</span> s3 []<span class="keyword">int</span> = <span class="built_in">make</span>([]<span class="keyword">int</span>, <span class="number">0</span>)</span><br><span class="line">   fmt.Println(s1, s2, s3)</span><br><span class="line">   <span class="comment">//var slice []type = make([]type, len)</span></span><br><span class="line">   <span class="comment">//slice  := make([]type, len)</span></span><br><span class="line">   <span class="comment">//slice  := make([]type, len, cap)</span></span><br><span class="line">   <span class="comment">// 4.初始化赋值</span></span><br><span class="line">   <span class="keyword">var</span> s4 []<span class="keyword">int</span> = <span class="built_in">make</span>([]<span class="keyword">int</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">   fmt.Println(s4)</span><br><span class="line">   s5 := []<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">   fmt.Println(s5)</span><br><span class="line">   <span class="comment">// 5.从数组切片</span></span><br><span class="line">   arr := [<span class="number">5</span>]<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;</span><br><span class="line">   <span class="keyword">var</span> s6 []<span class="keyword">int</span></span><br><span class="line">   <span class="comment">// 前包后不包</span></span><br><span class="line">   s6 = arr[<span class="number">1</span>:<span class="number">4</span>]<span class="comment">//</span></span><br><span class="line">   fmt.Println(s6)</span><br></pre></td></tr></table></figure>
+<h3><span id="3-qie-pian-cao-zuo">3.切片操作</span><a href="#3-qie-pian-cao-zuo" class="header-anchor">null</a></h3><ol>
 <li>初始化操作</li>
 </ol>
 <figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. s[l<span class="symbol">ow:hi</span>gh,<span class="built_in">max</span>] 从切片s索引位置low`到high处所获得的切片，<span class="built_in">len</span>=high-low,cap=<span class="built_in">max</span>-low`</span><br><span class="line"><span class="number">2</span>. s[<span class="symbol">:</span>] 从索引位置<span class="number">0</span>-<span class="built_in">len</span>(s)-<span class="number">1</span>的位置</span><br><span class="line"></span><br><span class="line"><span class="built_in">var</span> arr = [...]<span class="built_in">int</span>&#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>&#125;</span><br><span class="line"><span class="built_in">var</span> slice0 []<span class="built_in">int</span> = arr[<span class="symbol">2:8</span>]</span><br><span class="line"><span class="built_in">var</span> slice1 []<span class="built_in">int</span> = arr[<span class="symbol">0:6</span>]        //可以简写为 <span class="built_in">var</span> slice []<span class="built_in">int</span> = arr[<span class="symbol">:en</span>d]</span><br><span class="line"><span class="built_in">var</span> slice2 []<span class="built_in">int</span> = arr[<span class="symbol">5:10</span>]       //可以简写为 <span class="built_in">var</span> slice[]<span class="built_in">int</span> = arr[sta<span class="symbol">rt:</span>]</span><br><span class="line"><span class="built_in">var</span> slice3 []<span class="built_in">int</span> = arr[<span class="symbol">0:le</span><span class="built_in">n</span>(arr)] //<span class="built_in">var</span> slice []<span class="built_in">int</span> = arr[<span class="symbol">:</span>]</span><br><span class="line"><span class="built_in">var</span> slice4 = arr[<span class="symbol">:le</span><span class="built_in">n</span>(arr)-<span class="number">1</span>]      //去掉切片的最后一个元素</span><br></pre></td></tr></table></figure>
@@ -658,7 +668,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">slice</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1.随写</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2.创建方式</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3.切片操作</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">slicenull</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1.随写null</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2.创建方式null</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3.切片操作null</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -1242,20 +1252,5 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+	</body>
 </html>
