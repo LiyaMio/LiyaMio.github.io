@@ -87,13 +87,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>http://yoursite-url/tags/go/</loc>
-    <lastmod>2022-09-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   
   <url>
@@ -105,13 +98,6 @@
   
   <url>
     <loc>http://yoursite-url/categories/blog/</loc>
-    <lastmod>2022-09-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite-url/categories/go/</loc>
     <lastmod>2022-09-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

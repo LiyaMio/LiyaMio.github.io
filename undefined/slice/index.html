@@ -142,7 +142,7 @@
   <link rel="canonical" href="http://yoursite-url/undefined/slice/">
   <title>
     
-      slice - Ride Or Die
+      Ride Or Die
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -352,19 +352,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
-      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
     }
 
     header.intro-header {
        /*post*/
         background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url('/img/header_img/lml_bg.jpg'); */
+        /* background-image: url(''); */
       
     }
 
@@ -389,10 +389,8 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#go" title="go">go</a>
-              
             </div>
-            <h1>slice</h1>
+            <h1></h1>
             <h2 class="subheading"></h2>
             <span class="meta">
               Posted by 云起 on
@@ -404,11 +402,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">3</span> Minutes
+              Estimated Reading Time <span class="post-count">1</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">735</span> In Total
+              Words <span class="post-count">0</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -470,54 +468,8 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2><span id="slice">slice</span></h2><h3><span id="随写">随写</span></h3><ol>
-<li><p>切片：引用类型，是对数组的一个引用</p>
-</li>
-<li><p>底层是结构体</p>
-</li>
-</ol>
-<p><img src="slice/slice.png" alt="slice"></p>
-<ol start="3">
-<li>值拷贝传递</li>
-<li>string底层是byte数组，也可以进行切片操作</li>
-<li>切片的地址是他自身结构体的地址，不是底层数组的地址</li>
-<li>slice默认浅拷贝</li>
-<li>nil切片地址指向nil，空切片地址存在数据为空</li>
-</ol>
-<hr>
-<h3><span id="创建方式">创建方式</span></h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.声明切片</span></span><br><span class="line">   <span class="keyword">var</span> s1 []<span class="type">int</span></span><br><span class="line">   <span class="keyword">if</span> s1 == <span class="literal">nil</span> &#123;</span><br><span class="line">      fmt.Println(<span class="string">&quot;是空&quot;</span>)</span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      fmt.Println(<span class="string">&quot;不是空&quot;</span>)</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">// 2.:=</span></span><br><span class="line">   s2 := []<span class="type">int</span>&#123;&#125;</span><br><span class="line">   <span class="comment">// 3.make()</span></span><br><span class="line">   <span class="keyword">var</span> s3 []<span class="type">int</span> = <span class="built_in">make</span>([]<span class="type">int</span>, <span class="number">0</span>)</span><br><span class="line">   fmt.Println(s1, s2, s3)</span><br><span class="line">   <span class="comment">//var slice []type = make([]type, len)</span></span><br><span class="line">   <span class="comment">//slice  := make([]type, len)</span></span><br><span class="line">   <span class="comment">//slice  := make([]type, len, cap)</span></span><br><span class="line">   <span class="comment">// 4.初始化赋值</span></span><br><span class="line">   <span class="keyword">var</span> s4 []<span class="type">int</span> = <span class="built_in">make</span>([]<span class="type">int</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">   fmt.Println(s4)</span><br><span class="line">   s5 := []<span class="type">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">   fmt.Println(s5)</span><br><span class="line">   <span class="comment">// 5.从数组切片</span></span><br><span class="line">   arr := [<span class="number">5</span>]<span class="type">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;</span><br><span class="line">   <span class="keyword">var</span> s6 []<span class="type">int</span></span><br><span class="line">   <span class="comment">// 前包后不包</span></span><br><span class="line">   s6 = arr[<span class="number">1</span>:<span class="number">4</span>]<span class="comment">//</span></span><br><span class="line">   fmt.Println(s6)</span><br></pre></td></tr></table></figure>
-
-<h3><span id="切片操作">切片操作</span></h3><ol>
-<li>初始化操作</li>
-</ol>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. s<span class="selector-attr">[low:high,max]</span> 从切片s索引位置low`到high处所获得的切片，len=high-low,cap=max-low`</span><br><span class="line"><span class="number">2</span>. s<span class="selector-attr">[:]</span> 从索引位置<span class="number">0</span><span class="built_in">-len</span>(s)-<span class="number">1</span>的位置</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">var</span> arr = <span class="selector-attr">[...]</span>int&#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>&#125;</span><br><span class="line"><span class="selector-tag">var</span> slice0 <span class="selector-attr">[]</span>int = arr<span class="selector-attr">[2:8]</span></span><br><span class="line"><span class="selector-tag">var</span> slice1 <span class="selector-attr">[]</span>int = arr<span class="selector-attr">[0:6]</span>        <span class="comment">//可以简写为 var slice []int = arr[:end]</span></span><br><span class="line"><span class="selector-tag">var</span> slice2 <span class="selector-attr">[]</span>int = arr<span class="selector-attr">[5:10]</span>       <span class="comment">//可以简写为 var slice[]int = arr[start:]</span></span><br><span class="line"><span class="selector-tag">var</span> slice3 <span class="selector-attr">[]</span>int = arr<span class="selector-attr">[0:len(arr)]</span> <span class="comment">//var slice []int = arr[:]</span></span><br><span class="line"><span class="selector-tag">var</span> slice4 = arr<span class="selector-attr">[:len(arr)-1]</span>      <span class="comment">//去掉切片的最后一个元素</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>切片追加（append）</li>
-</ol>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">var</span> <span class="selector-tag">a</span> = <span class="selector-attr">[]</span>int&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">fmt<span class="selector-class">.Printf</span>(<span class="string">&quot;slice a : %v\n&quot;</span>, a)</span><br><span class="line"><span class="selector-tag">var</span> <span class="selector-tag">b</span> = <span class="selector-attr">[]</span>int&#123;<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line">fmt<span class="selector-class">.Printf</span>(<span class="string">&quot;slice b : %v\n&quot;</span>, b)</span><br><span class="line">c := <span class="built_in">append</span>(<span class="selector-tag">a</span>, <span class="selector-tag">b</span>...)</span><br><span class="line">fmt<span class="selector-class">.Printf</span>(<span class="string">&quot;slice c : %v\n&quot;</span>, c)</span><br><span class="line">d := <span class="built_in">append</span>(c, <span class="number">7</span>)</span><br><span class="line">fmt<span class="selector-class">.Printf</span>(<span class="string">&quot;slice d : %v\n&quot;</span>, d)</span><br><span class="line">e := <span class="built_in">append</span>(d, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>)</span><br><span class="line">fmt<span class="selector-class">.Printf</span>(<span class="string">&quot;slice e : %v\n&quot;</span>, e)</span><br></pre></td></tr></table></figure>
-
-<p>追加策略：追加后个数少于原切片容量，直接在原数组追加；</p>
-<p>​                    超过则通常以<strong>两倍</strong>的容量重新分配底层数组</p>
-<ol start="3">
-<li>切片拷贝(copy)</li>
-</ol>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">s1 := []<span class="type">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;</span><br><span class="line"> fmt.Printf(<span class="string">&quot;slice s1 : %v\n&quot;</span>, s1)</span><br><span class="line"> s2 := <span class="built_in">make</span>([]<span class="type">int</span>, <span class="number">10</span>)</span><br><span class="line"> fmt.Printf(<span class="string">&quot;slice s2 : %v\n&quot;</span>, s2)</span><br><span class="line"> <span class="built_in">copy</span>(s2, s1)</span><br><span class="line"> fmt.Printf(<span class="string">&quot;copied slice s1 : %v\n&quot;</span>, s1)</span><br><span class="line"> fmt.Printf(<span class="string">&quot;copied slice s2 : %v\n&quot;</span>, s2)</span><br><span class="line"> s3 := []<span class="type">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line"> fmt.Printf(<span class="string">&quot;slice s3 : %v\n&quot;</span>, s3)</span><br><span class="line"> s3 = <span class="built_in">append</span>(s3, s2...)</span><br><span class="line"> fmt.Printf(<span class="string">&quot;appended slice s3 : %v\n&quot;</span>, s3)</span><br><span class="line"> s3 = <span class="built_in">append</span>(s3, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>)</span><br><span class="line"> fmt.Printf(<span class="string">&quot;last slice s3 : %v\n&quot;</span>, s3)</span><br></pre></td></tr></table></figure>
-
-<p>copy 在两个 slice 间复制数据，复制长度以 len 小的为准。两个 slice 可指向同一底层数组，允许元素区间重叠。</p>
-<ol start="4">
-<li>切片遍历</li>
-</ol>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data := [...]<span class="type">int</span>&#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>&#125;</span><br><span class="line">  slice := data[:]</span><br><span class="line">  <span class="keyword">for</span> index, value := <span class="keyword">range</span> slice &#123;</span><br><span class="line">      fmt.Printf(<span class="string">&quot;inde : %v , value : %v\n&quot;</span>, index, value)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>range遍历切片，value是切片里的值拷贝</p>
-<ol start="5">
-<li>扩容策略</li>
-</ol>
-<p>扩容前容量的两倍小于需扩容的容量，则直接扩容至需扩容的容量</p>
-<p>否则，如果切片的容量小于 1024 个元素，翻倍扩容。</p>
-<p>​			一旦元素个数超过 1024 个元素，1.25倍扩容</p>
-
+        <hr>
+<h2 id><a href="#" class="headerlink" title="{}"></a>{}</h2>
 
         <hr>
         <!-- Pager -->
@@ -574,7 +526,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=slice&body=Hi,I found this website and thought you might like it http://yoursite-url/undefined/slice/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=&body=Hi,I found this website and thought you might like it http://yoursite-url/undefined/slice/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -657,17 +609,6 @@
       <!-- Catalog: Tabe of Content -->
       <!-- Table of Contents -->
 
-    
-      <aside id="sidebar">
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
-        
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">slice</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">随写</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">创建方式</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">切片操作</span></a></li></ol></li></ol>
-        
-        </div>
-      </aside>
-    
-
 
 
       <!-- Sidebar Container -->
@@ -684,8 +625,6 @@
             <a href="/tags/">FEATURED TAGS</a>
           </h5>
           <div class="tags">
-            
-            <a class="tag" href="/tags/#go" title="go">go</a>
             
           </div>
         </section>
