@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite-url/undefined/map/</loc>
+    
+    <lastmod>2022-09-16</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite-url/undefined/%E6%8C%87%E9%92%88/</loc>
     
     <lastmod>2022-09-16</lastmod>
