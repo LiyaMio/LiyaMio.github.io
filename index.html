@@ -519,14 +519,27 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
 
   <a href="/undefined/slice/">
     <h2 class="post-title">
-      Untitled
+      slice
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      
-{}...
+      随写
+切片：引用类型，是对数组的一个引用
+
+底层是结构体
+
+
+
+
+值拷贝传递
+string底层是byte数组，也可以进行切片操作
+切片的地址是他自身结构体的地址，不是底层数组的地址
+slice默认浅拷贝
+nil切片地址指向nil，空切片地址存在数据为空
+
+创建方式1234567891011121314151617181920212223242526//1.声明切片   var s1 []in......
     </div>
   </a>
   
@@ -742,7 +755,7 @@ Gitee 仓库地址：ht......
   <ul>
     
     <a href="undefined/slice/">
-      <li>(no title)</li>
+      <li>slice</li>
     </a>
     
     <a href="cn/hexo-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
