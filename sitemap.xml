@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite-url/undefined/%E7%BB%93%E6%9E%84%E4%BD%93/</loc>
+    
+    <lastmod>2022-09-17</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite-url/undefined/map/</loc>
     
     <lastmod>2022-09-16</lastmod>
@@ -81,7 +88,7 @@
 
   <url>
     <loc>http://yoursite-url/</loc>
-    <lastmod>2022-09-16</lastmod>
+    <lastmod>2022-09-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -89,21 +96,21 @@
   
   <url>
     <loc>http://yoursite-url/tags/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2022-09-16</lastmod>
+    <lastmod>2022-09-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite-url/tags/blog/</loc>
-    <lastmod>2022-09-16</lastmod>
+    <lastmod>2022-09-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite-url/tags/go/</loc>
-    <lastmod>2022-09-16</lastmod>
+    <lastmod>2022-09-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -112,21 +119,21 @@
   
   <url>
     <loc>http://yoursite-url/categories/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2022-09-16</lastmod>
+    <lastmod>2022-09-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite-url/categories/blog/</loc>
-    <lastmod>2022-09-16</lastmod>
+    <lastmod>2022-09-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite-url/categories/go/</loc>
-    <lastmod>2022-09-16</lastmod>
+    <lastmod>2022-09-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
