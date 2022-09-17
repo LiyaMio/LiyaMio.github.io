@@ -486,7 +486,12 @@
       
     </h3>
     <div class="post-content-preview">
-      ...
+      结构体随写基本使用定义12345type 类型名 struct &#123;       字段名 字段类型       字段名 字段类型       …   &#125; 
+
+别名12345//类型定义type NewInt int//类型别名type MyInt = int
+
+匿名结构体用于临时场景
+123456func main() &#123;    var user struct&#......
     </div>
   </a>
   
@@ -495,6 +500,8 @@
     2022-09-17
   </p>
   <div class="tags">
+    
+    <a href="/tags/#go" title="go">go</a>
     
   </div>
   
@@ -818,7 +825,7 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
     
     
     
-    <a href="/tags/#go" title="go" rel="3">go</a>
+    <a href="/tags/#go" title="go" rel="4">go</a>
     
     
     
@@ -1460,20 +1467,5 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+	</body>
 </html>
