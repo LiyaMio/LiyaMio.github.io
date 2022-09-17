@@ -244,6 +244,8 @@
 
           
           
+          
+          
           <li>
             <a href="/about/">
               
@@ -255,12 +257,10 @@
           
           
           
-          
-          
           <li>
-            <a href="/categories/">
+            <a href="/archive/">
               
-              CATEGORIES
+              ARCHIVES
               
               
             </a>
@@ -269,9 +269,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/categories/">
               
-              ARCHIVES
+              CATEGORIES
               
               
             </a>
@@ -470,24 +470,17 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="指针">指针</h2>
-<h3 id="随写">随写</h3>
-<ol>
-<li>
-<p>Go语言中的函数传参都是值拷贝</p>
+        <h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><h3 id="随写"><a href="#随写" class="headerlink" title="随写"></a>随写</h3><ol>
+<li><p>Go语言中的函数传参都是值拷贝</p>
 </li>
-<li>
-<p>类型指针不能进行偏移和运算</p>
+<li><p>类型指针不能进行偏移和运算</p>
 </li>
-<li>
-<p>当一个指针被定义后没有分配到任何变量时，它的值为 nil</p>
+<li><p>当一个指针被定义后没有分配到任何变量时，它的值为 nil</p>
 </li>
-<li>
-<p>引用类型的变量使用时不仅需要声明还需要分配内存空间</p>
+<li><p>引用类型的变量使用时不仅需要声明还需要分配内存空间</p>
 </li>
 </ol>
-<h3 id="new与make">new与make</h3>
-<ol>
+<h3 id="new与make"><a href="#new与make" class="headerlink" title="new与make"></a>new与make</h3><ol>
 <li>用于分配内存</li>
 <li>make只用于slice、map以及channel的初始化，返回的还是这三个引用类型本身</li>
 <li>new用于类型的内存分配，并且内存对应的值为类型零值，返回的是指向类型的指针</li>

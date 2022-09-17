@@ -244,6 +244,8 @@
 
           
           
+          
+          
           <li>
             <a href="/about/">
               
@@ -255,12 +257,10 @@
           
           
           
-          
-          
           <li>
-            <a href="/categories/">
+            <a href="/archive/">
               
-              CATEGORIES
+              ARCHIVES
               
               
             </a>
@@ -269,9 +269,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/categories/">
               
-              ARCHIVES
+              CATEGORIES
               
               
             </a>
@@ -408,7 +408,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">928</span> In Total
+              Words <span class="post-count">929</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -470,37 +470,34 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="map">map</h2>
-<h3 id="随写">随写</h3>
-<ol>
+        <h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><h3 id="随写"><a href="#随写" class="headerlink" title="随写"></a>随写</h3><ol>
 <li>遍历map时的元素顺序与添加键值对的顺序无关。</li>
 </ol>
-<h3 id="基本使用">基本使用</h3>
-<h4 id="创建">创建</h4>
-<p>make创建</p>
+<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><p>make创建</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">make</span>(<span class="keyword">map</span>[KeyType]ValueType, [<span class="built_in">cap</span>])</span><br></pre></td></tr></table></figure>
+
 <p>或声明时填充</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">userInfo := <span class="keyword">map</span>[<span class="type">string</span>]<span class="type">string</span>&#123;</span><br><span class="line">       <span class="string">&quot;username&quot;</span>: <span class="string">&quot;pprof.cn&quot;</span>,</span><br><span class="line">       <span class="string">&quot;password&quot;</span>: <span class="string">&quot;123456&quot;</span>,</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<h4 id="判断某个key是否存在">判断某个key是否存在</h4>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">value, ok := <span class="keyword">map</span>[key]  </span><br></pre></td></tr></table></figure>
-<h4 id="遍历">遍历</h4>
-<p>普通遍历</p>
+
+<h4 id="判断某个key是否存在"><a href="#判断某个key是否存在" class="headerlink" title="判断某个key是否存在"></a>判断某个key是否存在</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">value, ok := <span class="keyword">map</span>[key]  </span><br></pre></td></tr></table></figure>
+
+<h4 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h4><p>普通遍历</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> k, v := <span class="keyword">range</span> scoreMap &#123;</span><br><span class="line">      fmt.Println(k, v)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
 <p>只遍历key</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> k := <span class="keyword">range</span> scoreMap &#123;</span><br><span class="line">      fmt.Println(k)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
 <p>特定顺序遍历</p>
 <p>将key保存在切片中进行操作</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> keys = <span class="built_in">make</span>([]<span class="type">string</span>, <span class="number">0</span>, <span class="number">200</span>)</span><br><span class="line">   <span class="keyword">for</span> key := <span class="keyword">range</span> scoreMap &#123;</span><br><span class="line">       keys = <span class="built_in">append</span>(keys, key)</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">//对切片进行排序</span></span><br><span class="line">   sort.Strings(keys)</span><br><span class="line">   <span class="comment">//按照排序后的key遍历map</span></span><br><span class="line">   <span class="keyword">for</span> _, key := <span class="keyword">range</span> keys &#123;</span><br><span class="line">       fmt.Println(key, scoreMap[key])</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<h4 id="删除键值对">删除键值对</h4>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">delete</span>(<span class="built_in">map</span>, <span class="built_in">key</span>)  </span><br></pre></td></tr></table></figure>
-<h3 id="底层">底层</h3>
-<h3 id="map">map</h3>
-<p>一种通过key来获取value的一个数据结构，其底层存储方式为数组<img src="/undefined/map/map.png" alt="map"></p>
-<h4 id="hash冲突">hash冲突</h4>
-<p>个数组下标只能存储一对key，value, hashkey(xiaoming)=4占用了下标0的位置，假设我们遇到另一个key，hashkey(xiaowang)也是4，这就是hash冲突</p>
+
+<h4 id="删除键值对"><a href="#删除键值对" class="headerlink" title="删除键值对"></a>删除键值对</h4><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">delete</span>(<span class="built_in">map</span>, <span class="built_in">key</span>)  </span><br></pre></td></tr></table></figure>
+
+<h3 id="底层"><a href="#底层" class="headerlink" title="底层"></a>底层</h3><h3 id="map"><a href="#map-1" class="headerlink" title="map"></a>map</h3><p>一种通过key来获取value的一个数据结构，其底层存储方式为数组<img src="/undefined/map/map.png" alt="map"></p>
+<h4 id="hash冲突"><a href="#hash冲突" class="headerlink" title="hash冲突"></a>hash冲突</h4><p>个数组下标只能存储一对key，value, hashkey(xiaoming)&#x3D;4占用了下标0的位置，假设我们遇到另一个key，hashkey(xiaowang)也是4，这就是hash冲突</p>
 <p>解决方法：</p>
 <p>开放定址法：冲突的下标处开始往后探测，到达数组末尾时，从数组开始处探测，直到找到一个空位置存储这个key，当数组都找不到的情况下回扩容（事实上当数组容量快满的时候就会扩容了）；查找某一个key的时候，找到key对应的下标，比较key是否相等，如果相等直接取出来，否则按照顺寻探测直到碰到一个空位置，说明key不存在。</p>
-<p>如下图：首先存储key=xiaoming在下标0处，当存储key=xiaowang时，hash冲突了，按照线性探测，存储在下标1处，（红色的线是冲突或者下标已经被占用了） 再者key=xiaozhao存储在下标4处，当存储key=xiaoliu是，hash冲突了，按照线性探测，从头开始，存储在下标2处 （黄色的是冲突或者下标已经被占用了）<img src="/undefined/map/%E7%BA%BF%E6%80%A7%E6%8E%A2%E6%B5%8B.png" alt="map"></p>
+<p>如下图：首先存储key&#x3D;xiaoming在下标0处，当存储key&#x3D;xiaowang时，hash冲突了，按照线性探测，存储在下标1处，（红色的线是冲突或者下标已经被占用了） 再者key&#x3D;xiaozhao存储在下标4处，当存储key&#x3D;xiaoliu是，hash冲突了，按照线性探测，从头开始，存储在下标2处 （黄色的是冲突或者下标已经被占用了）<img src="/undefined/map/%E7%BA%BF%E6%80%A7%E6%8E%A2%E6%B5%8B.png" alt="map"></p>
 <p>拉链法（go map）：</p>
 <p>何为拉链，简单理解为链表，当key的hash冲突时，我们在冲突位置的元素上形成一个链表，通过指针互连接，当查找时，发现key冲突，顺着链表一直往下找，直到链表的尾节点，找不到则返回空，如下图：）<img src="/undefined/map/%E6%8B%89%E9%93%BE%E6%B3%95.png" alt="map"></p>
 <p>开放定址（线性探测）和拉链的优缺点</p>
@@ -511,8 +508,7 @@
 <li>拉链存储了指针，所以空间上会比线性探测占用多一点</li>
 <li>拉链是动态申请存储空间的，所以更适合链长不确定的</li>
 </ul>
-<h4 id="go-map实现原理">go map实现原理</h4>
-<p>map是数组存储的的，每个数组下标处存储的是一个bucket <img src="/undefined/map/bucket.png" alt="map"></p>
+<h4 id="go-map实现原理"><a href="#go-map实现原理" class="headerlink" title="go map实现原理"></a>go map实现原理</h4><p>map是数组存储的的，每个数组下标处存储的是一个bucket <img src="/undefined/map/bucket.png" alt="map"></p>
 <p>每个bucket中可以存储8个kv键值对，当每个bucket存储的kv对到达8个之后，会通过overflow指针指向一个新的bucket，从而形成一个链表,看bmap的结构，</p>
 <p>map[int64]int8,key是int64（8个字节），value是int8（一个字节），kv的长度不同，如果按照kv格式存放，则考虑内存对齐v也会占用int64，而按照后者存储时，8个v刚好占用一个int64</p>
 <p>当往map中存储一个kv对时，通过k获取hash值，hash值的低八位和bucket数组长度取余，定位到在数组中的那个下标，hash值的高八位存储在bucket中的tophash中，用来快速判断key是否存在，key和value的具体值则通过指针运算存储，当一个bucket满时，通过overfolw指针链接到下一个bucket。</p>
