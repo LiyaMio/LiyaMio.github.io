@@ -478,6 +478,48 @@
   <!-- top end -->
   
 
+  <a href="/undefined/方法/">
+    <h2 class="post-title">
+      方法
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      Method
+随写
+
+Go语言中的方法（Method）是一种作用于特定类型变量的函数。这种特定类型变量叫做接收者（Receiver）。接收者的概念就类似于其他语言中的this或者 self。
+方法与函数的区别是，函数不属于任何类型，方法属于特定的类型。
+
+基本使用
+定义
+123func (接收者变量 接收者类型) 方法名(参数列表) (返回参数) &#123;    函数体&#125; 
+1......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 云起 on
+    2022-09-17
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#go" title="go">go</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/undefined/结构体/">
     <h2 class="post-title">
       结构体
@@ -825,7 +867,7 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
     
     
     
-    <a href="/tags/#go" title="go" rel="4">go</a>
+    <a href="/tags/#go" title="go" rel="5">go</a>
     
     
     
@@ -901,6 +943,10 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
 <div class="widget">
   <ul>
     
+    <a href="undefined/%E6%96%B9%E6%B3%95/">
+      <li>方法</li>
+    </a>
+    
     <a href="undefined/%E7%BB%93%E6%9E%84%E4%BD%93/">
       <li>结构体</li>
     </a>
@@ -915,10 +961,6 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
     
     <a href="undefined/slice/">
       <li>slice</li>
-    </a>
-    
-    <a href="cn/hexo-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-      <li>hexo + github 博客搭建</li>
     </a>
     
   </ul>
@@ -945,7 +987,7 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/09/">September 2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/04/">April 2020</a><span class="archive-list-count">2</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/09/">September 2022</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/04/">April 2020</a><span class="archive-list-count">2</span></li></ul>
 </div>
 
 
@@ -1467,5 +1509,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
