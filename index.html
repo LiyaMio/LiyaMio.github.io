@@ -258,9 +258,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/categories/">
               
-              ARCHIVES
+              CATEGORIES
               
               
             </a>
@@ -269,9 +269,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/archive/">
               
-              CATEGORIES
+              ARCHIVES
               
               
             </a>
@@ -517,14 +517,17 @@
       
     </h3>
     <div class="post-content-preview">
-      map随写
+      map
+随写
+
 遍历map时的元素顺序与添加键值对的顺序无关。
 
-基本使用创建make创建
+基本使用
+创建
+make创建
 1make(map[KeyType]ValueType, [cap])
-
 或声明时填充
-1234userInfo := map[string]string&#123;       &quot;username&quot;: &quot;pprof.cn&quot;,       &quot;passwor......
+1234userInfo := map[string]string&#123;       &quot;username&quot;: &quot;pprof.cn&quot;,       &quot;pass......
     </div>
   </a>
   
@@ -557,22 +560,27 @@
       
     </h3>
     <div class="post-content-preview">
-      指针随写
+      指针
+随写
+
+
 Go语言中的函数传参都是值拷贝
+
 
 类型指针不能进行偏移和运算
 
+
 当一个指针被定义后没有分配到任何变量时，它的值为 nil
+
 
 引用类型的变量使用时不仅需要声明还需要分配内存空间
 
 
 new与make
+
 用于分配内存
 make只用于slice、map以及channel的初始化，返回的还是这三个引用类型本身
-new用于类型的内存分配，并且内存对应的值为类型零值，返回的是指向类型的指针
-
-...
+new用于类型的内存分配，并且内存对应的值为类型零值，返回的是指向类......
     </div>
   </a>
   
@@ -606,22 +614,31 @@ new用于类型的内存分配，并且内存对应的值为类型零值，返�
     </h3>
     <div class="post-content-preview">
       随写
+
+
 切片：引用类型，是对数组的一个引用
+
 
 底层是结构体
 
+
 值拷贝传递
+
 
 string底层是byte数组，也可以进行切片操作
 
+
 切片的地址是他自身结构体的地址，不是底层数组的地址
 
+
 slice默认浅拷贝
+
 
 nil切片地址指向nil，空切片地址存在数据为空
 
 
-创建方式1234567891011121314151617181920212223242526//1.声明切片   var s1 []......
+创建方式
+1234567891011121314151617181920212223242526//1.声明切片   ......
     </div>
   </a>
   
@@ -698,7 +715,9 @@ https://blog.csdn.net/qq_47654010......
 移植 Hux Blog 的主题，感谢 Huxpro 设计了如此完美的主题。
 由 Vincent 创建的 LiveMyLife 的主题修改来源 YenYuHsuan，参考主题 dusign、Utone，感谢 dusign、Utone。
 
-仓库Github 仓库地址：https://github.com/V-Vincen/hexo-theme-livemylifeGitee 仓库地址：http......
+仓库
+Github 仓库地址：https://github.com/V-Vincen/hexo-theme-livemylife
+Gitee 仓库地址：ht......
     </div>
   </a>
   
@@ -799,11 +818,11 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
     
     
     
-    <a href="/tags/#blog" title="blog" rel="1">blog</a>
-    
-    
-    
     <a href="/tags/#go" title="go" rel="3">go</a>
+    
+    
+    
+    <a href="/tags/#blog" title="blog" rel="1">blog</a>
     
     
   </div>
@@ -935,12 +954,12 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
       <li>Hexo-Theme-LiveMyLife</li>
     </a>
     
-    <a href="/categories/#blog">
-      <li>blog</li>
-    </a>
-    
     <a href="/categories/#go">
       <li>go</li>
+    </a>
+    
+    <a href="/categories/#blog">
+      <li>blog</li>
     </a>
     
   </ul>

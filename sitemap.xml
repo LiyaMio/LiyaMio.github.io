@@ -102,14 +102,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/tags/blog/</loc>
+    <loc>http://yoursite-url/tags/go/</loc>
     <lastmod>2022-09-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite-url/tags/go/</loc>
+    <loc>http://yoursite-url/tags/blog/</loc>
     <lastmod>2022-09-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -125,14 +125,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/categories/blog/</loc>
+    <loc>http://yoursite-url/categories/go/</loc>
     <lastmod>2022-09-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite-url/categories/go/</loc>
+    <loc>http://yoursite-url/categories/blog/</loc>
     <lastmod>2022-09-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
