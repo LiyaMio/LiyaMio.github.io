@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite-url/about/index.html</loc>
+    
+    <lastmod>2022-09-28</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite-url/undefined/%E5%87%BD%E6%95%B0/</loc>
     
     <lastmod>2022-09-18</lastmod>
@@ -17,6 +24,13 @@
   
   <url>
     <loc>http://yoursite-url/undefined/%E6%96%B9%E6%B3%95/</loc>
+    
+    <lastmod>2022-09-17</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite-url/undefined/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</loc>
     
     <lastmod>2022-09-17</lastmod>
     
@@ -96,13 +110,6 @@
     <loc>http://yoursite-url/archive/index.html</loc>
     
     <lastmod>2017-03-20</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite-url/about/index.html</loc>
-    
-    <lastmod>2016-04-20</lastmod>
     
   </url>
   
