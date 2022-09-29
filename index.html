@@ -469,7 +469,7 @@
   <!-- top end -->
   
 
-  <a href="/undefined/GMP/">
+  <a href="/go/GMP/">
     <h2 class="post-title">
       GMP
     </h2>
@@ -478,7 +478,10 @@
     </h3>
     <div class="post-content-preview">
       GMP 原理与调度 - 地鼠文档 (topgoer.cn)
-...
+线程由 CPU 调度是抢占式的，协程由用户态调度是协作式的
+1、我们通过 go func () 来创建一个 goroutine；
+2、有两个存储 G 的队列，一个是局部调度器 P 的本地队列、一个是全局 G 队列。新创建的 G 会先保存在 P 的本地队列中，如果 P 的本地队列已经满了就会保存在全局的队列中；
+3、G 只能运行在 M......
     </div>
   </a>
   
@@ -503,7 +506,7 @@
   <!-- top end -->
   
 
-  <a href="/undefined/并发编程/">
+  <a href="/go/并发编程/">
     <h2 class="post-title">
       并发编程
     </h2>
@@ -544,7 +547,7 @@ C.一个进程可以创建和撤销多个线程;同一个进程中的多个线�
   <!-- top end -->
   
 
-  <a href="/undefined/函数/">
+  <a href="/go/函数/">
     <h2 class="post-title">
       函数
     </h2>
@@ -583,7 +586,7 @@ C.一个进程可以创建和撤销多个线程;同一个进程中的多个线�
   <!-- top end -->
   
 
-  <a href="/undefined/基础语法/">
+  <a href="/go/基础语法/">
     <h2 class="post-title">
       基础语法
     </h2>
@@ -591,10 +594,12 @@ C.一个进程可以创建和撤销多个线程;同一个进程中的多个线�
       
     </h3>
     <div class="post-content-preview">
-      基础语法条件语句if不支持三目运算
+      基础语法
+条件语句
+if
+不支持三目运算
 123if a &gt;2 &#123;   fmt.Println(a)&#125;
-
-1234567if n := &quot;abc&quot;; x &gt; 0 &#123;     // 初始化语句未必就是定义变量， 如 println(&quot;init&quot;) 也是可以的。    println(n[2])&#125; else i......
+1234567if n := &quot;abc&quot;; x &gt; 0 &#123;     // 初始化语句未必就是定义变量， 如 println(&quot;init&quot;) 也是可以的。    println(n[2])&#125; else......
     </div>
   </a>
   
@@ -619,7 +624,7 @@ C.一个进程可以创建和撤销多个线程;同一个进程中的多个线�
   <!-- top end -->
   
 
-  <a href="/undefined/方法/">
+  <a href="/go/方法/">
     <h2 class="post-title">
       方法
     </h2>
@@ -661,7 +666,7 @@ Go语言中的方法（Method）是一种作用于特定类型变量的函数。
   <!-- top end -->
   
 
-  <a href="/undefined/结构体/">
+  <a href="/go/结构体/">
     <h2 class="post-title">
       结构体
     </h2>
@@ -703,7 +708,7 @@ Go语言中的方法（Method）是一种作用于特定类型变量的函数。
   <!-- top end -->
   
 
-  <a href="/undefined/map/">
+  <a href="/go/map/">
     <h2 class="post-title">
       map
     </h2>
@@ -746,7 +751,7 @@ make创建
   <!-- top end -->
   
 
-  <a href="/undefined/指针/">
+  <a href="/go/指针/">
     <h2 class="post-title">
       指针
     </h2>
@@ -799,7 +804,7 @@ new用于类型的内存分配，并且内存对应的值为类型零值，返�
   <!-- top end -->
   
 
-  <a href="/undefined/slice/">
+  <a href="/go/slice/">
     <h2 class="post-title">
       slice
     </h2>
@@ -1018,23 +1023,23 @@ https://blog.csdn.net/qq_47654010......
 <div class="widget">
   <ul>
     
-    <a href="undefined/GMP/">
+    <a href="go/GMP/">
       <li>GMP</li>
     </a>
     
-    <a href="undefined/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">
+    <a href="go/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">
       <li>并发编程</li>
     </a>
     
-    <a href="undefined/%E5%87%BD%E6%95%B0/">
+    <a href="go/%E5%87%BD%E6%95%B0/">
       <li>函数</li>
     </a>
     
-    <a href="undefined/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">
+    <a href="go/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">
       <li>基础语法</li>
     </a>
     
-    <a href="undefined/%E6%96%B9%E6%B3%95/">
+    <a href="go/%E6%96%B9%E6%B3%95/">
       <li>方法</li>
     </a>
     

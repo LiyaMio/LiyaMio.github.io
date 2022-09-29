@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/undefined/指针/">
+  <link rel="canonical" href="http://yoursite-url/go/GMP/">
   <title>
     
-      指针 - Ride Or Die
+      GMP - Ride Or Die
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -383,11 +383,11 @@
               <a class="tag" href="/tags/#go" title="go">go</a>
               
             </div>
-            <h1>指针</h1>
+            <h1>GMP</h1>
             <h2 class="subheading"></h2>
             <span class="meta">
               Posted by 云起 on
-              2022-09-16
+              2022-09-28
             </span>
 
 
@@ -399,7 +399,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">147</span> In Total
+              Words <span class="post-count">397</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -461,41 +461,23 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="指针">指针</h2>
-<h3 id="随写">随写</h3>
-<ol>
-<li>
-<p>Go语言中的函数传参都是值拷贝</p>
-</li>
-<li>
-<p>类型指针不能进行偏移和运算</p>
-</li>
-<li>
-<p>当一个指针被定义后没有分配到任何变量时，它的值为 nil</p>
-</li>
-<li>
-<p>引用类型的变量使用时不仅需要声明还需要分配内存空间</p>
-</li>
-</ol>
-<h3 id="new与make">new与make</h3>
-<ol>
-<li>用于分配内存</li>
-<li>make只用于slice、map以及channel的初始化，返回的还是这三个引用类型本身</li>
-<li>new用于类型的内存分配，并且内存对应的值为类型零值，返回的是指向类型的指针</li>
-</ol>
+        <p><a target="_blank" rel="noopener" href="https://www.topgoer.cn/docs/golang/chapter09-11">GMP 原理与调度 - 地鼠文档 (topgoer.cn)</a></p>
+<p>线程由 CPU 调度是抢占式的，协程由用户态调度是协作式的</p>
+<p>1、我们通过 go func () 来创建一个 goroutine；</p>
+<p>2、有两个存储 G 的队列，一个是局部调度器 P 的本地队列、一个是全局 G 队列。新创建的 G 会先保存在 P 的本地队列中，如果 P 的本地队列已经满了就会保存在全局的队列中；</p>
+<p>3、G 只能运行在 M 中，一个 M 必须持有一个 P，M 与 P 是 1：1 的关系。M 会从 P 的本地队列弹出一个可执行状态的 G 来执行，如果 P 的本地队列为空，就会想其他的 MP 组合偷取一个可执行的 G 来执行；</p>
+<p>4、一个 M 调度 G 执行的过程是一个循环机制；</p>
+<p>5、当 M 执行某一个 G 时候如果发生了 syscall 或则其余阻塞操作，M 会阻塞，如果当前有一些 G 在执行，runtime 会把这个线程 M 从 P 中摘除 (detach)，然后再创建一个新的操作系统的线程 (如果有空闲的线程可用就复用空闲线程) 来服务于这个 P；</p>
+<p>6、当 M 系统调用结束时候，这个 G 会尝试获取一个空闲的 P 执行，并放入到这个 P 的本地队列。如果获取不到 P，那么这个线程 M 变成休眠状态， 加入到空闲线程中，然后这个 G 会被放入全局队列中。</p>
 
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
           
-          <li class="previous">
-            <a href="/undefined/map/" data-toggle="tooltip" data-placement="top" title="map">&larr; Previous Post</a>
-          </li>
-          
           
           <li class="next">
-            <a href="/undefined/slice/" data-toggle="tooltip" data-placement="top" title="slice">Next Post &rarr;</a>
+            <a href="/go/并发编程/" data-toggle="tooltip" data-placement="top" title="并发编程">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -544,7 +526,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=指针&body=Hi,I found this website and thought you might like it http://yoursite-url/undefined/指针/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=GMP&body=Hi,I found this website and thought you might like it http://yoursite-url/go/GMP/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -579,7 +561,7 @@
       repo: '',
       owner: '',
       admin: '',
-      id: 'Fri Sep 16 2022 16:55:06 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Wed Sep 28 2022 23:39:16 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -632,7 +614,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%8C%87%E9%92%88"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">指针</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%9A%8F%E5%86%99"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">随写</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#new%E4%B8%8Emake"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">new与make</span></a></li></ol></li></ol>
+          <ol class="nav">none</ol>
         
         </div>
       </aside>

@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://yoursite-url/undefined/GMP/</loc>
+    <loc>http://yoursite-url/go/GMP/</loc>
     <lastmod>2022-09-28</lastmod>
   </url>
   <url>
-    <loc>http://yoursite-url/undefined/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</loc>
+    <loc>http://yoursite-url/go/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2022-09-28</lastmod>
   </url>
   <url>
-    <loc>http://yoursite-url/undefined/%E5%87%BD%E6%95%B0/</loc>
+    <loc>http://yoursite-url/go/%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2022-09-18</lastmod>
   </url>
   <url>
-    <loc>http://yoursite-url/undefined/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</loc>
+    <loc>http://yoursite-url/go/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</loc>
     <lastmod>2022-09-18</lastmod>
   </url>
   <url>
-    <loc>http://yoursite-url/undefined/%E6%96%B9%E6%B3%95/</loc>
+    <loc>http://yoursite-url/go/%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2022-09-17</lastmod>
   </url>
   <url>
-    <loc>http://yoursite-url/undefined/%E7%BB%93%E6%9E%84%E4%BD%93/</loc>
+    <loc>http://yoursite-url/go/%E7%BB%93%E6%9E%84%E4%BD%93/</loc>
     <lastmod>2022-09-17</lastmod>
   </url>
   <url>
-    <loc>http://yoursite-url/undefined/map/</loc>
+    <loc>http://yoursite-url/go/map/</loc>
     <lastmod>2022-09-16</lastmod>
   </url>
   <url>
-    <loc>http://yoursite-url/undefined/%E6%8C%87%E9%92%88/</loc>
+    <loc>http://yoursite-url/go/%E6%8C%87%E9%92%88/</loc>
     <lastmod>2022-09-16</lastmod>
   </url>
   <url>
-    <loc>http://yoursite-url/undefined/slice/</loc>
+    <loc>http://yoursite-url/go/slice/</loc>
     <lastmod>2022-09-16</lastmod>
   </url>
   <url>
