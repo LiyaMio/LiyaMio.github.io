@@ -2,7 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite-url/undefined/go%E7%9A%84%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</loc>
+    <loc>http://yoursite-url/go/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E9%97%AE%E9%A2%98/</loc>
+    
+    <lastmod>2022-10-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite-url/undefined/%E4%B8%80%E4%BA%9B%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/</loc>
+    
+    <lastmod>2022-10-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite-url/go/go%E7%9A%84%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</loc>
     
     <lastmod>2022-10-02</lastmod>
     
@@ -130,7 +144,7 @@
 
   <url>
     <loc>http://yoursite-url/</loc>
-    <lastmod>2022-10-03</lastmod>
+    <lastmod>2022-10-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -138,21 +152,21 @@
   
   <url>
     <loc>http://yoursite-url/tags/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2022-10-03</lastmod>
+    <lastmod>2022-10-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite-url/tags/go/</loc>
-    <lastmod>2022-10-03</lastmod>
+    <lastmod>2022-10-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite-url/tags/blog/</loc>
-    <lastmod>2022-10-03</lastmod>
+    <lastmod>2022-10-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -161,21 +175,21 @@
   
   <url>
     <loc>http://yoursite-url/categories/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2022-10-03</lastmod>
+    <lastmod>2022-10-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite-url/categories/go/</loc>
-    <lastmod>2022-10-03</lastmod>
+    <lastmod>2022-10-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite-url/categories/blog/</loc>
-    <lastmod>2022-10-03</lastmod>
+    <lastmod>2022-10-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

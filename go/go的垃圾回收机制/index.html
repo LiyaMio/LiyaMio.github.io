@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/">
+  <link rel="canonical" href="http://yoursite-url/go/go的垃圾回收机制/">
   <title>
     
-      Ride Or Die
+      go的垃圾回收机制 - Ride Or Die
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -291,29 +291,7 @@
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      English
-    </span>
-    <select id="lang-select" data-canonical="index.html">
-      
-      
-      <option value="en"  selected >
-        English
-      </option>
-      
-      <option value="cn" >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -365,19 +343,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
     }
 
     header.intro-header {
-       /*config*/
-        background-image: var(--intro-header-background-image-url-home);
-        /* background-image: url('/img/header_img/newhome_bg.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/lml_bg.jpg'); */
       
     }
 
@@ -399,10 +377,42 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>Ride Or Die</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">be yourself</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#go" title="go">go</a>
+              
+            </div>
+            <h1>go的垃圾回收机制</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 云起 on
+              2022-10-03
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">4</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">1.2k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -443,621 +453,316 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
-
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-
-      <!-- Main Content -->
-
-
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/go/进程同步问题/">
-    <h2 class="post-title">
-      进程同步问题
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      进程同步问题生产者-消费者问题1234567891011121314151617//单向通道func producer(out chan &lt;- int)&#123;   for i:=0;i&lt;10;i++&#123;      out&lt;-i*i   &#125;   close(out)&#125;func consumer(in &lt;-chan int)&#123; ......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 云起 on
-    2022-10-08
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#go" title="go">go</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/undefined/一些奇技淫巧/">
-    <h2 class="post-title">
-      一些奇技淫巧
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      把下标排序，排序逻辑用数组元素
-870. 优势洗牌 - 力扣（LeetCode）
- sort(idx,idx+n,[&amp;](int i,int j){return nums2[i]&lt;nums2[j];});
-...
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 云起 on
-    2022-10-08
-  </p>
-  <div class="tags">
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/go/go的垃圾回收机制/">
-    <h2 class="post-title">
-      go的垃圾回收机制
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      垃圾回收
-三色标记法
-灰色：对象已被标记，但这个对象包含的子对象未标记
-黑色：对象已被标记，且这个对象包含的子对象也已标记，gcmarkBits对应的位为1（该对象不会在本次GC中被清理）
-白色：对象未被标记，gcmarkBits对应的位为0（该对象将会在本次GC中被清理）
-
-例如，当前内存中有A~F一共6个对象，根对象a,b本身为栈上分配的局部变量，根对象a、b分别引用了对象A、B, 而B......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 云起 on
-    2022-10-03
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#go" title="go">go</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/go/GMP/">
-    <h2 class="post-title">
-      GMP
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      GMP 原理与调度 - 地鼠文档 (topgoer.cn)
-线程由 CPU 调度是抢占式的，协程由用户态调度是协作式的
-1、我们通过 go func () 来创建一个 goroutine；
-2、有两个存储 G 的队列，一个是局部调度器 P 的本地队列、一个是全局 G 队列。新创建的 G 会先保存在 P 的本地队列中，如果 P 的本地队列已经满了就会保存在全局的队列中；
-3、G 只能运行在 M......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 云起 on
-    2022-09-28
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#go" title="go">go</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/go/并发编程/">
-    <h2 class="post-title">
-      并发编程
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      并发
-随写
-线程和进程
-A. 进程是程序在操作系统中的一次执行过程，系统进行资源分配和调度的一个独立单位。
-B. 线程是进程的一个执行实体,是CPU调度和分派的基本单位,它是比进程更小的能独立运行的基本单位。
-C.一个进程可以创建和撤销多个线程;同一个进程中的多个线程之间可以并发执行。 
-
-线程和协程
-12协程：独立的栈空间，共享堆空间，调度由用户自己控制，本质上有点类似于用户级线程，这些用......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 云起 on
-    2022-09-28
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#go" title="go">go</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/go/函数/">
-    <h2 class="post-title">
-      函数
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      函数
-随写
-特点
-12345678910• 无需声明原型。• 支持不定 变参。• 支持多返回值。• 支持命名返回参数。 • 支持匿名函数和闭包。• 函数也是一种类型，一个函数可以赋值给变量。• 不支持 嵌套 (nested) 一个包不能有两个名字一样的函数。• 不支持 重载 (overload) • 不支持 默认参数 (default parameter)。 
-基本使用
-函数声明
-12345......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 云起 on
-    2022-09-18
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#go" title="go">go</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/go/基础语法/">
-    <h2 class="post-title">
-      基础语法
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      基础语法
-条件语句
-if
-不支持三目运算
-123if a &gt;2 &#123;   fmt.Println(a)&#125;
-1234567if n := &quot;abc&quot;; x &gt; 0 &#123;     // 初始化语句未必就是定义变量， 如 println(&quot;init&quot;) 也是可以的。    println(n[2])&#125; else......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 云起 on
-    2022-09-18
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#go" title="go">go</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/go/方法/">
-    <h2 class="post-title">
-      方法
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      Method
-随写
-
-Go语言中的方法（Method）是一种作用于特定类型变量的函数。这种特定类型变量叫做接收者（Receiver）。接收者的概念就类似于其他语言中的this或者 self。
-方法与函数的区别是，函数不属于任何类型，方法属于特定的类型。
-
-基本使用
-定义
-123func (接收者变量 接收者类型) 方法名(参数列表) (返回参数) &#123;    函数体&#125; 
-1......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 云起 on
-    2022-09-17
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#go" title="go">go</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/go/结构体/">
-    <h2 class="post-title">
-      结构体
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      结构体
-随写
-基本使用
-定义
-12345type 类型名 struct &#123;       字段名 字段类型       字段名 字段类型       …   &#125; 
-别名
-12345//类型定义type NewInt int//类型别名type MyInt = int
-匿名结构体
-用于临时场景
-123456func main() &#123;    var user stru......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 云起 on
-    2022-09-17
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#go" title="go">go</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/go/map/">
-    <h2 class="post-title">
-      map
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      map
-随写
-
-遍历map时的元素顺序与添加键值对的顺序无关。
-
-基本使用
-创建
-make创建
-1make(map[KeyType]ValueType, [cap])
-或声明时填充
-1234userInfo := map[string]string&#123;       &quot;username&quot;: &quot;pprof.cn&quot;,       &quot;pass......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 云起 on
-    2022-09-16
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#go" title="go">go</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-
-  <!-- Pager -->
-  <ul class="pager">
-    
-    
-    <li class="next">
-      <a href="/archives/2/">Newer Posts &rarr;</a>
-    </li>
-    
-  </ul>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">VISITORS</a></h5>
-
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
-        <hr>
-    
-        <!-- Featured Tags -->
-
-<section>
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="2">Hexo-Theme-LiveMyLife</a>
-    
-    
-    
-    <a href="/tags/#go" title="go" rel="11">go</a>
-    
-    
-    
-    <a href="/tags/#blog" title="blog" rel="1">blog</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/clound.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>till we die</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/LiyaMio">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-      <li>
-        <a target="_blank" href="https://twitter.com/LiyaMio">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="go/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E9%97%AE%E9%A2%98/">
-      <li>进程同步问题</li>
-    </a>
-    
-    <a href="undefined/%E4%B8%80%E4%BA%9B%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">
-      <li>一些奇技淫巧</li>
-    </a>
-    
-    <a href="go/go%E7%9A%84%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/">
-      <li>go的垃圾回收机制</li>
-    </a>
-    
-    <a href="go/GMP/">
-      <li>GMP</li>
-    </a>
-    
-    <a href="go/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">
-      <li>并发编程</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Friends Blog -->
-
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://v-vincen.life/" target="_blank">V_Vincen</a></li>
-  
-  <li><a href="https://blog.bladehiker.com/" target="_blank">BladeHiker</a></li>
-  
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h1><p><img src="/go/go%E7%9A%84%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/gcc.png" alt="gcc"></p>
+<h2 id="三色标记法"><a href="#三色标记法" class="headerlink" title="三色标记法"></a>三色标记法</h2><ul>
+<li>灰色：对象已被标记，但这个对象包含的子对象未标记</li>
+<li>黑色：对象已被标记，且这个对象包含的子对象也已标记，gcmarkBits对应的位为1（该对象不会在本次GC中被清理）</li>
+<li>白色：对象未被标记，gcmarkBits对应的位为0（该对象将会在本次GC中被清理）</li>
 </ul>
+<p>例如，当前内存中有A~F一共6个对象，根对象a,b本身为栈上分配的局部变量，根对象a、b分别引用了对象A、B, 而B对象又引用了对象D，则GC开始前各对象的状态如下图所示:</p>
+<ol>
+<li>初始状态下所有对象都是白色的。</li>
+<li>接着开始扫描根对象a、b; 由于根对象引用了对象A、B,那么A、B变为灰色对象，接下来就开始分析灰色对象，分析A时，A没有引用其他对象很快就转入黑色，B引用了D，则B转入黑色的同时还需要将D转为灰色，进行接下来的分析。</li>
+<li>灰色对象只有D，由于D没有引用其他对象，所以D转入黑色。标记过程结束</li>
+<li>最终，黑色的对象会被保留下来，白色对象会被回收掉。</li>
+</ol>
+<p><img src="/go/go%E7%9A%84%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/gcc1.jpg" alt="gcc1"></p>
+<h2 id="gc的触发"><a href="#GC的触发" class="headerlink" title="GC的触发"></a>GC的触发</h2><ul>
+<li>阈值：默认内存扩大一倍，启动gc</li>
+<li>定期：默认2min触发一次gc，src&#x2F;runtime&#x2F;proc.go:forcegcperiod</li>
+<li>手动：runtime.gc()</li>
+</ul>
+<h2 id="stw"><a href="#STW" class="headerlink" title="STW"></a>STW</h2><p>stop the world是gc的最大性能问题，对于gc而言，需要停止所有的内存变化，即停止所有的goroutine，等待gc结束之后才恢复。</p>
+<p>标记-清除(mark and sweep)算法的STW(stop the world)操作，就是runtime把所有的线程全部冻结掉，所有的线程全部冻结意味着用户逻辑是暂停的。这样所有的对象都不会被修改了，这时候去扫描是绝对安全的。</p>
+<p>Go如何减短这个过程呢？标记-清除(mark and sweep)算法包含两部分逻辑：标记和清除。</p>
+<p>我们知道Golang三色标记法中最后只剩下的黑白两种对象，黑色对象是程序恢复后接着使用的对象，如果不碰触黑色对象，只清除白色的对象，肯定不会影响程序逻辑。所以： <code>清除操作和用户逻辑可以并发。</code></p>
+<p>标记操作和用户逻辑也是并发的，用户逻辑会时常生成对象或者改变对象的引用，那么标记和用户逻辑如何并发呢？这里就让说到golang的写屏障了</p>
+<h2 id="gc流程"><a href="#GC流程" class="headerlink" title="GC流程"></a>GC流程</h2><ol>
+<li>Sweep Termination: 对未清扫的span进行清扫, 只有上一轮的GC的清扫工作完成才可以开始新一轮的GC</li>
+<li>Mark: 扫描所有根对象, 和根对象可以到达的所有对象, 标记它们不被回收</li>
+<li>Mark Termination: 完成标记工作, 重新扫描部分根对象(要求STW)</li>
+<li>Sweep: 按标记结果清扫span</li>
+</ol>
+<p>目前整个GC流程会进行两次STW(Stop The World), 第一次是Mark阶段的开始, 第二次是Mark Termination阶段.</p>
+<ul>
+<li>第一次STW会准备根对象的扫描, 启动写屏障(Write Barrier)和辅助GC(mutator assist).</li>
+<li>第二次STW会重新扫描部分根对象, 禁用写屏障(Write Barrier)和辅助GC(mutator assist).</li>
+</ul>
+<p>需要注意的是, 不是所有根对象的扫描都需要STW, 例如扫描栈上的对象只需要停止拥有该栈的G.<br>从go 1.9开始, 写屏障的实现使用了Hybrid Write Barrier, 大幅减少了第二次STW的时间.</p>
+<h2 id="写屏障"><a href="#写屏障" class="headerlink" title="写屏障"></a>写屏障</h2><p>因为go支持<strong>并行GC</strong>， GC的扫描和go代码可以同时运行，这样带来的问题是GC扫描的过程中go代码有可能改变了对象的依赖树。</p>
+<p>例如开始扫描时发现根对象A和B，B拥有C的指针。</p>
+<ol>
+<li>GC先扫描A，A放入黑色</li>
+<li>B把C的指针交给A</li>
+<li>GC再扫描B，B放入黑色</li>
+<li>C在白色，会回收；但是A其实引用了C。</li>
+</ol>
+<p>为了避免这个问题, go在GC的标记阶段会启用写屏障(Write Barrier).</p>
+<p>启用了写屏障(Write Barrier)后，</p>
+<ol>
+<li>GC先扫描A，A放入黑色</li>
+<li>B把C的指针交给A</li>
+<li><strong>由于A在黑色，所以C放入灰色</strong></li>
+<li>C没有子对象，放入黑色</li>
+<li>扫描B，B没有子对象，放入黑色</li>
+</ol>
+<p>即使A可能会在稍后丢掉C, 那么C就在下一轮回收。</p>
+<p>开启写屏障之后，当指针发生改变, GC会认为在这一轮的扫描中这个指针是<strong>存活</strong>的, 所以放入<strong>灰色</strong>。</p>
 
 
         <hr>
-    
-        <!-- Archives -->
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/undefined/一些奇技淫巧/" data-toggle="tooltip" data-placement="top" title="一些奇技淫巧">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/go/GMP/" data-toggle="tooltip" data-placement="top" title="GMP">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/10/">October 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/09/">September 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/04/">April 2020</a><span class="archive-list-count">2</span></li></ul>
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
 </div>
+<!-- tip end -->
 
+        <!-- tip end -->
+        
 
-        <hr>
-    
-        <!-- Categories -->
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
 
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Hexo-Theme-LiveMyLife">
-      <li>Hexo-Theme-LiveMyLife</li>
-    </a>
-    
-    <a href="/categories/#go">
-      <li>go</li>
-    </a>
-    
-    <a href="/categories/#blog">
-      <li>blog</li>
-    </a>
-    
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=go的垃圾回收机制&body=Hi,I found this website and thought you might like it http://yoursite-url/go/go的垃圾回收机制/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
   </ul>
 </div>
 
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 
+        <!-- Sharing End -->
+        
         <hr>
-    
-</div>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Mon Oct 03 2022 07:28:52 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
 
 
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
     
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">垃圾回收</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%89%E8%89%B2%E6%A0%87%E8%AE%B0%E6%B3%95"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">三色标记法</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#gc%E7%9A%84%E8%A7%A6%E5%8F%91"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">GC的触发</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#stw"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">STW</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#gc%E6%B5%81%E7%A8%8B"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">GC流程</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%86%99%E5%B1%8F%E9%9A%9C"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">写屏障</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#go" title="go">go</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="https://blog.bladehiker.com/" target="_blank">BladeHiker</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
