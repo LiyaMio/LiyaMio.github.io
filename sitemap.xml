@@ -207,14 +207,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/tags/docker/</loc>
+    <loc>http://yoursite-url/tags/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2023-02-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite-url/tags/%E5%B7%A5%E5%85%B7/</loc>
+    <loc>http://yoursite-url/tags/docker/</loc>
     <lastmod>2023-02-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -258,14 +258,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/categories/docker/</loc>
+    <loc>http://yoursite-url/categories/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2023-02-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite-url/categories/%E5%B7%A5%E5%85%B7/</loc>
+    <loc>http://yoursite-url/categories/docker/</loc>
     <lastmod>2023-02-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
