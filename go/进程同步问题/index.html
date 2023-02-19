@@ -246,16 +246,16 @@
           
           
           
+          
+          
           <li>
-            <a href="/categories/">
+            <a href="/archive/">
               
-              CATEGORIES
+              ARCHIVES
               
               
             </a>
           </li>
-          
-          
           
           
           
@@ -271,9 +271,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/categories/">
               
-              ARCHIVES
+              CATEGORIES
               
               
             </a>
@@ -462,7 +462,6 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <h1 id="进程同步问题"><a href="#进程同步问题" class="headerlink" title="进程同步问题"></a>进程同步问题</h1><h2 id="生产者-消费者问题"><a href="#生产者-消费者问题" class="headerlink" title="生产者-消费者问题"></a>生产者-消费者问题</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//单向通道</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">producer</span><span class="params">(out <span class="keyword">chan</span> &lt;- <span class="type">int</span>)</span></span>&#123;</span><br><span class="line">   <span class="keyword">for</span> i:=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++&#123;</span><br><span class="line">      out&lt;-i*i</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">close</span>(out)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">consumer</span><span class="params">(in &lt;-<span class="keyword">chan</span> <span class="type">int</span>)</span></span>&#123;</span><br><span class="line">   <span class="keyword">for</span> n:=<span class="keyword">range</span> in&#123;</span><br><span class="line">      fmt.Println(n)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">   ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="type">int</span>)</span><br><span class="line">   <span class="keyword">go</span> producer(ch)</span><br><span class="line">   consumer(ch)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h2 id="读者-写者问题"><a href="#读者-写者问题" class="headerlink" title="读者-写者问题"></a>读者-写者问题</h2><p>允许多个进程同时对数据进行读操作，但是不允许读和写以及写和写操作同时发生。</p>
 
 
@@ -655,6 +654,10 @@
           
           <li>
             <a href="https://blog.bladehiker.com/" target="_blank">BladeHiker</a>
+          </li>
+          
+          <li>
+            <a href="undefined" target="_blank">undefined</a>
           </li>
           
         </ul>
