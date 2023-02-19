@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite-url/%E5%B7%A5%E5%85%B7/datagrip/</loc>
+    <lastmod>2023-02-19</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite-url/undefined/docker/</loc>
+    <lastmod>2022-11-02</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite-url/undefined/c-%E4%BD%8D%E8%BF%90%E7%AE%97/</loc>
+    <lastmod>2022-10-18</lastmod>
+  </url>
+  <url>
     <loc>http://yoursite-url/undefined/%E4%BA%8C%E5%8F%89%E6%A0%91/</loc>
     <lastmod>2022-10-10</lastmod>
   </url>
