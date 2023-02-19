@@ -142,7 +142,7 @@
   <link rel="canonical" href="http://yoursite-url/archives/2/">
   <title>
     
-      Ride Or Die
+      Ride or Die
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -230,7 +230,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Ride Or Die</a>
+      <a class="navbar-brand" href="/">Ride or Die</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -249,9 +249,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/archive/">
               
-              CATEGORIES
+              ARCHIVES
               
               
             </a>
@@ -260,9 +260,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/categories/">
               
-              ARCHIVES
+              CATEGORIES
               
               
             </a>
@@ -400,7 +400,7 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
           <div class="site-heading">
-            <h1>Ride Or Die</h1>
+            <h1>Ride or Die</h1>
             <!--<hr class="small">-->
             <span class="subheading">be yourself</span>
           </div>
@@ -477,13 +477,9 @@
       
     </h3>
     <div class="post-content-preview">
-      函数
-随写
-特点
-12345678910• 无需声明原型。• 支持不定 变参。• 支持多返回值。• 支持命名返回参数。 • 支持匿名函数和闭包。• 函数也是一种类型，一个函数可以赋值给变量。• 不支持 嵌套 (nested) 一个包不能有两个名字一样的函数。• 不支持 重载 (overload) • 不支持 默认参数 (default parameter)。 
-基本使用
-函数声明
-12345......
+      函数随写特点12345678910• 无需声明原型。• 支持不定 变参。• 支持多返回值。• 支持命名返回参数。 • 支持匿名函数和闭包。• 函数也是一种类型，一个函数可以赋值给变量。• 不支持 嵌套 (nested) 一个包不能有两个名字一样的函数。• 不支持 重载 (overload) • 不支持 默认参数 (default parameter)。 
+
+基本使用函数声明12345func......
     </div>
   </a>
   
@@ -516,12 +512,10 @@
       
     </h3>
     <div class="post-content-preview">
-      基础语法
-条件语句
-if
-不支持三目运算
+      基础语法条件语句if不支持三目运算
 123if a &gt;2 &#123;   fmt.Println(a)&#125;
-1234567if n := &quot;abc&quot;; x &gt; 0 &#123;     // 初始化语句未必就是定义变量， 如 println(&quot;init&quot;) 也是可以的。    println(n[2])&#125; else......
+
+1234567if n := &quot;abc&quot;; x &gt; 0 &#123;     // 初始化语句未必就是定义变量， 如 println(&quot;init&quot;) 也是可以的。    println(n[2])&#125; else i......
     </div>
   </a>
   
@@ -554,16 +548,13 @@ if
       
     </h3>
     <div class="post-content-preview">
-      Method
-随写
-
+      Method随写
 Go语言中的方法（Method）是一种作用于特定类型变量的函数。这种特定类型变量叫做接收者（Receiver）。接收者的概念就类似于其他语言中的this或者 self。
 方法与函数的区别是，函数不属于任何类型，方法属于特定的类型。
 
-基本使用
-定义
-123func (接收者变量 接收者类型) 方法名(参数列表) (返回参数) &#123;    函数体&#125; 
-1......
+基本使用定义123func (接收者变量 接收者类型) 方法名(参数列表) (返回参数) &#123;    函数体&#125; 
+
+1231......
     </div>
   </a>
   
@@ -596,16 +587,12 @@ Go语言中的方法（Method）是一种作用于特定类型变量的函数。
       
     </h3>
     <div class="post-content-preview">
-      结构体
-随写
-基本使用
-定义
-12345type 类型名 struct &#123;       字段名 字段类型       字段名 字段类型       …   &#125; 
-别名
-12345//类型定义type NewInt int//类型别名type MyInt = int
-匿名结构体
-用于临时场景
-123456func main() &#123;    var user stru......
+      结构体随写基本使用定义12345type 类型名 struct &#123;       字段名 字段类型       字段名 字段类型       …   &#125; 
+
+别名12345//类型定义type NewInt int//类型别名type MyInt = int
+
+匿名结构体用于临时场景
+123456func main() &#123;    var user struct&#......
     </div>
   </a>
   
@@ -638,17 +625,14 @@ Go语言中的方法（Method）是一种作用于特定类型变量的函数。
       
     </h3>
     <div class="post-content-preview">
-      map
-随写
-
+      map随写
 遍历map时的元素顺序与添加键值对的顺序无关。
 
-基本使用
-创建
-make创建
+基本使用创建make创建
 1make(map[KeyType]ValueType, [cap])
+
 或声明时填充
-1234userInfo := map[string]string&#123;       &quot;username&quot;: &quot;pprof.cn&quot;,       &quot;pass......
+1234userInfo := map[string]string&#123;       &quot;username&quot;: &quot;pprof.cn&quot;,       &quot;passwor......
     </div>
   </a>
   
@@ -681,27 +665,22 @@ make创建
       
     </h3>
     <div class="post-content-preview">
-      指针
-随写
-
-
+      指针随写
 Go语言中的函数传参都是值拷贝
-
 
 类型指针不能进行偏移和运算
 
-
 当一个指针被定义后没有分配到任何变量时，它的值为 nil
-
 
 引用类型的变量使用时不仅需要声明还需要分配内存空间
 
 
 new与make
-
 用于分配内存
 make只用于slice、map以及channel的初始化，返回的还是这三个引用类型本身
-new用于类型的内存分配，并且内存对应的值为类型零值，返回的是指向类......
+new用于类型的内存分配，并且内存对应的值为类型零值，返回的是指向类型的指针
+
+...
     </div>
   </a>
   
@@ -735,31 +714,22 @@ new用于类型的内存分配，并且内存对应的值为类型零值，返�
     </h3>
     <div class="post-content-preview">
       随写
-
-
 切片：引用类型，是对数组的一个引用
-
 
 底层是结构体
 
-
 值拷贝传递
-
 
 string底层是byte数组，也可以进行切片操作
 
-
 切片的地址是他自身结构体的地址，不是底层数组的地址
 
-
 slice默认浅拷贝
-
 
 nil切片地址指向nil，空切片地址存在数据为空
 
 
-创建方式
-1234567891011121314151617181920212223242526//1.声明切片   ......
+创建方式1234567891011121314151617181920212223242526//1.声明切片   var s1 []......
     </div>
   </a>
   
@@ -836,9 +806,7 @@ https://blog.csdn.net/qq_47654010......
 移植 Hux Blog 的主题，感谢 Huxpro 设计了如此完美的主题。
 由 Vincent 创建的 LiveMyLife 的主题修改来源 YenYuHsuan，参考主题 dusign、Utone，感谢 dusign、Utone。
 
-仓库
-Github 仓库地址：https://github.com/V-Vincen/hexo-theme-livemylife
-Gitee 仓库地址：ht......
+仓库Github 仓库地址：https://github.com/V-Vincen/hexo-theme-livemylifeGitee 仓库地址：http......
     </div>
   </a>
   
@@ -943,19 +911,11 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
     
     
     
-    <a href="/tags/#go" title="go" rel="11">go</a>
-    
-    
-    
     <a href="/tags/#blog" title="blog" rel="1">blog</a>
     
     
     
-    <a href="/tags/#每日一题 中等" title="每日一题 中等" rel="1">每日一题 中等</a>
-    
-    
-    
-    <a href="/tags/#数据结构" title="数据结构" rel="1">数据结构</a>
+    <a href="/tags/#go" title="go" rel="11">go</a>
     
     
     
@@ -964,6 +924,14 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
     
     
     <a href="/tags/#工具" title="工具" rel="1">工具</a>
+    
+    
+    
+    <a href="/tags/#数据结构" title="数据结构" rel="1">数据结构</a>
+    
+    
+    
+    <a href="/tags/#每日一题 中等" title="每日一题 中等" rel="1">每日一题 中等</a>
     
     
   </div>
@@ -1095,20 +1063,12 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
       <li>Hexo-Theme-LiveMyLife</li>
     </a>
     
-    <a href="/categories/#go">
-      <li>go</li>
-    </a>
-    
     <a href="/categories/#blog">
       <li>blog</li>
     </a>
     
-    <a href="/categories/#每日一题">
-      <li>每日一题</li>
-    </a>
-    
-    <a href="/categories/#数据结构">
-      <li>数据结构</li>
+    <a href="/categories/#go">
+      <li>go</li>
     </a>
     
     <a href="/categories/#docker">
@@ -1117,6 +1077,14 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
     
     <a href="/categories/#工具">
       <li>工具</li>
+    </a>
+    
+    <a href="/categories/#数据结构">
+      <li>数据结构</li>
+    </a>
+    
+    <a href="/categories/#每日一题">
+      <li>每日一题</li>
     </a>
     
   </ul>

@@ -142,7 +142,7 @@
   <link rel="canonical" href="http://yoursite-url/undefined/docker/">
   <title>
     
-      docker - Ride Or Die
+      docker - Ride or Die
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -230,7 +230,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Ride Or Die</a>
+      <a class="navbar-brand" href="/">Ride or Die</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -249,9 +249,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/archive/">
               
-              CATEGORIES
+              ARCHIVES
               
               
             </a>
@@ -260,9 +260,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/categories/">
               
-              ARCHIVES
+              CATEGORIES
               
               
             </a>
@@ -399,7 +399,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">160</span> In Total
+              Words <span class="post-count">159</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -461,15 +461,17 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="docker修改镜像存储位置">docker修改镜像存储位置</h1>
-<p>利用wsl进行修改</p>
+        <h1 id="docker修改镜像存储位置"><a href="#docker修改镜像存储位置" class="headerlink" title="docker修改镜像存储位置"></a>docker修改镜像存储位置</h1><p>利用wsl进行修改</p>
 <figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl <span class="comment">--list -v</span></span><br></pre></td></tr></table></figure>
+
 <p>![wsl list](wsl list.png)</p>
 <p>将<code>docker-desktop-data</code>导出到文件中(备份image及相关文件)，使用如下命令</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">wsl</span> --<span class="meta">export</span> docker-desktop-<span class="meta">data</span> <span class="string">&quot;D:\\docker-desktop-data.tar&quot;</span></span><br></pre></td></tr></table></figure>
+
 <p>从wsl<code>取消注册</code>docker-desktop-data，请注意<code>C:\Users\加菲晴\AppData\Local\Docker\wsl\data\ext4.vhdx</code>文件将被自动删除。</p>
 <p>将导出的<code>docker-desktop-data</code>再导入回wsl，并设置我们想要的路径，<strong>即新的镜像及各种docker使用的文件的挂载目录</strong></p>
 <figure class="highlight wren"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">wsl</span> <span class="operator">-</span><span class="operator">-</span><span class="keyword">import</span> <span class="variable">docker</span><span class="operator">-</span><span class="variable">desktop</span><span class="operator">-</span><span class="variable">data</span> <span class="string">&quot;E:<span class="char escape_">\\</span>work<span class="char escape_">\\</span>docker&quot;</span> <span class="string">&quot;D:<span class="char escape_">\\</span>docker-desktop-data.tar&quot;</span> <span class="operator">-</span><span class="operator">-</span><span class="variable">version</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
 <p>完成后，重启docker即可完成。</p>
 
 

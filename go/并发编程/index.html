@@ -142,7 +142,7 @@
   <link rel="canonical" href="http://yoursite-url/go/并发编程/">
   <title>
     
-      并发编程 - Ride Or Die
+      并发编程 - Ride or Die
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -230,7 +230,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Ride Or Die</a>
+      <a class="navbar-brand" href="/">Ride or Die</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -249,9 +249,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/archive/">
               
-              CATEGORIES
+              ARCHIVES
               
               
             </a>
@@ -260,9 +260,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/categories/">
               
-              ARCHIVES
+              CATEGORIES
               
               
             </a>
@@ -461,26 +461,22 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="并发">并发</h1>
-<h2 id="随写">随写</h2>
-<p>线程和进程</p>
+        <h1 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h1><h2 id="随写"><a href="#随写" class="headerlink" title="随写"></a>随写</h2><p>线程和进程</p>
 <pre><code>A. 进程是程序在操作系统中的一次执行过程，系统进行资源分配和调度的一个独立单位。
 B. 线程是进程的一个执行实体,是CPU调度和分派的基本单位,它是比进程更小的能独立运行的基本单位。
 C.一个进程可以创建和撤销多个线程;同一个进程中的多个线程之间可以并发执行。 
 </code></pre>
 <p>线程和协程</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">协程：独立的栈空间，共享堆空间，调度由用户自己控制，本质上有点类似于用户级线程，这些用户级线程的调度也是自己实现的。</span><br><span class="line">线程：一个线程上可以跑多个协程，协程是轻量级的线程。</span><br></pre></td></tr></table></figure>
+
 <p>并发和并行</p>
 <pre><code>A. 多线程程序在一个核的cpu上运行，就是并发。
 B. 多线程程序在多个核的cpu上运行，就是并行。 
 </code></pre>
-<h2 id="goroutine">goroutine</h2>
-<p>Go语言中使用goroutine非常简单，只需要在调用函数的时候在前面加上go关键字，就可以为一个函数创建一个goroutine。</p>
+<h2 id="goroutine"><a href="#goroutine" class="headerlink" title="goroutine"></a>goroutine</h2><p>Go语言中使用goroutine非常简单，只需要在调用函数的时候在前面加上go关键字，就可以为一个函数创建一个goroutine。</p>
 <p>一个goroutine必定对应一个函数，可以创建多个goroutine去执行相同的函数。</p>
-<h4 id="可增长的栈">可增长的栈</h4>
-<p>OS线程（操作系统线程）一般都有固定的栈内存（通常为2MB）,一个goroutine的栈在其生命周期开始时只有很小的栈（典型情况下2KB），goroutine的栈不是固定的，他可以按需增大和缩小，goroutine的栈大小限制可以达到1GB，虽然极少会用到这个大。所以在Go语言中一次创建十万左右的goroutine也是可以的。</p>
-<h3 id="goroutine调度">goroutine调度</h3>
-<p>GPM是Go语言运行时（runtime）层面的实现，是go语言自己实现的一套调度系统。区别于操作系统调度OS线程。</p>
+<h4 id="可增长的栈"><a href="#可增长的栈" class="headerlink" title="可增长的栈"></a>可增长的栈</h4><p>OS线程（操作系统线程）一般都有固定的栈内存（通常为2MB）,一个goroutine的栈在其生命周期开始时只有很小的栈（典型情况下2KB），goroutine的栈不是固定的，他可以按需增大和缩小，goroutine的栈大小限制可以达到1GB，虽然极少会用到这个大。所以在Go语言中一次创建十万左右的goroutine也是可以的。</p>
+<h3 id="goroutine调度"><a href="#goroutine调度" class="headerlink" title="goroutine调度"></a>goroutine调度</h3><p>GPM是Go语言运行时（runtime）层面的实现，是go语言自己实现的一套调度系统。区别于操作系统调度OS线程。</p>
 <ul>
 <li>1.G很好理解，就是个goroutine的，里面除了存放本goroutine信息外 还有与所在P的绑定等信息。</li>
 <li>2.P管理着一组goroutine队列，P里面会存储当前goroutine运行的上下文环境（函数指针，堆栈地址及地址边界），P会对自己管理的goroutine队列做一些调度（比如把占用CPU时间较长的goroutine暂停、运行后续的goroutine等等）当自己的队列消费完了就去全局队列里取，如果全局队列里也消费完了会去其他P的队列里抢任务。</li>
@@ -494,62 +490,60 @@ B. 多线程程序在多个核的cpu上运行，就是并行。
 <li>2.go程序可以同时使用多个操作系统线程。</li>
 <li>3.goroutine和OS线程是多对多的关系，即m:n。</li>
 </ul>
-<h2 id="channel">channel</h2>
-<h3 id="随写">随写</h3>
-<p>Go 语言中的通道（channel）是一种特殊的类型。通道像一个传送带或者队列，总是遵循先入先出（First In First Out）的规则，保证收发数据的顺序。每一个通道都是一个具体类型的导管，也就是声明channel的时候需要为其指定元素类型。</p>
+<h2 id="channel"><a href="#channel" class="headerlink" title="channel"></a>channel</h2><h3 id="随写"><a href="#随写-1" class="headerlink" title="随写"></a>随写</h3><p>Go 语言中的通道（channel）是一种特殊的类型。通道像一个传送带或者队列，总是遵循先入先出（First In First Out）的规则，保证收发数据的顺序。每一个通道都是一个具体类型的导管，也就是声明channel的时候需要为其指定元素类型。</p>
 <p>channel是一种类型，一种引用类型。声明通道类型的格式如下：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 变量 <span class="keyword">chan</span> 元素类型  </span><br></pre></td></tr></table></figure>
-<h3 id="基本使用">基本使用</h3>
-<h4 id="创建">创建</h4>
-<p>通道是引用类型，通道类型的空值是nil。</p>
+
+<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><p>通道是引用类型，通道类型的空值是nil。</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ch <span class="keyword">chan</span> <span class="type">int</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">make</span><span class="params">(chan 元素类型, [缓冲大小])</span></span>   </span><br></pre></td></tr></table></figure>
-<h4 id="操作">操作</h4>
-<p>通道有发送（send）、接收(receive）和关闭（close）三种操作。</p>
+
+<h4 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h4><p>通道有发送（send）、接收(receive）和关闭（close）三种操作。</p>
 <p>发送和接收都使用&lt;-符号。</p>
-<h5 id="发送">发送</h5>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ch &lt;- <span class="number">10</span> <span class="comment">// 把10发送到ch中  </span></span><br></pre></td></tr></table></figure>
-<h5 id="接收">接收</h5>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x := &lt;- ch <span class="comment">// 从ch中接收值并赋值给变量x</span></span><br><span class="line">&lt;-ch </span><br></pre></td></tr></table></figure>
-<h5 id="关闭">关闭</h5>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">close</span>(ch)   </span><br></pre></td></tr></table></figure>
+<h5 id="发送"><a href="#发送" class="headerlink" title="发送"></a>发送</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ch &lt;- <span class="number">10</span> <span class="comment">// 把10发送到ch中  </span></span><br></pre></td></tr></table></figure>
+
+<h5 id="接收"><a href="#接收" class="headerlink" title="接收"></a>接收</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x := &lt;- ch <span class="comment">// 从ch中接收值并赋值给变量x</span></span><br><span class="line">&lt;-ch </span><br></pre></td></tr></table></figure>
+
+<h5 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">close</span>(ch)   </span><br></pre></td></tr></table></figure>
+
 <p>关闭后的通道有以下特点：</p>
 <pre><code>1.对一个关闭的通道再发送值就会导致panic。
 2.对一个关闭的通道进行接收会一直获取值直到通道为空。
 3.对一个关闭的并且没有值的通道执行接收操作会得到对应类型的零值。
 4.关闭一个已经关闭的通道会导致panic。  
 </code></pre>
-<h4 id="优雅的从通道循环取值">优雅的从通道循环取值</h4>
-<p>当通过通道发送有限的数据时，我们可以通过close函数关闭通道来告知从该通道接收值的goroutine停止等待。当通道被关闭时，往该通道发送值会引发panic，从该通道里接收的值一直都是类型零值。</p>
+<h4 id="优雅的从通道循环取值"><a href="#优雅的从通道循环取值" class="headerlink" title="优雅的从通道循环取值"></a>优雅的从通道循环取值</h4><p>当通过通道发送有限的数据时，我们可以通过close函数关闭通道来告知从该通道接收值的goroutine停止等待。当通道被关闭时，往该通道发送值会引发panic，从该通道里接收的值一直都是类型零值。</p>
 <p>那如何判断一个通道是否被关闭了呢？</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// channel 练习</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    ch1 := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="type">int</span>)</span><br><span class="line">    ch2 := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="type">int</span>)</span><br><span class="line">    <span class="comment">// 开启goroutine将0~100的数发送到ch1中</span></span><br><span class="line">    <span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">100</span>; i++ &#123;</span><br><span class="line">            ch1 &lt;- i</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">close</span>(ch1)</span><br><span class="line">    &#125;()</span><br><span class="line">    <span class="comment">// 开启goroutine从ch1中接收值，并将该值的平方发送到ch2中</span></span><br><span class="line">    <span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">for</span> &#123;</span><br><span class="line">            i, ok := &lt;-ch1 <span class="comment">// 通道关闭后再取值ok=false</span></span><br><span class="line">            <span class="keyword">if</span> !ok &#123;</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            &#125;</span><br><span class="line">            ch2 &lt;- i * i</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">close</span>(ch2)</span><br><span class="line">    &#125;()</span><br><span class="line">    <span class="comment">// 在主goroutine中从ch2中接收值打印</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="keyword">range</span> ch2 &#123; <span class="comment">// 通道关闭后会退出for range循环</span></span><br><span class="line">        fmt.Println(i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;   </span><br></pre></td></tr></table></figure>
-<h4 id="单向通道">单向通道</h4>
-<p>有的时候我们会将通道作为参数在多个任务函数间传递，很多时候我们在不同的任务函数中使用通道都会对其进行限制，比如限制通道在函数中只能发送或只能接收。</p>
+
+<h4 id="单向通道"><a href="#单向通道" class="headerlink" title="单向通道"></a>单向通道</h4><p>有的时候我们会将通道作为参数在多个任务函数间传递，很多时候我们在不同的任务函数中使用通道都会对其进行限制，比如限制通道在函数中只能发送或只能接收。</p>
 <p>Go语言中提供了单向通道来处理这种情况。例如，我们把上面的例子改造如下：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">counter</span><span class="params">(out <span class="keyword">chan</span>&lt;- <span class="type">int</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">100</span>; i++ &#123;</span><br><span class="line">        out &lt;- i</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">close</span>(out)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">squarer</span><span class="params">(out <span class="keyword">chan</span>&lt;- <span class="type">int</span>, in &lt;-<span class="keyword">chan</span> <span class="type">int</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="keyword">range</span> in &#123;</span><br><span class="line">        out &lt;- i * i</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">close</span>(out)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">printer</span><span class="params">(in &lt;-<span class="keyword">chan</span> <span class="type">int</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="keyword">range</span> in &#123;</span><br><span class="line">        fmt.Println(i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    ch1 := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="type">int</span>)</span><br><span class="line">    ch2 := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="type">int</span>)</span><br><span class="line">    <span class="keyword">go</span> counter(ch1)</span><br><span class="line">    <span class="keyword">go</span> squarer(ch2, ch1)</span><br><span class="line">    printer(ch2)</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span><span class="keyword">chan</span>&lt;- <span class="type">int</span>是一个只能发送的通道，可以发送但是不能接收；</span><br><span class="line"><span class="number">2.</span>&lt;-<span class="keyword">chan</span> <span class="type">int</span>是一个只能接收的通道，可以接收但是不能发送。  </span><br></pre></td></tr></table></figure>
+
 <p><img src="/go/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E9%80%9A%E9%81%93.png" alt="并发编程"></p>
-<h2 id="定时器">定时器</h2>
-<ul>
+<h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h2><ul>
 <li>Timer：时间到了，执行只执行1次</li>
 </ul>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// 1.timer基本使用</span></span><br><span class="line">    <span class="comment">//timer1 := time.NewTimer(2 * time.Second)</span></span><br><span class="line">    <span class="comment">//t1 := time.Now()</span></span><br><span class="line">    <span class="comment">//fmt.Printf(&quot;t1:%v\n&quot;, t1)</span></span><br><span class="line">    <span class="comment">//t2 := &lt;-timer1.C</span></span><br><span class="line">    <span class="comment">//fmt.Printf(&quot;t2:%v\n&quot;, t2)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2.验证timer只能响应1次</span></span><br><span class="line">    <span class="comment">//timer2 := time.NewTimer(time.Second)</span></span><br><span class="line">    <span class="comment">//for &#123;</span></span><br><span class="line">    <span class="comment">// &lt;-timer2.C</span></span><br><span class="line">    <span class="comment">// fmt.Println(&quot;时间到&quot;)</span></span><br><span class="line">    <span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 3.timer实现延时的功能</span></span><br><span class="line">    <span class="comment">//(1)</span></span><br><span class="line">    <span class="comment">//time.Sleep(time.Second)</span></span><br><span class="line">    <span class="comment">//(2)</span></span><br><span class="line">    <span class="comment">//timer3 := time.NewTimer(2 * time.Second)</span></span><br><span class="line">    <span class="comment">//&lt;-timer3.C</span></span><br><span class="line">    <span class="comment">//fmt.Println(&quot;2秒到&quot;)</span></span><br><span class="line">    <span class="comment">//(3)</span></span><br><span class="line">    <span class="comment">//&lt;-time.After(2*time.Second)</span></span><br><span class="line">    <span class="comment">//fmt.Println(&quot;2秒到&quot;)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 4.停止定时器</span></span><br><span class="line">    <span class="comment">//timer4 := time.NewTimer(2 * time.Second)</span></span><br><span class="line">    <span class="comment">//go func() &#123;</span></span><br><span class="line">    <span class="comment">// &lt;-timer4.C</span></span><br><span class="line">    <span class="comment">// fmt.Println(&quot;定时器执行了&quot;)</span></span><br><span class="line">    <span class="comment">//&#125;()</span></span><br><span class="line">    <span class="comment">//b := timer4.Stop()</span></span><br><span class="line">    <span class="comment">//if b &#123;</span></span><br><span class="line">    <span class="comment">// fmt.Println(&quot;timer4已经关闭&quot;)</span></span><br><span class="line">    <span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 5.重置定时器</span></span><br><span class="line">    timer5 := time.NewTimer(<span class="number">3</span> * time.Second)</span><br><span class="line">    timer5.Reset(<span class="number">1</span> * time.Second)</span><br><span class="line">    fmt.Println(time.Now())</span><br><span class="line">    fmt.Println(&lt;-timer5.C)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>Ticker：时间到了，多次执行</li>
 </ul>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// 1.获取ticker对象</span></span><br><span class="line">    ticker := time.NewTicker(<span class="number">1</span> * time.Second)</span><br><span class="line">    i := <span class="number">0</span></span><br><span class="line">    <span class="comment">// 子协程</span></span><br><span class="line">    <span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">for</span> &#123;</span><br><span class="line">            <span class="comment">//&lt;-ticker.C</span></span><br><span class="line">            i++</span><br><span class="line">            fmt.Println(&lt;-ticker.C)</span><br><span class="line">            <span class="keyword">if</span> i == <span class="number">5</span> &#123;</span><br><span class="line">                <span class="comment">//停止</span></span><br><span class="line">                ticker.Stop()</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;()</span><br><span class="line">    <span class="keyword">for</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="并发安全和锁">并发安全和锁</h3>
-<p>有时候在Go代码中可能会存在多个goroutine同时操作一个资源（临界区），这种情况会发生竞态问题（数据竞态）。</p>
-<h4 id="互斥锁">互斥锁</h4>
-<p>互斥锁是一种常用的控制共享资源访问的方法，它能够保证同时只有一个goroutine可以访问共享资源。Go语言中使用sync包的Mutex类型来实现互斥锁。 使用互斥锁来修复上面代码的问题：</p>
+
+<h3 id="并发安全和锁"><a href="#并发安全和锁" class="headerlink" title="并发安全和锁"></a>并发安全和锁</h3><p>有时候在Go代码中可能会存在多个goroutine同时操作一个资源（临界区），这种情况会发生竞态问题（数据竞态）。</p>
+<h4 id="互斥锁"><a href="#互斥锁" class="headerlink" title="互斥锁"></a>互斥锁</h4><p>互斥锁是一种常用的控制共享资源访问的方法，它能够保证同时只有一个goroutine可以访问共享资源。Go语言中使用sync包的Mutex类型来实现互斥锁。 使用互斥锁来修复上面代码的问题：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x <span class="type">int64</span></span><br><span class="line"><span class="keyword">var</span> wg sync.WaitGroup</span><br><span class="line"><span class="keyword">var</span> lock sync.Mutex</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">add</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">5000</span>; i++ &#123;</span><br><span class="line">        lock.Lock() <span class="comment">// 加锁</span></span><br><span class="line">        x = x + <span class="number">1</span></span><br><span class="line">        lock.Unlock() <span class="comment">// 解锁</span></span><br><span class="line">    &#125;</span><br><span class="line">    wg.Done()</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    wg.Add(<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">go</span> add()</span><br><span class="line">    <span class="keyword">go</span> add()</span><br><span class="line">    wg.Wait()</span><br><span class="line">    fmt.Println(x)</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-<h4 id="读写互斥锁">读写互斥锁</h4>
-<p>互斥锁是完全互斥的，但是有很多实际的场景下是读多写少的，当我们并发的去读取一个资源不涉及资源修改的时候是没有必要加锁的，这种场景下使用读写锁是更好的一种选择。</p>
+
+<h4 id="读写互斥锁"><a href="#读写互斥锁" class="headerlink" title="读写互斥锁"></a>读写互斥锁</h4><p>互斥锁是完全互斥的，但是有很多实际的场景下是读多写少的，当我们并发的去读取一个资源不涉及资源修改的时候是没有必要加锁的，这种场景下使用读写锁是更好的一种选择。</p>
 <p>读写锁在Go语言中使用sync包中的RWMutex类型。</p>
 <p>读写锁分为两种：读锁和写锁。当一个goroutine获取读锁之后，其他的goroutine如果是获取读锁会继续获得锁，如果是获取写锁就会等待；当一个goroutine获取写锁之后，其他的goroutine无论是获取读锁还是写锁都会等待。</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> (</span><br><span class="line">    x      <span class="type">int64</span></span><br><span class="line">    wg     sync.WaitGroup</span><br><span class="line">    lock   sync.Mutex</span><br><span class="line">    rwlock sync.RWMutex</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">write</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// lock.Lock()   // 加互斥锁</span></span><br><span class="line">    rwlock.Lock() <span class="comment">// 加写锁</span></span><br><span class="line">    x = x + <span class="number">1</span></span><br><span class="line">    time.Sleep(<span class="number">10</span> * time.Millisecond) <span class="comment">// 假设读操作耗时10毫秒</span></span><br><span class="line">    rwlock.Unlock()                   <span class="comment">// 解写锁</span></span><br><span class="line">    <span class="comment">// lock.Unlock()                     // 解互斥锁</span></span><br><span class="line">    wg.Done()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">read</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// lock.Lock()                  // 加互斥锁</span></span><br><span class="line">    rwlock.RLock()               <span class="comment">// 加读锁</span></span><br><span class="line">    time.Sleep(time.Millisecond) <span class="comment">// 假设读操作耗时1毫秒</span></span><br><span class="line">    rwlock.RUnlock()             <span class="comment">// 解读锁</span></span><br><span class="line">    <span class="comment">// lock.Unlock()                // 解互斥锁</span></span><br><span class="line">    wg.Done()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    start := time.Now()</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ &#123;</span><br><span class="line">        wg.Add(<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">go</span> write()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++ &#123;</span><br><span class="line">        wg.Add(<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">go</span> read()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    wg.Wait()</span><br><span class="line">    end := time.Now()</span><br><span class="line">    fmt.Println(end.Sub(start))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="sync">sync</h3>
-<p><img src="/go/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/sync.png" alt="并发编程"></p>
+
+<h3 id="sync"><a href="#sync" class="headerlink" title="sync"></a>sync</h3><p><img src="/go/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/sync.png" alt="并发编程"></p>
 
 
         <hr>
