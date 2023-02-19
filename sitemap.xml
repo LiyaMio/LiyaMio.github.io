@@ -156,14 +156,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/en/Hexo-Theme-LiveMyLife/</loc>
+    <loc>http://yoursite-url/cn/Hexo-Theme-LiveMyLife/</loc>
     
     <lastmod>2020-04-16</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite-url/cn/Hexo-Theme-LiveMyLife/</loc>
+    <loc>http://yoursite-url/en/Hexo-Theme-LiveMyLife/</loc>
     
     <lastmod>2020-04-16</lastmod>
     
@@ -186,13 +186,6 @@
 
   
   <url>
-    <loc>http://yoursite-url/tags/blog/</loc>
-    <lastmod>2023-02-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://yoursite-url/tags/Hexo-Theme-LiveMyLife/</loc>
     <lastmod>2023-02-19</lastmod>
     <changefreq>daily</changefreq>
@@ -201,6 +194,13 @@
   
   <url>
     <loc>http://yoursite-url/tags/go/</loc>
+    <lastmod>2023-02-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite-url/tags/blog/</loc>
     <lastmod>2023-02-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -221,27 +221,20 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E4%B8%AD%E7%AD%89/</loc>
-    <lastmod>2023-02-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://yoursite-url/tags/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2023-02-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
-
-  
   <url>
-    <loc>http://yoursite-url/categories/blog/</loc>
+    <loc>http://yoursite-url/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E4%B8%AD%E7%AD%89/</loc>
     <lastmod>2023-02-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
+  
+
   
   <url>
     <loc>http://yoursite-url/categories/Hexo-Theme-LiveMyLife/</loc>
@@ -252,6 +245,13 @@
   
   <url>
     <loc>http://yoursite-url/categories/go/</loc>
+    <lastmod>2023-02-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite-url/categories/blog/</loc>
     <lastmod>2023-02-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -272,14 +272,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/</loc>
+    <loc>http://yoursite-url/categories/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2023-02-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite-url/categories/%E5%B7%A5%E5%85%B7/</loc>
+    <loc>http://yoursite-url/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/</loc>
     <lastmod>2023-02-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
