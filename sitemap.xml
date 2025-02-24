@@ -319,27 +319,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/tags/leetcode-%E4%BD%8D%E8%BF%90%E7%AE%97/</loc>
-    <lastmod>2025-02-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite-url/tags/paper-AdversarialAttack/</loc>
-    <lastmod>2025-02-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite-url/tags/paper-GAN/</loc>
-    <lastmod>2025-02-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://yoursite-url/tags/leetcode/</loc>
     <lastmod>2025-02-24</lastmod>
     <changefreq>daily</changefreq>
@@ -355,6 +334,34 @@
   
   <url>
     <loc>http://yoursite-url/tags/%E6%A8%A1%E6%8B%9F/</loc>
+    <lastmod>2025-02-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite-url/tags/paper/</loc>
+    <lastmod>2025-02-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite-url/tags/AdversarialAttack/</loc>
+    <lastmod>2025-02-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite-url/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/</loc>
+    <lastmod>2025-02-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite-url/tags/GAN/</loc>
     <lastmod>2025-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
