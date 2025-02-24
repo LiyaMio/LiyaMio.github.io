@@ -380,7 +380,11 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#leetcode 数据结构 每日一题" title="leetcode 数据结构 每日一题">leetcode 数据结构 每日一题</a>
+              <a class="tag" href="/tags/#数据结构" title="数据结构">数据结构</a>
+              
+              <a class="tag" href="/tags/#leetcode" title="leetcode">leetcode</a>
+              
+              <a class="tag" href="/tags/#每日一题" title="每日一题">每日一题</a>
               
             </div>
             <h1>1206.跳表构建</h1>
@@ -476,14 +480,17 @@
 </ul>
 <p>注意，跳表中可能存在多个相同的值，你的代码需要处理这种情况。</p>
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">输入</span><br><span class="line">[&quot;Skiplist&quot;, &quot;add&quot;, &quot;add&quot;, &quot;add&quot;, &quot;search&quot;, &quot;add&quot;, &quot;search&quot;, &quot;erase&quot;, &quot;erase&quot;, &quot;search&quot;]</span><br><span class="line">[[], [<span class="number">1</span>], [<span class="number">2</span>], [<span class="number">3</span>], [<span class="number">0</span>], [<span class="number">4</span>], [<span class="number">1</span>], [<span class="number">0</span>], [<span class="number">1</span>], [<span class="number">1</span>]]</span><br><span class="line">输出</span><br><span class="line">[<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">false</span>, <span class="keyword">null</span>, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">true</span>, <span class="keyword">false</span>]</span><br><span class="line"></span><br><span class="line">解释</span><br><span class="line">Skiplist skiplist = <span class="built_in">new</span> Skiplist();</span><br><span class="line">skiplist.<span class="keyword">add</span>(<span class="number">1</span>);</span><br><span class="line">skiplist.<span class="keyword">add</span>(<span class="number">2</span>);</span><br><span class="line">skiplist.<span class="keyword">add</span>(<span class="number">3</span>);</span><br><span class="line">skiplist.<span class="keyword">search</span>(<span class="number">0</span>);   // 返回 <span class="keyword">false</span></span><br><span class="line">skiplist.<span class="keyword">add</span>(<span class="number">4</span>);</span><br><span class="line">skiplist.<span class="keyword">search</span>(<span class="number">1</span>);   // 返回 <span class="keyword">true</span></span><br><span class="line">skiplist.erase(<span class="number">0</span>);    // 返回 <span class="keyword">false</span>，<span class="number">0</span> 不在跳表中</span><br><span class="line">skiplist.erase(<span class="number">1</span>);    // 返回 <span class="keyword">true</span></span><br><span class="line">skiplist.<span class="keyword">search</span>(<span class="number">1</span>);   // 返回 <span class="keyword">false</span>，<span class="number">1</span> 已被擦除</span><br></pre></td></tr></table></figure>
+
 <p><strong>提示:</strong></p>
 <ul>
 <li><code>0 &lt;= num, target &lt;= 2 * 104</code></li>
 <li>调用<code>search</code>, <code>add</code>,  <code>erase</code>操作次数不大于 <code>5 * 104</code></li>
 </ul>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ul>
-<li>跳表实际为一种多层的有序链表，跳表的每一层都为一个有序链表，且满足每个位于第<em>i</em>层的节点有<em>p</em>的概率出现在第<em>i</em>+1层，其中<em>p</em>为常数。</li>
-<li>跳表的期望空间复杂度为<em>O</em>(<em>n</em>)，跳表的查询，插入和删除操作的期望时间复杂度均为<em>O</em>(log<em>n</em>)。</li>
+<li><p>跳表实际为一种多层的有序链表，跳表的每一层都为一个有序链表，且满足每个位于第<em>i</em>层的节点有<em>p</em>的概率出现在第<em>i</em>+1层，其中<em>p</em>为常数。</p>
+</li>
+<li><p>跳表的期望空间复杂度为<em>O</em>(<em>n</em>)，跳表的查询，插入和删除操作的期望时间复杂度均为<em>O</em>(log<em>n</em>)。</p>
+</li>
 <li><p>底层出现的元素不可能会出现在高层</p>
 </li>
 <li><p><img src="https://assets.leetcode-cn.com/solution-static/1206/1206_1.PNG" alt="跳表结构"></p>
@@ -662,7 +669,11 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#leetcode 数据结构 每日一题" title="leetcode 数据结构 每日一题">leetcode 数据结构 每日一题</a>
+            <a class="tag" href="/tags/#数据结构" title="数据结构">数据结构</a>
+            
+            <a class="tag" href="/tags/#leetcode" title="leetcode">leetcode</a>
+            
+            <a class="tag" href="/tags/#每日一题" title="每日一题">每日一题</a>
             
           </div>
         </section>
