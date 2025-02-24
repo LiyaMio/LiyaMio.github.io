@@ -380,7 +380,11 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#leetcode 模拟 每日一题" title="leetcode 模拟 每日一题">leetcode 模拟 每日一题</a>
+              <a class="tag" href="/tags/#leetcode" title="leetcode">leetcode</a>
+              
+              <a class="tag" href="/tags/#每日一题" title="每日一题">每日一题</a>
+              
+              <a class="tag" href="/tags/#模拟" title="模拟">模拟</a>
               
             </div>
             <h1>1656.设计有序流</h1>
@@ -399,7 +403,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">434</span> In Total
+              Words <span class="post-count">448</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -461,41 +465,27 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="1656设计有序流">1656.设计有序流</h1>
-<p>地址：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/design-an-ordered-stream/description/">1656. 设计有序流 - 力扣（LeetCode）</a></p>
-<h2 id="题目描述">题目描述</h2>
-<p>有 <code>n</code> 个 <code>(id, value)</code> 对，其中 <code>id</code> 是 <code>1</code> 到 <code>n</code> 之间的一个整数，<code>value</code> 是一个字符串。不存在 <code>id</code> 相同的两个 <code>(id, value)</code> 对。</p>
+        <h1 id="1656设计有序流"><a href="#1656-设计有序流" class="headerlink" title="1656.设计有序流"></a>1656.设计有序流</h1><p>地址：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/design-an-ordered-stream/description/">1656. 设计有序流 - 力扣（LeetCode）</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>有 <code>n</code> 个 <code>(id, value)</code> 对，其中 <code>id</code> 是 <code>1</code> 到 <code>n</code> 之间的一个整数，<code>value</code> 是一个字符串。不存在 <code>id</code> 相同的两个 <code>(id, value)</code> 对。</p>
 <p>设计一个流，以 <strong>任意</strong> 顺序获取 <code>n</code> 个 <code>(id, value)</code> 对，并在多次调用时 <strong>按 <code>id</code> 递增的顺序</strong> 返回一些值。</p>
 <p>实现 <code>OrderedStream</code> 类：</p>
 <ul>
-<li>
-<p><code>OrderedStream(int n)</code> 构造一个能接收 <code>n</code> 个值的流，并将当前指针 <code>ptr</code> 设为 <code>1</code> 。</p>
+<li><p><code>OrderedStream(int n)</code> 构造一个能接收 <code>n</code> 个值的流，并将当前指针 <code>ptr</code> 设为 <code>1</code> 。</p>
 </li>
-<li>
-<pre><code>String[] insert(int id, String value)
+<li><p>&#96;&#96;&#96;<br>String[] insert(int id, String value)</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">向流中存储新的</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-(id, value)
+<p>(id, value)</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">   </span><br><span class="line"></span><br><span class="line">  对。存储后：</span><br><span class="line"></span><br><span class="line"><span class="bullet">  -</span> 如果流存储有 <span class="code">`id = ptr`</span> 的 <span class="code">`(id, value)`</span> 对，则找出从 <span class="code">`id = ptr`</span> 开始的 <span class="strong">**最长 id 连续递增序列**</span> ，并 <span class="strong">**按顺序**</span> 返回与这些 id 关联的值的列表。然后，将 <span class="code">`ptr`</span> 更新为最后那个 <span class="code">`id + 1`</span> 。</span><br><span class="line"><span class="bullet">  -</span> 否则，返回一个空列表。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="section">## <span class="strong">**示例：**</span></span></span><br><span class="line"></span><br><span class="line">![<span class="string">img</span>](<span class="link">https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/11/15/q1.gif</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</code></pre>
+<p>输入<br>[“OrderedStream”, “insert”, “insert”, “insert”, “insert”, “insert”]<br>[[5], [3, “ccccc”], [1, “aaaaa”], [2, “bbbbb”], [5, “eeeee”], [4, “ddddd”]]<br>输出<br>[null, [], [“aaaaa”], [“bbbbb”, “ccccc”], [], [“ddddd”, “eeeee”]]</p>
 </li>
 </ul>
-<p>输入<br>
-[“OrderedStream”, “insert”, “insert”, “insert”, “insert”, “insert”]<br>
-[[5], [3, “ccccc”], [1, “aaaaa”], [2, “bbbbb”], [5, “eeeee”], [4, “ddddd”]]<br>
-输出<br>
-[null, [], [“aaaaa”], [“bbbbb”, “ccccc”], [], [“ddddd”, “eeeee”]]</p>
-<p>解释<br>
-OrderedStream os= new OrderedStream(5);<br>
-os.insert(3, “ccccc”); // 插入 (3, “ccccc”)，返回 []<br>
-os.insert(1, “aaaaa”); // 插入 (1, “aaaaa”)，返回 [“aaaaa”]<br>
-os.insert(2, “bbbbb”); // 插入 (2, “bbbbb”)，返回 [“bbbbb”, “ccccc”]<br>
-os.insert(5, “eeeee”); // 插入 (5, “eeeee”)，返回 []<br>
-os.insert(4, “ddddd”); // 插入 (4, “ddddd”)，返回 [“ddddd”, “eeeee”]</p>
+<p>解释<br>OrderedStream os&#x3D; new OrderedStream(5);<br>os.insert(3, “ccccc”); &#x2F;&#x2F; 插入 (3, “ccccc”)，返回 []<br>os.insert(1, “aaaaa”); &#x2F;&#x2F; 插入 (1, “aaaaa”)，返回 [“aaaaa”]<br>os.insert(2, “bbbbb”); &#x2F;&#x2F; 插入 (2, “bbbbb”)，返回 [“bbbbb”, “ccccc”]<br>os.insert(5, “eeeee”); &#x2F;&#x2F; 插入 (5, “eeeee”)，返回 []<br>os.insert(4, “ddddd”); &#x2F;&#x2F; 插入 (4, “ddddd”)，返回 [“ddddd”, “eeeee”]</p>
 <figure class="highlight nim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="comment">## 思路</span></span><br><span class="line"></span><br><span class="line">暴力模拟</span><br><span class="line"></span><br><span class="line"><span class="comment">## 代码</span></span><br><span class="line"></span><br><span class="line">```c++</span><br><span class="line">class <span class="type">OrderedStream</span> &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;<span class="type">string</span>&gt; stream;</span><br><span class="line">    <span class="type">int</span> <span class="keyword">ptr</span>;</span><br><span class="line">    <span class="type">OrderedStream</span>(<span class="type">int</span> n) &#123;</span><br><span class="line">        stream.resize(n+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">ptr</span>=<span class="number">1</span>;    </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    vector&lt;<span class="type">string</span>&gt; insert(<span class="type">int</span> idKey, <span class="type">string</span> value) &#123;</span><br><span class="line">        stream[idKey]=value;</span><br><span class="line">        vector&lt;<span class="type">string</span>&gt; res;</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">ptr</span>&lt;stream.size()&amp;&amp;!stream[<span class="keyword">ptr</span>].empty())&#123;</span><br><span class="line">            res.push_back(stream[<span class="keyword">ptr</span>]);</span><br><span class="line">            ++<span class="keyword">ptr</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * <span class="type">Your</span> <span class="type">OrderedStream</span> <span class="keyword">object</span> will be instantiated <span class="keyword">and</span> called <span class="keyword">as</span> such:</span><br><span class="line"> * <span class="type">OrderedStream</span>* obj = new <span class="type">OrderedStream</span>(n);</span><br><span class="line"> * vector&lt;<span class="type">string</span>&gt; param_1 = obj-&gt;insert(idKey,value);</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
-<h2 id="复杂度">复杂度</h2>
-<p>时间复杂度O(n)  空间复杂度O(n)</p>
-<h2 id></h2>
 
+
+
+<h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><p>时间复杂度O(n)  空间复杂度O(n)</p>
+<h2 id><a href="#" class="headerlink" title></a></h2>
 
         <hr>
         <!-- Pager -->
@@ -667,7 +657,11 @@ os.insert(4, “ddddd”); // 插入 (4, “ddddd”)，返回 [“ddddd”, “
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#leetcode 模拟 每日一题" title="leetcode 模拟 每日一题">leetcode 模拟 每日一题</a>
+            <a class="tag" href="/tags/#leetcode" title="leetcode">leetcode</a>
+            
+            <a class="tag" href="/tags/#每日一题" title="每日一题">每日一题</a>
+            
+            <a class="tag" href="/tags/#模拟" title="模拟">模拟</a>
             
           </div>
         </section>
