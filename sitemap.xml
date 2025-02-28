@@ -523,11 +523,4 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>http://yoursite-url/categories/leetcode-https-leetcode-cn-problems-design-a-text-editor/</loc>
-    <lastmod>2025-02-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 </urlset>
