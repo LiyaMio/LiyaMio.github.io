@@ -469,6 +469,39 @@
   <!-- top end -->
   
 
+  <a href="/go/进程同步问题/">
+    <h2 class="post-title">
+      进程同步问题
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      进程同步问题生产者-消费者问题1234567891011121314151617//单向通道func producer(out chan &lt;- int)&#123;   for i:=0;i&lt;10;i++&#123;      out&lt;-i*i   &#125;   close(out)&#125;func consumer(in &lt;-chan int)&#123; ......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 云起 on
+    2022-10-08
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#go" title="go">go</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/undefined/一些奇技淫巧/">
     <h2 class="post-title">
       一些奇技淫巧
@@ -799,54 +832,6 @@ Go语言中的方法（Method）是一种作用于特定类型变量的函数。
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/go/指针/">
-    <h2 class="post-title">
-      指针
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      指针随写
-Go语言中的函数传参都是值拷贝
-
-类型指针不能进行偏移和运算
-
-当一个指针被定义后没有分配到任何变量时，它的值为 nil
-
-引用类型的变量使用时不仅需要声明还需要分配内存空间
-
-
-new与make
-用于分配内存
-make只用于slice、map以及channel的初始化，返回的还是这三个引用类型本身
-new用于类型的内存分配，并且内存对应的值为类型零值，返回的是指向类型的指针
-
-...
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 云起 on
-    2022-09-16
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#go" title="go">go</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
@@ -939,11 +924,11 @@ new用于类型的内存分配，并且内存对应的值为类型零值，返�
     
     
     
-    <a href="/tags/#leetcode" title="leetcode" rel="8">leetcode</a>
+    <a href="/tags/#leetcode" title="leetcode" rel="9">leetcode</a>
     
     
     
-    <a href="/tags/#每日一题" title="每日一题" rel="7">每日一题</a>
+    <a href="/tags/#每日一题" title="每日一题" rel="8">每日一题</a>
     
     
     
@@ -975,7 +960,7 @@ new用于类型的内存分配，并且内存对应的值为类型零值，返�
     
     
     
-    <a href="/tags/#困难" title="困难" rel="1">困难</a>
+    <a href="/tags/#困难" title="困难" rel="2">困难</a>
     
     
     
@@ -992,6 +977,18 @@ new用于类型的内存分配，并且内存对应的值为类型零值，返�
     
     
     <a href="/tags/#回溯" title="回溯" rel="1">回溯</a>
+    
+    
+    
+    <a href="/tags/#每日不会一题" title="每日不会一题" rel="1">每日不会一题</a>
+    
+    
+    
+    <a href="/tags/#DP" title="DP" rel="1">DP</a>
+    
+    
+    
+    <a href="/tags/#记忆化搜索" title="记忆化搜索" rel="1">记忆化搜索</a>
     
     
   </div>
@@ -1063,6 +1060,10 @@ new用于类型的内存分配，并且内存对应的值为类型零值，返�
 <div class="widget">
   <ul>
     
+    <a href="../../leetcode/132.%E5%88%86%E5%89%B2%E5%9B%9E%E6%96%87%E4%B8%B2II/">
+      <li>132.分割回文串II</li>
+    </a>
+    
     <a href="../../leetcode/131.%E5%88%86%E5%89%B2%E5%9B%9E%E6%96%87%E4%B8%B2/">
       <li>131.分割回文串</li>
     </a>
@@ -1077,10 +1078,6 @@ new用于类型的内存分配，并且内存对应的值为类型零值，返�
     
     <a href="../../leetcode/1472.%E8%AE%BE%E8%AE%A1%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95/">
       <li>1472.设计浏览器历史记录</li>
-    </a>
-    
-    <a href="../../leetcode/2502.%E8%AE%BE%E8%AE%A1%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E5%99%A8/">
-      <li>2502.设计内存分配器</li>
     </a>
     
   </ul>
@@ -1107,7 +1104,7 @@ new用于类型的内存分配，并且内存对应的值为类型零值，返�
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2025/03/">March 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2025/02/">February 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2024/09/">September 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2023/02/">February 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2022/11/">November 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2022/10/">October 2022</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2022/09/">September 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">April 2020</a><span class="archive-list-count">2</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2025/02/">February 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2024/09/">September 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2023/02/">February 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2022/11/">November 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2022/10/">October 2022</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2022/09/">September 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">April 2020</a><span class="archive-list-count">2</span></li></ul>
 </div>
 
 
