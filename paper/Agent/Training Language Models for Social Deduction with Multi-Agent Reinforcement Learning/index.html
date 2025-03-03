@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/工具/burpsuite/">
+  <link rel="canonical" href="http://yoursite-url/paper/Agent/Training Language Models for Social Deduction with Multi-Agent Reinforcement Learning/">
   <title>
     
-      post - Ride or Die
+      TrainingLanguageModelsForSocialDeductionWithMultiAgentReinforcementLearning - Ride or Die
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -292,30 +292,6 @@
           
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      English
-    </span>
-    <select id="lang-select" data-canonical="工具/burpsuite/">
-      
-      
-      <option value="en" >
-        English
-      </option>
-      
-      <option value="cn" >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
-          
           
           
         </ul>
@@ -404,14 +380,16 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#工具" title="工具">工具</a>
+              <a class="tag" href="/tags/#paper" title="paper">paper</a>
+              
+              <a class="tag" href="/tags/#Agent" title="Agent">Agent</a>
               
             </div>
-            <h1>post</h1>
+            <h1>TrainingLanguageModelsForSocialDeductionWithMultiAgentReinforcementLearning</h1>
             <h2 class="subheading"></h2>
             <span class="meta">
               Posted by 云起 on
-              2024-09-29
+              2025-03-03
             </span>
 
 
@@ -419,11 +397,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">1</span> Minutes
+              Estimated Reading Time <span class="post-count">11</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">4</span> In Total
+              Words <span class="post-count">3.1k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -485,19 +463,400 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h4 id="模拟发包"><a href="#模拟发包" class="headerlink" title="模拟发包"></a>模拟发包</h4>
+        <h1 id="training-language-models-for-social-deduction-with-multi-agent-reinforcement-learning">Training Language Models for Social Deduction with Multi-Agent Reinforcement Learning</h1>
+<p>[toc]</p>
+<h2 id="概述">概述</h2>
+<ul>
+<li><strong>问题背景</strong>
+<ul>
+<li><strong>社交推理游戏</strong>（如《Among Us》）要求玩家通过沟通与观察推断隐藏角色（如“内鬼”），是研究多智能体协作与对抗的理想场景。</li>
+<li><strong>自然语言沟通</strong>是多智能体协作的关键，但现有方法依赖大量人类示范数据或难以生成自然有效的对话策略。</li>
+</ul>
+</li>
+<li><strong>现有挑战</strong>
+<ul>
+<li><strong>稀疏奖励信号</strong>：仅依赖游戏胜利的奖励难以优化复杂的沟通行为。</li>
+<li><strong>听与说的双重需求</strong>：智能体需同时学会解析他人信息（听）和生成有效信息（说）。</li>
+</ul>
+</li>
+<li><strong>研究目标</strong>
+<ul>
+<li><strong>无需人类数据</strong>：通过强化学习自监督优化语言模型的沟通能力。</li>
+<li><strong>提升胜率与策略多样性</strong>：在对抗性环境中实现类似人类的社交推理行为。</li>
+</ul>
+</li>
+</ul>
+<h2 id="方法">方法</h2>
+<h3 id="1框架设计">1.框架设计</h3>
+<ul>
+<li>
+<p><strong>环境建模</strong>：将游戏建模为<strong>部分可观察马尔可夫游戏（POMG）</strong>，引入自然语言作为动作与观测的载体。</p>
+</li>
+<li>
+<p><strong>语言模型选择</strong>：采用<strong>RWKV模型</strong>（线性注意力机制），支持长序列处理与低计算开销。</p>
+</li>
+</ul>
+<h3 id="2-关键创新">2. 关键创新</h3>
+<ul>
+<li><strong>听的优化（Listening）</strong>：
+<ul>
+<li><strong>监督学习任务</strong>：通过预测内鬼身份的准确率提供密集奖励（公式2）。</li>
+<li>目标：增强模型从对话中提取关键信息的能力。</li>
+</ul>
+</li>
+<li><strong>说的优化（Speaking）</strong>：
+<ul>
+<li><strong>多智能体强化学习</strong>：奖励消息对其他智能体内鬼信念的影响（公式5-6）。</li>
+<li>目标：生成能引导队友正确投票的对话。</li>
+</ul>
+</li>
+<li><strong>对抗训练</strong>：
+<ul>
+<li>通过自我对抗（Self-Play）迭代优化内鬼与船员的策略，提升鲁棒性。</li>
+</ul>
+</li>
+</ul>
+<h2 id="创新点">创新点</h2>
+<h3 id="1-现有方法的缺陷">1. 现有方法的缺陷</h3>
+<ul>
+<li><strong>缺陷1：依赖人类示范数据</strong><br>
+传统多智能体强化学习（MARL）方法（如Cicero [8]）需大量人类对话数据训练，难以泛化到新任务（如《Among Us》），且收集成本高。</li>
+<li><strong>缺陷2：稀疏奖励信号</strong><br>
+仅依赖最终胜负的奖励（+1/-1）无法指导复杂的沟通行为（如“何时提供证据”“如何反驳”），导致策略收敛困难。</li>
+<li><strong>缺陷3：听与说分离优化</strong><br>
+现有工作（如RLHF [28]）侧重单方面优化“说”的能力（生成合理文本），但忽略“听”的推理能力（解析他人意图），导致沟通效率低。</li>
+</ul>
+<h3 id="2听的优化内鬼身份预测imposter-prediction">2.听的优化——内鬼身份预测（Imposter Prediction）</h3>
+<p><strong>目标</strong>：通过监督学习增强模型从对话中提取关键信息的能力。</p>
+<p><strong>公式与实现</strong>：</p>
+<ul>
+<li><strong>监督信号定义</strong></li>
+</ul>
+<p>$$<br>
+L_L (π,τ_t^L)=−logπ(q∣τ_t^L)<br>
+$$</p>
+<ul>
+<li>$$τ_t^L$$：智能体的动作-观测历史（含对话记录）。</li>
+<li>q：正确投票内鬼的动作（监督标签）。</li>
+<li><strong>物理意义</strong>：强制模型根据历史信息（包括对话）最大化正确投票概率，类似分类任务。</li>
+</ul>
+<p><strong>优势</strong>：</p>
+<ul>
+<li><strong>密集奖励</strong>：在讨论阶段的每一步提供即时反馈，加速收敛。</li>
+<li><strong>无需人类数据</strong>：直接利用游戏内真实标签（内鬼身份）作为监督信号。</li>
+</ul>
+<h3 id="3说的优化基于影响的对话奖励reinforced-discussion-learning">3.说的优化——基于影响的对话奖励（Reinforced Discussion Learning）</h3>
+<p><strong>目标</strong>：通过强化学习激励智能体生成能改变队友信念的有效消息。</p>
+<p><strong>公式与实现</strong>：</p>
+<ul>
+<li><strong>信念变化奖励</strong></li>
+</ul>
+<p>$$<br>
+B_t =\sum_{k∈C_t} π^k (q∣τ_t^k),r_i^s=B_t−B_{t^′}<br>
+$$</p>
+<ul>
+<li>
+<p>$$B_t$$：当前时刻所有存活船员对内鬼的置信度总和。</p>
+</li>
+<li>
+<p>$$r_i^s$$：说话者i的奖励=消息发布后置信度增量。</p>
+</li>
+<li>
+<p><strong>物理意义</strong>：消息越能提升队友的准确判断，奖励越高。</p>
+</li>
+</ul>
+<p><strong>训练目标</strong></p>
+<p>$$L_{RL+L+S_(π)}=L_{RL}+L(π)−E[λ_Sγ^tr_i^s]$$</p>
+<ul>
+<li>综合强化学习损失（$$L_{RL}$$）、听损失（$$L_L$$）、说奖励（$$r_i^s$$）。</li>
+<li>$$λ_S$$：奖励系数，控制说话优化的权重。</li>
+<li>$$γ^t$$:折扣银子</li>
+</ul>
+<p><strong>优势</strong>：</p>
+<ul>
+<li><strong>因果性奖励</strong>：直接量化消息对队友决策的影响，避免生成无意义对话。</li>
+<li><strong>自洽优化</strong>：听与说协同训练，消息生成与解析能力同步提升。</li>
+</ul>
+<h3 id="4对抗训练与鲁棒性提升self-play">4.对抗训练与鲁棒性提升（Self-Play）</h3>
+<p><strong>目标</strong>：通过迭代对抗训练，使船员策略适应动态变化的内鬼策略。</p>
+<p><strong>公式与实现</strong>：</p>
+<ul>
+<li>
+<p><strong>内鬼训练目标</strong>（公式8）：</p>
+<p>$$L_{imp}(π)=L_{RL}(π)+E[λ_Sγ^tr_i^s]$$</p>
+<ul>
+<li>内鬼的说话奖励$$r_i^s$$符号与船员相反（最大化误导船员）。</li>
+</ul>
+</li>
+</ul>
+<p><strong>动态平衡机制</strong>：</p>
+<ul>
+<li>每轮训练中，船员与内鬼策略交替更新（图5）。</li>
+<li>冻结部分船员策略（防止退化策略，如全体沉默）。</li>
+</ul>
+<p><strong>优势</strong>：</p>
+<ul>
+<li><strong>策略多样性</strong>：内鬼学会反指控（如“玩家Red才是内鬼！”），船员学会识别欺骗。</li>
+<li><strong>鲁棒性验证</strong>：胜率在对抗训练后稳定（51%-56%），表明无过拟合。</li>
+</ul>
+<h3 id="5方法对比">5.方法对比</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>维度</strong></th>
+<th style="text-align:left"><strong>传统MARL（如PPO）</strong></th>
+<th style="text-align:left"><strong>本文方法（RL+L+S）</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>奖励信号</strong></td>
+<td style="text-align:left">稀疏（仅胜负）</td>
+<td style="text-align:left">密集（听+说+胜负）</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>数据依赖</strong></td>
+<td style="text-align:left">需人类示范</td>
+<td style="text-align:left">完全自监督</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>沟通能力</strong></td>
+<td style="text-align:left">生成文本质量低、无策略性</td>
+<td style="text-align:left">生成指控、证据、反欺骗等策略</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>训练稳定性</strong></td>
+<td style="text-align:left">易陷入局部最优（如沉默）</td>
+<td style="text-align:left">通过冻结策略与KL约束保持稳定</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6核心公式">6.核心公式</h3>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">        Listen Loss (L_L)  </span><br><span class="line">          ↓  </span><br><span class="line">RL Loss (L_RL) → Combined Loss (L_RL+L+S)  </span><br><span class="line">          ↑  </span><br><span class="line">  <span class="attribute">Speak</span> Reward (r_i^s)  </span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>听与说的协同</strong>：听的监督信号提升信念预测能力，说的奖励机制利用该能力生成有效消息。</li>
+<li><strong>对抗训练闭环</strong>：船员与内鬼通过动态博弈优化，形成复杂策略平衡。</li>
+</ul>
+<h3 id="7总结">7.总结</h3>
+<ul>
+<li><strong>方法优势</strong>：
+<ul>
+<li>通过<strong>听与说的联合优化</strong>，实现无需人类数据的自然语言沟通。</li>
+<li>引入<strong>密集奖励与对抗训练</strong>，解决稀疏奖励与策略退化问题。</li>
+</ul>
+</li>
+<li><strong>公式设计关键</strong>：
+<ul>
+<li>监督学习（听）与强化学习（说）的数学融合。</li>
+<li>奖励函数直接关联智能体决策的因果影响。</li>
+</ul>
+</li>
+</ul>
+<h2 id="实验">实验</h2>
+<h3 id="1基础模型性能对比">1.基础模型性能对比</h3>
+<p><img src="/paper/Agent/Training%20Language%20Models%20for%20Social%20Deduction%20with%20Multi-Agent%20Reinforcement%20Learning/T1.png" alt></p>
+<ul>
+<li>比较不同参数规模的RWKV模型在任务中的表现，包括预测准确率（Accuracy）、环境观测困惑度（PPL-World）和语言模型困惑度（PPL-LM）。</li>
+<li><strong>关键数据</strong>：
+<ul>
+<li>1.5B模型在准确率（0.62）与计算效率间达到最佳平衡，优于7B模型（0.65）但参数量更少。</li>
+<li>PPL-World（环境理解能力）随模型规模增大而降低（1.5B: 0.28 → 7B: 0.22）。</li>
+</ul>
+</li>
+</ul>
+<p><strong>结论</strong>：</p>
+<ul>
+<li>选择1.5B参数模型作为基础，因其在性能与计算成本间达到最优权衡。</li>
+<li>模型规模并非越大越好，任务特定优化（如听与说的联合训练）更为关键。</li>
+</ul>
+<h3 id="2不同训练方法的胜率对比">2.不同训练方法的胜率对比</h3>
+<p><img src="/paper/Agent/Training%20Language%20Models%20for%20Social%20Deduction%20with%20Multi-Agent%20Reinforcement%20Learning/F3.png" alt></p>
+<ul>
+<li>在基础环境（2×2网格，4船员1内鬼）中，对比以下方法的胜率：
+<ul>
+<li><strong>Base Model</strong>（未训练RWKV）：胜率&lt;20%。</li>
+<li><strong>RL</strong>（纯强化学习）：胜率约30%。</li>
+<li><strong>RL+L</strong>（强化学习+听优化）：胜率约50%。</li>
+<li><strong>RL+L+S</strong>（听+说联合优化）：胜率约60%。</li>
+</ul>
+</li>
+</ul>
+<p><strong>关键发现</strong>：</p>
+<ul>
+<li><strong>听与说的协同效应</strong>：RL+L+S胜率是纯RL的<strong>2倍</strong>，说明联合优化显著提升沟通效率。</li>
+<li><strong>仅听优化的局限性</strong>：RL+L虽优于RL，但缺乏主动引导对话的能力，胜率仍有限。</li>
+</ul>
+<h3 id="3环境变化的鲁棒性测试图4">3.环境变化的鲁棒性测试（图4）</h3>
+<p><img src="/paper/Agent/Training%20Language%20Models%20for%20Social%20Deduction%20with%20Multi-Agent%20Reinforcement%20Learning/F4.png" alt></p>
+<p><strong>图表内容</strong>：</p>
+<ul>
+<li>测试模型在以下环境变化中的胜率：
+<ul>
+<li><strong>地图尺寸</strong>（1×3, 2×2, 2×3网格）。</li>
+<li><strong>任务数量</strong>（3/4/5任务）。</li>
+<li><strong>船员数量</strong>（4-6人）。</li>
+</ul>
+</li>
+</ul>
+<p><strong>关键发现</strong>：</p>
+<ul>
+<li><strong>地图尺寸影响小</strong>：胜率在不同尺寸间波动&lt;5%，模型能适应空间结构变化。</li>
+<li><strong>任务数量增加</strong>：胜率下降（任务越多，船员倾向于优先完成任务而非投票）。</li>
+<li><strong>船员数量增加</strong>：胜率显著提升（容错率提高，错误投票影响降低）。</li>
+</ul>
+<p><strong>结论</strong>：</p>
+<ul>
+<li>方法在未训练的环境配置中表现稳定，验证了泛化能力。</li>
+</ul>
+<h3 id="4-对抗训练的稳健性验证图5">4. 对抗训练的稳健性验证（图5）</h3>
+<p><img src="/paper/Agent/Training%20Language%20Models%20for%20Social%20Deduction%20with%20Multi-Agent%20Reinforcement%20Learning/F5.png" alt></p>
+<p><strong>图表内容</strong>：</p>
+<ul>
+<li>展示自我对抗训练（Self-Play）迭代中，船员胜率的变化：
+<ul>
+<li><strong>初始策略（迭代0）</strong>：胜率约60%。</li>
+<li><strong>对抗训练后（迭代3+）</strong>：胜率收敛至51%-56%。</li>
+</ul>
+</li>
+</ul>
+<p><strong>关键发现</strong>：</p>
+<ul>
+<li><strong>策略动态平衡</strong>：内鬼学会反指控（如“玩家Red可疑！”），船员学会识别欺骗，形成策略博弈。</li>
+<li><strong>胜率稳定区间</strong>：最终胜率保持在50%左右，接近纳什均衡，说明无策略退化。</li>
+</ul>
+<hr>
+<h3 id="5-失败案例分析第63节">5. 失败案例分析（第6.3节）</h3>
+<p><strong>问题与解决方案</strong>：</p>
+<ul>
+<li><strong>退化策略（如全体沉默）</strong>：
+<ul>
+<li><strong>现象</strong>：船员通过不发言规避风险。</li>
+<li><strong>解决</strong>：冻结部分船员策略（强制多样性）。</li>
+</ul>
+</li>
+<li><strong>非自然语言生成</strong>：
+<ul>
+<li><strong>现象</strong>：模型输出乱码或动作令牌。</li>
+<li><strong>解决</strong>：引入世界建模损失（公式9），保持语言生成能力。</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-对话样本分析附录c">6. 对话样本分析（附录C）</h3>
+<p><strong>示例1</strong>：船员通过环境证据指控内鬼</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">Player</span> <span class="built_in">Yellow</span><span class="operator">:</span> <span class="string">&quot;Player Green在房间(0,1)离开尸体！&quot;</span>  </span><br><span class="line"><span class="variable">Player</span> <span class="built_in">Green</span>（内鬼）<span class="operator">:</span> <span class="string">&quot;我什么都没做！&quot;</span>  </span><br><span class="line">投票结果：<span class="variable">Player</span> <span class="built_in">Green</span>被驱逐，船员胜利。  </span><br></pre></td></tr></table></figure>
+<p><strong>示例2</strong>：内鬼反指控成功</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">Player</span> <span class="built_in">Red</span>（内鬼）<span class="operator">:</span> <span class="string">&quot;Player Blue才是内鬼！&quot;</span>  </span><br><span class="line"><span class="variable">Player</span> <span class="built_in">Blue</span><span class="operator">:</span> <span class="string">&quot;我在做任务，有记录！&quot;</span>  </span><br><span class="line">投票结果：<span class="variable">Player</span> <span class="built_in">Blue</span>被错误驱逐，内鬼胜利。  </span><br></pre></td></tr></table></figure>
+<p><strong>结论</strong>：</p>
+<ul>
+<li>模型能生成<strong>类人策略</strong>（证据引用、反指控、谎言）。</li>
+<li>对话质量直接影响游戏结果，验证了方法的有效性。</li>
+</ul>
+<h3 id="7总结">7.总结</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>实验维度</strong></th>
+<th style="text-align:left"><strong>核心结论</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">基础模型选择</td>
+<td style="text-align:left">1.5B RWKV在效率与性能间最优</td>
+</tr>
+<tr>
+<td style="text-align:left">听与说联合优化</td>
+<td style="text-align:left">RL+L+S胜率是纯RL的2倍</td>
+</tr>
+<tr>
+<td style="text-align:left">环境鲁棒性</td>
+<td style="text-align:left">胜率在未训练配置中波动&lt;10%</td>
+</tr>
+<tr>
+<td style="text-align:left">对抗训练</td>
+<td style="text-align:left">策略收敛至稳定纳什均衡（胜率51%-56%）</td>
+</tr>
+<tr>
+<td style="text-align:left">失败案例解决</td>
+<td style="text-align:left">通过冻结策略与KL约束保持自然语言生成</td>
+</tr>
+</tbody>
+</table>
+<p><strong>图表联动启示</strong>：</p>
+<ul>
+<li><strong>图3+图5</strong>：听与说的联合优化（图3高胜率）需对抗训练（图5稳定性）支持，避免过拟合。</li>
+<li><strong>图4+附录C</strong>：泛化能力（图4）依赖多样化的策略生成（附录C样本）。</li>
+</ul>
+<h2 id="可探索点">可探索点</h2>
+<h3 id="技术层面">技术层面</h3>
+<ol>
+<li><strong>任务依赖性的突破</strong>
+<ul>
+<li><strong>现状</strong>：当前方法需手动定义预测目标（如内鬼身份），限制了迁移能力。</li>
+<li><strong>改进方向</strong>：
+<ul>
+<li><strong>自动目标发现</strong>：引入元学习或因果推理，让模型自主识别场景中的关键推理目标（如“谁在破坏任务”“谁在传播虚假信息”）。</li>
+<li><strong>多任务联合训练</strong>：在多个社交推理游戏（如《狼人杀》《密室逃脱》）中共享表征，提升泛化性。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>真实性约束的挑战</strong>
+<ul>
+<li><strong>问题</strong>：智能体可能生成虚假信息（如伪造证据），在现实应用中存在伦理风险。</li>
+<li><strong>解决方案</strong>：
+<ul>
+<li><strong>真实性奖励</strong>：在奖励函数中引入事实核查机制（如对比环境观测与对话内容的一致性）。</li>
+<li><strong>人类反馈集成</strong>：结合RLHF（Reinforcement Learning from Human Feedback），让人工标注者评估消息的真实性。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>长程推理的局限性</strong>
+<ul>
+<li><strong>当前瓶颈</strong>：模型在长对话序列中可能遗忘关键信息（如早期证据）。</li>
+<li><strong>潜在优化</strong>：
+<ul>
+<li><strong>外部记忆模块</strong>：为语言模型添加可读写的记忆存储，支持长期依赖（类似Park et al. [29] 的长期记忆流）。</li>
+<li><strong>分层注意力机制</strong>：区分“环境观测”“他人发言”“自身策略”等不同信息源，提升推理效率。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="应用场景">应用场景</h3>
+<ol>
+<li>
+<p><strong>虚拟协作场景</strong></p>
+<ul>
+<li><strong>智能客服协作</strong>：多个客服机器人通过自然语言协调解决复杂用户问题（如跨部门工单分配）。</li>
+<li><strong>游戏NPC智能化</strong>：在开放世界游戏中，NPC基于动态环境生成拟人化对话与策略（如《模拟人生》中的角色互动）。</li>
+</ul>
+</li>
+<li>
+<p><strong>现实对抗场景</strong></p>
+<ul>
+<li><strong>网络安全防御</strong>：训练多智能体模拟攻击者与防御者，通过对话推理识别潜在威胁（如钓鱼攻击溯源）。</li>
+<li><strong>商业谈判模拟</strong>：构建虚拟谈判对手，帮助人类练习应对策略（如价格协商、合同条款博弈）。</li>
+</ul>
+</li>
+<li>
+<p><strong>教育与培训</strong></p>
+<ul>
+<li><strong>社交技能训练</strong>：为自闭症患者或社交焦虑者提供虚拟社交场景，通过智能体互动练习沟通技巧。</li>
+<li><strong>团队协作评估</strong>：分析多人协作任务中的沟通效率，为企业团队建设提供数据支持。</li>
+</ul>
+</li>
+</ol>
+
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
           
-          <li class="previous">
-            <a href="/leetcode/2506.统计相似字符串对的数目/" data-toggle="tooltip" data-placement="top" title="2506.统计相似字符串对的数目">&larr; Previous Post</a>
-          </li>
-          
           
           <li class="next">
-            <a href="/ctf/攻防世界/GFSJ0475 get_post/" data-toggle="tooltip" data-placement="top" title="get_post">Next Post &rarr;</a>
+            <a href="/leetcode/1278.分割回文串III/" data-toggle="tooltip" data-placement="top" title="1278.分割回文串III">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -546,7 +905,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=post&body=Hi,I found this website and thought you might like it http://yoursite-url/工具/burpsuite/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=TrainingLanguageModelsForSocialDeductionWithMultiAgentReinforcementLearning&body=Hi,I found this website and thought you might like it http://yoursite-url/paper/Agent/Training Language Models for Social Deduction with Multi-Agent Reinforcement Learning/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -581,7 +940,7 @@
       repo: '',
       owner: '',
       admin: '',
-      id: 'Sun Sep 29 2024 12:08:58 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Mon Mar 03 2025 08:09:41 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -634,7 +993,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%A8%A1%E6%8B%9F%E5%8F%91%E5%8C%85"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">模拟发包</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#training-language-models-for-social-deduction-with-multi-agent-reinforcement-learning"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Training Language Models for Social Deduction with Multi-Agent Reinforcement Learning</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">概述</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">1.框架设计</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-%E5%85%B3%E9%94%AE%E5%88%9B%E6%96%B0"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">2. 关键创新</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%9B%E6%96%B0%E7%82%B9"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">创新点</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-%E7%8E%B0%E6%9C%89%E6%96%B9%E6%B3%95%E7%9A%84%E7%BC%BA%E9%99%B7"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">1. 现有方法的缺陷</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2%E5%90%AC%E7%9A%84%E4%BC%98%E5%8C%96%E5%86%85%E9%AC%BC%E8%BA%AB%E4%BB%BD%E9%A2%84%E6%B5%8Bimposter-prediction"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">2.听的优化——内鬼身份预测（Imposter Prediction）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3%E8%AF%B4%E7%9A%84%E4%BC%98%E5%8C%96%E5%9F%BA%E4%BA%8E%E5%BD%B1%E5%93%8D%E7%9A%84%E5%AF%B9%E8%AF%9D%E5%A5%96%E5%8A%B1reinforced-discussion-learning"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">3.说的优化——基于影响的对话奖励（Reinforced Discussion Learning）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4%E5%AF%B9%E6%8A%97%E8%AE%AD%E7%BB%83%E4%B8%8E%E9%B2%81%E6%A3%92%E6%80%A7%E6%8F%90%E5%8D%87self-play"><span class="toc-nav-number">1.3.4.</span> <span class="toc-nav-text">4.对抗训练与鲁棒性提升（Self-Play）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5%E6%96%B9%E6%B3%95%E5%AF%B9%E6%AF%94"><span class="toc-nav-number">1.3.5.</span> <span class="toc-nav-text">5.方法对比</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#6%E6%A0%B8%E5%BF%83%E5%85%AC%E5%BC%8F"><span class="toc-nav-number">1.3.6.</span> <span class="toc-nav-text">6.核心公式</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#7%E6%80%BB%E7%BB%93"><span class="toc-nav-number">1.3.7.</span> <span class="toc-nav-text">7.总结</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">实验</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9E%8B%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">1.基础模型性能对比</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2%E4%B8%8D%E5%90%8C%E8%AE%AD%E7%BB%83%E6%96%B9%E6%B3%95%E7%9A%84%E8%83%9C%E7%8E%87%E5%AF%B9%E6%AF%94"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">2.不同训练方法的胜率对比</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3%E7%8E%AF%E5%A2%83%E5%8F%98%E5%8C%96%E7%9A%84%E9%B2%81%E6%A3%92%E6%80%A7%E6%B5%8B%E8%AF%95%E5%9B%BE4"><span class="toc-nav-number">1.4.3.</span> <span class="toc-nav-text">3.环境变化的鲁棒性测试（图4）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-%E5%AF%B9%E6%8A%97%E8%AE%AD%E7%BB%83%E7%9A%84%E7%A8%B3%E5%81%A5%E6%80%A7%E9%AA%8C%E8%AF%81%E5%9B%BE5"><span class="toc-nav-number">1.4.4.</span> <span class="toc-nav-text">4. 对抗训练的稳健性验证（图5）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-%E5%A4%B1%E8%B4%A5%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90%E7%AC%AC63%E8%8A%82"><span class="toc-nav-number">1.4.5.</span> <span class="toc-nav-text">5. 失败案例分析（第6.3节）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#6-%E5%AF%B9%E8%AF%9D%E6%A0%B7%E6%9C%AC%E5%88%86%E6%9E%90%E9%99%84%E5%BD%95c"><span class="toc-nav-number">1.4.6.</span> <span class="toc-nav-text">6. 对话样本分析（附录C）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#7%E6%80%BB%E7%BB%93"><span class="toc-nav-number">1.4.7.</span> <span class="toc-nav-text">7.总结</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8F%AF%E6%8E%A2%E7%B4%A2%E7%82%B9"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">可探索点</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%8A%80%E6%9C%AF%E5%B1%82%E9%9D%A2"><span class="toc-nav-number">1.5.1.</span> <span class="toc-nav-text">技术层面</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-nav-number">1.5.2.</span> <span class="toc-nav-text">应用场景</span></a></li></ol></li></ol></li></ol>
         
         </div>
       </aside>
@@ -657,7 +1016,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#工具" title="工具">工具</a>
+            <a class="tag" href="/tags/#paper" title="paper">paper</a>
+            
+            <a class="tag" href="/tags/#Agent" title="Agent">Agent</a>
             
           </div>
         </section>
