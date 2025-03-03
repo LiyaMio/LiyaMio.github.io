@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite-url/leetcode/1745.%E5%88%86%E5%89%B2%E5%9B%9E%E6%96%87%E4%B8%B2IV/</loc>
+    
+    <lastmod>2025-03-03</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite-url/paper/Agent/Training%20Language%20Models%20for%20Social%20Deduction%20with%20Multi-Agent%20Reinforcement%20Learning/</loc>
     
     <lastmod>2025-03-03</lastmod>
@@ -495,6 +502,13 @@
   
   <url>
     <loc>http://yoursite-url/tags/Agent/</loc>
+    <lastmod>2025-03-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite-url/tags/dp/</loc>
     <lastmod>2025-03-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
