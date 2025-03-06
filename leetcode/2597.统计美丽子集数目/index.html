@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/archives/2/">
+  <link rel="canonical" href="http://yoursite-url/leetcode/2597.统计美丽子集数目/">
   <title>
     
-      Ride or Die
+      2597.统计美丽子集数目 - Ride or Die
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -291,29 +291,7 @@
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      English
-    </span>
-    <select id="lang-select" data-canonical="archives/2/index.html">
-      
-      
-      <option value="en"  selected >
-        English
-      </option>
-      
-      <option value="cn" >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -365,19 +343,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
     }
 
     header.intro-header {
-       /*config*/
-        background-image: var(--intro-header-background-image-url-home);
-        /* background-image: url('/img/header_img/newhome_bg.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/lml_bg.jpg'); */
       
     }
 
@@ -399,10 +377,50 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>Ride or Die</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">be yourself</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#leetcode" title="leetcode">leetcode</a>
+              
+              <a class="tag" href="/tags/#每日一题" title="每日一题">每日一题</a>
+              
+              <a class="tag" href="/tags/#中等" title="中等">中等</a>
+              
+              <a class="tag" href="/tags/#回溯" title="回溯">回溯</a>
+              
+              <a class="tag" href="/tags/#dp" title="dp">dp</a>
+              
+            </div>
+            <h1>2597.统计美丽子集数目</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 云起 on
+              2025-03-07
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">1</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">27</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -443,819 +461,267 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1 id="2597统计美丽子集数目"><a href="#2597-统计美丽子集数目" class="headerlink" title="2597.统计美丽子集数目"></a>2597.统计美丽子集数目</h1><p>地址：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/the-number-of-beautiful-subsets/description/">2597. 美丽子集的数目 - 力扣（LeetCode）</a></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>同余dp</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/paper/Agent/True Knowledge Comes from Practice Aligning LLMs with Embodied Environments via Reinforcement Learning/" data-toggle="tooltip" data-placement="top" title="True Knowledge Comes from Practice Aligning LLMs with Embodied Environments via Reinforcement Learning">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=2597.统计美丽子集数目&body=Hi,I found this website and thought you might like it http://yoursite-url/leetcode/2597.统计美丽子集数目/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Fri Mar 07 2025 07:33:08 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#2597%E7%BB%9F%E8%AE%A1%E7%BE%8E%E4%B8%BD%E5%AD%90%E9%9B%86%E6%95%B0%E7%9B%AE"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">2597.统计美丽子集数目</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">思路</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
     
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
+
+
+      <!-- Sidebar Container -->
+      <div class="
                 col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-      <!-- Main Content -->
-
-
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/leetcode/2353.设计食物评分系统/">
-    <h2 class="post-title">
-      2353.设计食物评分系统
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      2353.设计食物评分系统地址：2353. 设计食物评分系统
-思路分别维护两个hashmap，用set实现有序。
-注：set是升序
-代码123456789101112131415161718192021class FoodRatings &#123;public:       map&lt;string, pair&lt;string,int&gt;&gt; foodmap;    map&......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 云起 on
-    2025-02-28
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#leetcode" title="leetcode">leetcode</a>
-    
-    <a href="/tags/#每日一题" title="每日一题">每日一题</a>
-    
-    <a href="/tags/#中等" title="中等">中等</a>
-    
-    <a href="/tags/#设计" title="设计">设计</a>
-    
-    <a href="/tags/#hashmap" title="hashmap">hashmap</a>
-    
-    <a href="/tags/#懒删除堆" title="懒删除堆">懒删除堆</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/leetcode/2296.设计一个文本编辑器/">
-    <h2 class="post-title">
-      2296.设计一个文本编辑器
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      2296.设计一个文本编辑器地址：2296. 设计一个文本编辑器
-思路双端栈模拟光标左侧和右侧字符串
-代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748class TextEditor &#123;public:    vector&lt;char&gt; left......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 云起 on
-    2025-02-27
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#leetcode" title="leetcode">leetcode</a>
-    
-    <a href="/tags/#每日一题" title="每日一题">每日一题</a>
-    
-    <a href="/tags/#模拟" title="模拟">模拟</a>
-    
-    <a href="/tags/#设计" title="设计">设计</a>
-    
-    <a href="/tags/#困难" title="困难">困难</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/leetcode/1472.设计浏览器历史记录/">
-    <h2 class="post-title">
-      1472.设计浏览器历史记录
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      1472.设计浏览器历史记录地址：1472. 设计浏览器历史记录 - 力扣（LeetCode）
-思路维护历史数组，通过当前下标来模拟操作。
-代码中的resize可以帮助直接擦除当前访问之后的页面。
-代码12345678910111213141516171819202122232425262728293031323334class BrowserHistory &#123;public:   ......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 云起 on
-    2025-02-26
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#leetcode" title="leetcode">leetcode</a>
-    
-    <a href="/tags/#每日一题" title="每日一题">每日一题</a>
-    
-    <a href="/tags/#模拟" title="模拟">模拟</a>
-    
-    <a href="/tags/#中等" title="中等">中等</a>
-    
-    <a href="/tags/#设计" title="设计">设计</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/leetcode/2502.设计内存分配器/">
-    <h2 class="post-title">
-      2502.设计内存分配器
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      2502.设计内存分配器地址：2502. 设计内存分配器 - 力扣（LeetCode）
-题目描述给你一个整数 n ，表示下标从 0 开始的内存数组的大小。所有内存单元开始都是空闲的。
-请你设计一个具备以下功能的内存分配器：
-
-分配 一块大小为 size 的连续空闲内存单元并赋 id mID 。
-释放 给定 id mID 对应的所有内存单元。
-
-注意：
-
-多个块可以被分配到同一个 mID 。
-......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 云起 on
-    2025-02-25
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#leetcode" title="leetcode">leetcode</a>
-    
-    <a href="/tags/#每日一题" title="每日一题">每日一题</a>
-    
-    <a href="/tags/#模拟" title="模拟">模拟</a>
-    
-    <a href="/tags/#中等" title="中等">中等</a>
-    
-    <a href="/tags/#设计" title="设计">设计</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/paper/GAN/GenerativeAdversarialNetworks/">
-    <h2 class="post-title">
-      Generative Adversarial Networks
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      Generative Adversarial Networks[toc]
-AbstractGenerative model：研究训练示例的集合，并且学习他们的概率分布。
-Generative Adversarial Networks:从估计的概率分布中学习到更多的示例
-GAN基于博弈论，其他生成建模的方法大多基于优化。
-1.Introduction有监督学习需要人工标注大量数据。
-生成建模通......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 云起 on
-    2025-02-24
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#paper" title="paper">paper</a>
-    
-    <a href="/tags/#GAN" title="GAN">GAN</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/leetcode/1656.设计有序流/">
-    <h2 class="post-title">
-      1656.设计有序流
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      1656.设计有序流地址：1656. 设计有序流 - 力扣（LeetCode）
-题目描述有 n 个 (id, value) 对，其中 id 是 1 到 n 之间的一个整数，value 是一个字符串。不存在 id 相同的两个 (id, value) 对。
-设计一个流，以 任意 顺序获取 n 个 (id, value) 对，并在多次调用时 按 id 递增的顺序 返回一些值。
-实现 Ordered......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 云起 on
-    2025-02-24
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#leetcode" title="leetcode">leetcode</a>
-    
-    <a href="/tags/#每日一题" title="每日一题">每日一题</a>
-    
-    <a href="/tags/#模拟" title="模拟">模拟</a>
-    
-    <a href="/tags/#设计" title="设计">设计</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/leetcode/1206.跳表构建/">
-    <h2 class="post-title">
-      1206.跳表构建
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      1206.跳表构建地址：1206. 设计跳表 - 力扣（LeetCode）
-题目描述不使用任何库函数，设计一个 跳表 。
-跳表 是在 O(log(n)) 时间内完成增加、删除、搜索操作的数据结构。跳表相比于树堆与红黑树，其功能与性能相当，并且跳表的代码长度相较下更短，其设计思想与链表相似。
-例如，一个跳表包含 [30, 40, 50, 60, 70, 90] ，然后增加 80、45 到跳表中......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 云起 on
-    2025-02-23
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#数据结构" title="数据结构">数据结构</a>
-    
-    <a href="/tags/#leetcode" title="leetcode">leetcode</a>
-    
-    <a href="/tags/#每日一题" title="每日一题">每日一题</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/paper/AdversarialAttack/TowardsEvaluatingtheRobustnessofNeuralNetworks/">
-    <h2 class="post-title">
-      Towards Evaluating the Robustness of Neural Networks
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      Towards Evaluating the Robustness of Neural Networks[toc]
-文章信息2017
-由Nicholas Carlini和David Wagner撰写，来自加州大学伯克利分校。
-背景知识防御性蒸馏：一种通过训练过程来提高神经网络鲁棒性的方法，通过使用软标签（soft labels）来训练模型，从而减少对抗性样本的影响。
-
-原理：防御性蒸馏基于模......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 云起 on
-    2025-02-22
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#paper" title="paper">paper</a>
-    
-    <a href="/tags/#AdversarialAttack" title="AdversarialAttack">AdversarialAttack</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/leetcode/2506.统计相似字符串对的数目/">
-    <h2 class="post-title">
-      2506.统计相似字符串对的数目
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      2506 统计相似字符串对的数目地址：2506. 统计相似字符串对的数目 - 力扣（LeetCode）
-题目描述给你一个下标从 0 开始的字符串数组 words 。
-如果两个字符串由相同的字符组成，则认为这两个字符串 相似 。
-
-例如，&quot;abca&quot; 和 &quot;cba&quot; 相似，因为它们都由字符 &#39;a&#39;、&#39;b&#39;、&#39;c&#......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 云起 on
-    2025-02-22
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#leetcode" title="leetcode">leetcode</a>
-    
-    <a href="/tags/#位运算" title="位运算">位运算</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/工具/burpsuite/">
-    <h2 class="post-title">
-      post
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      模拟发包...
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 云起 on
-    2024-09-29
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#工具" title="工具">工具</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-
-  <!-- Pager -->
-  <ul class="pager">
-    
-    <li class="previous">
-      <a href="/">&larr; Older Posts</a>
-    </li>
-    
-    
-    <li class="next">
-      <a href="/archives/3/">Newer Posts &rarr;</a>
-    </li>
-    
-  </ul>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">VISITORS</a></h5>
-
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
-        <hr>
-    
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#leetcode" title="leetcode">leetcode</a>
+            
+            <a class="tag" href="/tags/#每日一题" title="每日一题">每日一题</a>
+            
+            <a class="tag" href="/tags/#中等" title="中等">中等</a>
+            
+            <a class="tag" href="/tags/#回溯" title="回溯">回溯</a>
+            
+            <a class="tag" href="/tags/#dp" title="dp">dp</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="2">Hexo-Theme-LiveMyLife</a>
-    
-    
-    
-    <a href="/tags/#go" title="go" rel="11">go</a>
-    
-    
-    
-    <a href="/tags/#blog" title="blog" rel="1">blog</a>
-    
-    
-    
-    <a href="/tags/#docker" title="docker" rel="1">docker</a>
-    
-    
-    
-    <a href="/tags/#数据结构" title="数据结构" rel="2">数据结构</a>
-    
-    
-    
-    <a href="/tags/#工具" title="工具" rel="3">工具</a>
-    
-    
-    
-    <a href="/tags/#每日一题 中等" title="每日一题 中等" rel="1">每日一题 中等</a>
-    
-    
-    
-    <a href="/tags/#ctf" title="ctf" rel="2">ctf</a>
-    
-    
-    
-    <a href="/tags/#web" title="web" rel="2">web</a>
-    
-    
-    
-    <a href="/tags/#攻防世界" title="攻防世界" rel="2">攻防世界</a>
-    
-    
-    
-    <a href="/tags/#leetcode" title="leetcode" rel="14">leetcode</a>
-    
-    
-    
-    <a href="/tags/#每日一题" title="每日一题" rel="13">每日一题</a>
-    
-    
-    
-    <a href="/tags/#模拟" title="模拟" rel="4">模拟</a>
-    
-    
-    
-    <a href="/tags/#paper" title="paper" rel="5">paper</a>
-    
-    
-    
-    <a href="/tags/#AdversarialAttack" title="AdversarialAttack" rel="1">AdversarialAttack</a>
-    
-    
-    
-    <a href="/tags/#位运算" title="位运算" rel="2">位运算</a>
-    
-    
-    
-    <a href="/tags/#GAN" title="GAN" rel="1">GAN</a>
-    
-    
-    
-    <a href="/tags/#中等" title="中等" rel="7">中等</a>
-    
-    
-    
-    <a href="/tags/#设计" title="设计" rel="5">设计</a>
-    
-    
-    
-    <a href="/tags/#困难" title="困难" rel="4">困难</a>
-    
-    
-    
-    <a href="/tags/#hashmap" title="hashmap" rel="1">hashmap</a>
-    
-    
-    
-    <a href="/tags/#懒删除堆" title="懒删除堆" rel="1">懒删除堆</a>
-    
-    
-    
-    <a href="/tags/#dfs" title="dfs" rel="1">dfs</a>
-    
-    
-    
-    <a href="/tags/#回溯" title="回溯" rel="2">回溯</a>
-    
-    
-    
-    <a href="/tags/#每日不会一题" title="每日不会一题" rel="3">每日不会一题</a>
-    
-    
-    
-    <a href="/tags/#DP" title="DP" rel="2">DP</a>
-    
-    
-    
-    <a href="/tags/#记忆化搜索" title="记忆化搜索" rel="1">记忆化搜索</a>
-    
-    
-    
-    <a href="/tags/#Agent" title="Agent" rel="3">Agent</a>
-    
-    
-    
-    <a href="/tags/#dp" title="dp" rel="2">dp</a>
-    
-    
-    
-    <a href="/tags/#WM" title="WM" rel="2">WM</a>
-    
-    
-    
-    <a href="/tags/#贪心" title="贪心" rel="1">贪心</a>
-    
-    
-    
-    <a href="/tags/#前缀和" title="前缀和" rel="1">前缀和</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/clound.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>till we die</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/LiyaMio">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-      <li>
-        <a target="_blank" href="https://twitter.com/LiyaMio">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../leetcode/2597.%E7%BB%9F%E8%AE%A1%E7%BE%8E%E4%B8%BD%E5%AD%90%E9%9B%86%E6%95%B0%E7%9B%AE/">
-      <li>2597.统计美丽子集数目</li>
-    </a>
-    
-    <a href="../../paper/Agent/True%20Knowledge%20Comes%20from%20Practice%20Aligning%20LLMs%20with%20Embodied%20Environments%20via%20Reinforcement%20Learning/">
-      <li>True Knowledge Comes from Practice Aligning LLMs with Embodied Environments via Reinforcement Learning</li>
-    </a>
-    
-    <a href="../../leetcode/2588.%E7%BB%9F%E8%AE%A1%E7%BE%8E%E4%B8%BD%E5%AD%90%E6%95%B0%E7%BB%84%E6%95%B0%E7%9B%AE/">
-      <li>2588.统计美丽子数组数目</li>
-    </a>
-    
-    <a href="../../leetcode/1328.%E7%A0%B4%E5%9D%8F%E5%9B%9E%E6%96%87%E4%B8%B2/">
-      <li>1328.破坏回文串</li>
-    </a>
-    
-    <a href="../../paper/Agent/Language%20Models%20Meet%20World%20Models%20Embodied%20Experiences%20Enhance%20Language%20Models/">
-      <li>Language Models Meet World Models:  Embodied Experiences Enhance Language Models</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://v-vincen.life/" target="_blank">V_Vincen</a></li>
-  
-  <li><a href="https://syvy.top/" target="_blank">SYVY</a></li>
-  
-</ul>
-
-
+        
         <hr>
-    
-        <!-- Archives -->
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2025/03/">March 2025</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2025/02/">February 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2024/09/">September 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2023/02/">February 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2022/11/">November 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2022/10/">October 2022</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2022/09/">September 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">April 2020</a><span class="archive-list-count">2</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Hexo-Theme-LiveMyLife">
-      <li>Hexo-Theme-LiveMyLife</li>
-    </a>
-    
-    <a href="/categories/#go">
-      <li>go</li>
-    </a>
-    
-    <a href="/categories/#blog">
-      <li>blog</li>
-    </a>
-    
-    <a href="/categories/#docker">
-      <li>docker</li>
-    </a>
-    
-    <a href="/categories/#数据结构">
-      <li>数据结构</li>
-    </a>
-    
-    <a href="/categories/#工具">
-      <li>工具</li>
-    </a>
-    
-    <a href="/categories/#每日一题">
-      <li>每日一题</li>
-    </a>
-    
-    <a href="/categories/#ctf">
-      <li>ctf</li>
-    </a>
-    
-    <a href="/categories/#web">
-      <li>web</li>
-    </a>
-    
-    <a href="/categories/#攻防世界">
-      <li>攻防世界</li>
-    </a>
-    
-    <a href="/categories/#paper/AdversarialAttack">
-      <li>paper/AdversarialAttack</li>
-    </a>
-    
-    <a href="/categories/#leetcode">
-      <li>leetcode</li>
-    </a>
-    
-    <a href="/categories/#paper">
-      <li>paper</li>
-    </a>
-    
-    <a href="/categories/#-leetcode">
-      <li>-leetcode</li>
-    </a>
-    
-    <a href="/categories/#/leetcode">
-      <li>/leetcode</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="https://syvy.top/" target="_blank">SYVY</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->

@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite-url/leetcode/2597.%E7%BB%9F%E8%AE%A1%E7%BE%8E%E4%B8%BD%E5%AD%90%E9%9B%86%E6%95%B0%E7%9B%AE/</loc>
+    <lastmod>2025-03-06</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite-url/paper/Agent/True%20Knowledge%20Comes%20from%20Practice%20Aligning%20LLMs%20with%20Embodied%20Environments%20via%20Reinforcement%20Learning/</loc>
+    <lastmod>2025-03-06</lastmod>
+  </url>
+  <url>
     <loc>http://yoursite-url/leetcode/2588.%E7%BB%9F%E8%AE%A1%E7%BE%8E%E4%B8%BD%E5%AD%90%E6%95%B0%E7%BB%84%E6%95%B0%E7%9B%AE/</loc>
     <lastmod>2025-03-05</lastmod>
   </url>
