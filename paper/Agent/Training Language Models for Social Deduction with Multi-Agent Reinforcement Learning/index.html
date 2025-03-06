@@ -505,7 +505,7 @@
 </ul>
 <h2 id="创新点"><a href="#创新点" class="headerlink" title="创新点"></a>创新点</h2><h3 id="1-现有方法的缺陷"><a href="#1-现有方法的缺陷" class="headerlink" title="1. 现有方法的缺陷"></a>1. 现有方法的缺陷</h3><ul>
 <li><strong>缺陷1：依赖人类示范数据</strong><br>传统多智能体强化学习（MARL）方法（如Cicero [8]）需大量人类对话数据训练，难以泛化到新任务（如《Among Us》），且收集成本高。</li>
-<li><strong>缺陷2：稀疏奖励信号</strong><br>仅依赖最终胜负的奖励（+1&#x2F;-1）无法指导复杂的沟通行为（如“何时提供证据”“如何反驳”），导致策略收敛困难。</li>
+<li><strong>缺陷2：稀疏奖励信号</strong><br>仅依赖最终胜负的奖励（+1/-1）无法指导复杂的沟通行为（如“何时提供证据”“如何反驳”），导致策略收敛困难。</li>
 <li><strong>缺陷3：听与说分离优化</strong><br>现有工作（如RLHF [28]）侧重单方面优化“说”的能力（生成合理文本），但忽略“听”的推理能力（解析他人意图），导致沟通效率低。</li>
 </ul>
 <h3 id="2听的优化内鬼身份预测imposter-prediction"><a href="#2-听的优化——内鬼身份预测（Imposter-Prediction）" class="headerlink" title="2.听的优化——内鬼身份预测（Imposter Prediction）"></a>2.听的优化——内鬼身份预测（Imposter Prediction）</h3><p><strong>目标</strong>：通过监督学习增强模型从对话中提取关键信息的能力。</p>
@@ -513,9 +513,9 @@
 <ul>
 <li><strong>监督信号定义</strong></li>
 </ul>
-<p>$$<br>L_L (π,τ_t^L)&#x3D;−logπ(q∣τ_t^L)<br>$$</p>
-<ul>
-<li>$$τ_t^L$$：智能体的动作-观测历史（含对话记录）。</li>
+<script type="math/tex; mode=display">
+L_L (π,τ_t^L)=−logπ(q∣τ_t^L)</script><ul>
+<li><script type="math/tex">τ_t^L</script>：智能体的动作-观测历史（含对话记录）。</li>
 <li>q：正确投票内鬼的动作（监督标签）。</li>
 <li><strong>物理意义</strong>：强制模型根据历史信息（包括对话）最大化正确投票概率，类似分类任务。</li>
 </ul>
@@ -529,21 +529,19 @@
 <ul>
 <li><strong>信念变化奖励</strong></li>
 </ul>
-<p>$$<br>B_t &#x3D;\sum_{k∈C_t} π^k (q∣τ_t^k),r_i^s&#x3D;B_t−B_{t^′}<br>$$</p>
-<ul>
-<li><p>$$B_t$$：当前时刻所有存活船员对内鬼的置信度总和。</p>
+<script type="math/tex; mode=display">
+B_t =\sum_{k∈C_t} π^k (q∣τ_t^k),r_i^s=B_t−B_{t^′}</script><ul>
+<li><p><script type="math/tex">B_t</script>：当前时刻所有存活船员对内鬼的置信度总和。</p>
 </li>
-<li><p>$$r_i^s$$：说话者i的奖励&#x3D;消息发布后置信度增量。</p>
+<li><p><script type="math/tex">r_i^s</script>：说话者i的奖励=消息发布后置信度增量。</p>
 </li>
-<li><p><strong>物理意义</strong>：消息越能提升队友的准确判断，奖励越高。</p>
-</li>
+<li><strong>物理意义</strong>：消息越能提升队友的准确判断，奖励越高。</li>
 </ul>
 <p><strong>训练目标</strong></p>
-<p>$$L_{RL+L+S_(π)}&#x3D;L_{RL}+L(π)−E[λ_Sγ^tr_i^s]$$</p>
-<ul>
-<li>综合强化学习损失（$$L_{RL}$$）、听损失（$$L_L$$）、说奖励（$$r_i^s$$）。</li>
-<li>$$λ_S$$：奖励系数，控制说话优化的权重。</li>
-<li>$$γ^t$$:折扣银子</li>
+<script type="math/tex; mode=display">L_{RL+L+S_(π)}=L_{RL}+L(π)−E[λ_Sγ^tr_i^s]</script><ul>
+<li>综合强化学习损失（<script type="math/tex">L_{RL}</script>）、听损失（<script type="math/tex">L_L</script>）、说奖励（<script type="math/tex">r_i^s</script>）。</li>
+<li><script type="math/tex">λ_S</script>：奖励系数，控制说话优化的权重。</li>
+<li><script type="math/tex">γ^t</script>:折扣银子</li>
 </ul>
 <p><strong>优势</strong>：</p>
 <ul>
@@ -554,9 +552,8 @@
 <p><strong>公式与实现</strong>：</p>
 <ul>
 <li><p><strong>内鬼训练目标</strong>（公式8）：</p>
-<p>$$L_{imp}(π)&#x3D;L_{RL}(π)+E[λ_Sγ^tr_i^s]$$</p>
-<ul>
-<li>内鬼的说话奖励$$r_i^s$$符号与船员相反（最大化误导船员）。</li>
+<script type="math/tex; mode=display">L_{imp}(π)=L_{RL}(π)+E[λ_Sγ^tr_i^s]</script><ul>
+<li>内鬼的说话奖励<script type="math/tex">r_i^s</script>符号与船员相反（最大化误导船员）。</li>
 </ul>
 </li>
 </ul>
@@ -570,37 +567,40 @@
 <li><strong>策略多样性</strong>：内鬼学会反指控（如“玩家Red才是内鬼！”），船员学会识别欺骗。</li>
 <li><strong>鲁棒性验证</strong>：胜率在对抗训练后稳定（51%-56%），表明无过拟合。</li>
 </ul>
-<h3 id="5方法对比"><a href="#5-方法对比" class="headerlink" title="5.方法对比"></a>5.方法对比</h3><table>
+<h3 id="5方法对比"><a href="#5-方法对比" class="headerlink" title="5.方法对比"></a>5.方法对比</h3><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="left"><strong>维度</strong></th>
-<th align="left"><strong>传统MARL（如PPO）</strong></th>
-<th align="left"><strong>本文方法（RL+L+S）</strong></th>
+<th style="text-align:left"><strong>维度</strong></th>
+<th style="text-align:left"><strong>传统MARL（如PPO）</strong></th>
+<th style="text-align:left"><strong>本文方法（RL+L+S）</strong></th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left"><strong>奖励信号</strong></td>
-<td align="left">稀疏（仅胜负）</td>
-<td align="left">密集（听+说+胜负）</td>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>奖励信号</strong></td>
+<td style="text-align:left">稀疏（仅胜负）</td>
+<td style="text-align:left">密集（听+说+胜负）</td>
 </tr>
 <tr>
-<td align="left"><strong>数据依赖</strong></td>
-<td align="left">需人类示范</td>
-<td align="left">完全自监督</td>
+<td style="text-align:left"><strong>数据依赖</strong></td>
+<td style="text-align:left">需人类示范</td>
+<td style="text-align:left">完全自监督</td>
 </tr>
 <tr>
-<td align="left"><strong>沟通能力</strong></td>
-<td align="left">生成文本质量低、无策略性</td>
-<td align="left">生成指控、证据、反欺骗等策略</td>
+<td style="text-align:left"><strong>沟通能力</strong></td>
+<td style="text-align:left">生成文本质量低、无策略性</td>
+<td style="text-align:left">生成指控、证据、反欺骗等策略</td>
 </tr>
 <tr>
-<td align="left"><strong>训练稳定性</strong></td>
-<td align="left">易陷入局部最优（如沉默）</td>
-<td align="left">通过冻结策略与KL约束保持稳定</td>
+<td style="text-align:left"><strong>训练稳定性</strong></td>
+<td style="text-align:left">易陷入局部最优（如沉默）</td>
+<td style="text-align:left">通过冻结策略与KL约束保持稳定</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="6核心公式"><a href="#6-核心公式" class="headerlink" title="6.核心公式"></a>6.核心公式</h3><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">        Listen Loss (L_L)  </span><br><span class="line">          ↓  </span><br><span class="line">RL Loss (L_RL) → Combined Loss (L_RL+L+S)  </span><br><span class="line">          ↑  </span><br><span class="line">  <span class="attribute">Speak</span> Reward (r_i^s)  </span><br></pre></td></tr></table></figure>
-
 <ul>
 <li><strong>听与说的协同</strong>：听的监督信号提升信念预测能力，说的奖励机制利用该能力生成有效消息。</li>
 <li><strong>对抗训练闭环</strong>：船员与内鬼通过动态博弈优化，形成复杂策略平衡。</li>
@@ -617,7 +617,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><h3 id="1基础模型性能对比"><a href="#1-基础模型性能对比" class="headerlink" title="1.基础模型性能对比"></a>1.基础模型性能对比</h3><p><img src="/paper/Agent/Training%20Language%20Models%20for%20Social%20Deduction%20with%20Multi-Agent%20Reinforcement%20Learning/T1.png"></p>
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><h3 id="1基础模型性能对比"><a href="#1-基础模型性能对比" class="headerlink" title="1.基础模型性能对比"></a>1.基础模型性能对比</h3><p><img src="/paper/Agent/Training%20Language%20Models%20for%20Social%20Deduction%20with%20Multi-Agent%20Reinforcement%20Learning/T1.png" alt></p>
 <ul>
 <li>比较不同参数规模的RWKV模型在任务中的表现，包括预测准确率（Accuracy）、环境观测困惑度（PPL-World）和语言模型困惑度（PPL-LM）。</li>
 <li><strong>关键数据</strong>：<ul>
@@ -631,7 +631,7 @@
 <li>选择1.5B参数模型作为基础，因其在性能与计算成本间达到最优权衡。</li>
 <li>模型规模并非越大越好，任务特定优化（如听与说的联合训练）更为关键。</li>
 </ul>
-<h3 id="2不同训练方法的胜率对比"><a href="#2-不同训练方法的胜率对比" class="headerlink" title="2.不同训练方法的胜率对比"></a>2.不同训练方法的胜率对比</h3><p><img src="/paper/Agent/Training%20Language%20Models%20for%20Social%20Deduction%20with%20Multi-Agent%20Reinforcement%20Learning/F3.png"></p>
+<h3 id="2不同训练方法的胜率对比"><a href="#2-不同训练方法的胜率对比" class="headerlink" title="2.不同训练方法的胜率对比"></a>2.不同训练方法的胜率对比</h3><p><img src="/paper/Agent/Training%20Language%20Models%20for%20Social%20Deduction%20with%20Multi-Agent%20Reinforcement%20Learning/F3.png" alt></p>
 <ul>
 <li>在基础环境（2×2网格，4船员1内鬼）中，对比以下方法的胜率：<ul>
 <li><strong>Base Model</strong>（未训练RWKV）：胜率&lt;20%。</li>
@@ -646,12 +646,12 @@
 <li><strong>听与说的协同效应</strong>：RL+L+S胜率是纯RL的<strong>2倍</strong>，说明联合优化显著提升沟通效率。</li>
 <li><strong>仅听优化的局限性</strong>：RL+L虽优于RL，但缺乏主动引导对话的能力，胜率仍有限。</li>
 </ul>
-<h3 id="3环境变化的鲁棒性测试图4"><a href="#3-环境变化的鲁棒性测试（图4）" class="headerlink" title="3.环境变化的鲁棒性测试（图4）"></a>3.环境变化的鲁棒性测试（图4）</h3><p><img src="/paper/Agent/Training%20Language%20Models%20for%20Social%20Deduction%20with%20Multi-Agent%20Reinforcement%20Learning/F4.png"></p>
+<h3 id="3环境变化的鲁棒性测试图4"><a href="#3-环境变化的鲁棒性测试（图4）" class="headerlink" title="3.环境变化的鲁棒性测试（图4）"></a>3.环境变化的鲁棒性测试（图4）</h3><p><img src="/paper/Agent/Training%20Language%20Models%20for%20Social%20Deduction%20with%20Multi-Agent%20Reinforcement%20Learning/F4.png" alt></p>
 <p><strong>图表内容</strong>：</p>
 <ul>
 <li>测试模型在以下环境变化中的胜率：<ul>
 <li><strong>地图尺寸</strong>（1×3, 2×2, 2×3网格）。</li>
-<li><strong>任务数量</strong>（3&#x2F;4&#x2F;5任务）。</li>
+<li><strong>任务数量</strong>（3/4/5任务）。</li>
 <li><strong>船员数量</strong>（4-6人）。</li>
 </ul>
 </li>
@@ -666,7 +666,7 @@
 <ul>
 <li>方法在未训练的环境配置中表现稳定，验证了泛化能力。</li>
 </ul>
-<h3 id="4-对抗训练的稳健性验证图5"><a href="#4-对抗训练的稳健性验证（图5）" class="headerlink" title="4. 对抗训练的稳健性验证（图5）"></a>4. 对抗训练的稳健性验证（图5）</h3><p><img src="/paper/Agent/Training%20Language%20Models%20for%20Social%20Deduction%20with%20Multi-Agent%20Reinforcement%20Learning/F5.png"></p>
+<h3 id="4-对抗训练的稳健性验证图5"><a href="#4-对抗训练的稳健性验证（图5）" class="headerlink" title="4. 对抗训练的稳健性验证（图5）"></a>4. 对抗训练的稳健性验证（图5）</h3><p><img src="/paper/Agent/Training%20Language%20Models%20for%20Social%20Deduction%20with%20Multi-Agent%20Reinforcement%20Learning/F5.png" alt></p>
 <p><strong>图表内容</strong>：</p>
 <ul>
 <li>展示自我对抗训练（Self-Play）迭代中，船员胜率的变化：<ul>
@@ -696,43 +696,45 @@
 </ul>
 <h3 id="6-对话样本分析附录c"><a href="#6-对话样本分析（附录C）" class="headerlink" title="6. 对话样本分析（附录C）"></a>6. 对话样本分析（附录C）</h3><p><strong>示例1</strong>：船员通过环境证据指控内鬼</p>
 <figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">Player</span> <span class="built_in">Yellow</span><span class="operator">:</span> <span class="string">&quot;Player Green在房间(0,1)离开尸体！&quot;</span>  </span><br><span class="line"><span class="variable">Player</span> <span class="built_in">Green</span>（内鬼）<span class="operator">:</span> <span class="string">&quot;我什么都没做！&quot;</span>  </span><br><span class="line">投票结果：<span class="variable">Player</span> <span class="built_in">Green</span>被驱逐，船员胜利。  </span><br></pre></td></tr></table></figure>
-
 <p><strong>示例2</strong>：内鬼反指控成功</p>
 <figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">Player</span> <span class="built_in">Red</span>（内鬼）<span class="operator">:</span> <span class="string">&quot;Player Blue才是内鬼！&quot;</span>  </span><br><span class="line"><span class="variable">Player</span> <span class="built_in">Blue</span><span class="operator">:</span> <span class="string">&quot;我在做任务，有记录！&quot;</span>  </span><br><span class="line">投票结果：<span class="variable">Player</span> <span class="built_in">Blue</span>被错误驱逐，内鬼胜利。  </span><br></pre></td></tr></table></figure>
-
 <p><strong>结论</strong>：</p>
 <ul>
 <li>模型能生成<strong>类人策略</strong>（证据引用、反指控、谎言）。</li>
 <li>对话质量直接影响游戏结果，验证了方法的有效性。</li>
 </ul>
-<h3 id="7总结"><a href="#7-总结-1" class="headerlink" title="7.总结"></a>7.总结</h3><table>
+<h3 id="7总结"><a href="#7-总结-1" class="headerlink" title="7.总结"></a>7.总结</h3><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="left"><strong>实验维度</strong></th>
-<th align="left"><strong>核心结论</strong></th>
+<th style="text-align:left"><strong>实验维度</strong></th>
+<th style="text-align:left"><strong>核心结论</strong></th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">基础模型选择</td>
-<td align="left">1.5B RWKV在效率与性能间最优</td>
+<tbody>
+<tr>
+<td style="text-align:left">基础模型选择</td>
+<td style="text-align:left">1.5B RWKV在效率与性能间最优</td>
 </tr>
 <tr>
-<td align="left">听与说联合优化</td>
-<td align="left">RL+L+S胜率是纯RL的2倍</td>
+<td style="text-align:left">听与说联合优化</td>
+<td style="text-align:left">RL+L+S胜率是纯RL的2倍</td>
 </tr>
 <tr>
-<td align="left">环境鲁棒性</td>
-<td align="left">胜率在未训练配置中波动&lt;10%</td>
+<td style="text-align:left">环境鲁棒性</td>
+<td style="text-align:left">胜率在未训练配置中波动&lt;10%</td>
 </tr>
 <tr>
-<td align="left">对抗训练</td>
-<td align="left">策略收敛至稳定纳什均衡（胜率51%-56%）</td>
+<td style="text-align:left">对抗训练</td>
+<td style="text-align:left">策略收敛至稳定纳什均衡（胜率51%-56%）</td>
 </tr>
 <tr>
-<td align="left">失败案例解决</td>
-<td align="left">通过冻结策略与KL约束保持自然语言生成</td>
+<td style="text-align:left">失败案例解决</td>
+<td style="text-align:left">通过冻结策略与KL约束保持自然语言生成</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><strong>图表联动启示</strong>：</p>
 <ul>
 <li><strong>图3+图5</strong>：听与说的联合优化（图3高胜率）需对抗训练（图5稳定性）支持，避免过拟合。</li>
@@ -780,8 +782,7 @@
 <li><strong>商业谈判模拟</strong>：构建虚拟谈判对手，帮助人类练习应对策略（如价格协商、合同条款博弈）。</li>
 </ul>
 </li>
-<li><p><strong>教育与培训</strong></p>
-<ul>
+<li><strong>教育与培训</strong><ul>
 <li><strong>社交技能训练</strong>：为自闭症患者或社交焦虑者提供虚拟社交场景，通过智能体互动练习沟通技巧。</li>
 <li><strong>团队协作评估</strong>：分析多人协作任务中的沟通效率，为企业团队建设提供数据支持。</li>
 </ul>
