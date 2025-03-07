@@ -399,11 +399,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">2</span> Minutes
+              Estimated Reading Time <span class="post-count">7</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">552</span> In Total
+              Words <span class="post-count">2k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -466,12 +466,7 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p>[toc]</p>
-<h1 id="discussion-and-conclusion"><a href="#DISCUSSION-AND-CONCLUSION" class="headerlink" title="DISCUSSION AND CONCLUSION"></a>DISCUSSION AND CONCLUSION</h1><p>title: “True Knowledge Comes from Practice Aligning LLMs<br>with Embodied Environments via Reinforcement Learning”<br>catalog: true<br>date: 2025-03-06 08:50:48<br>subtitle:<br>header-img: &#x2F;img&#x2F;header_img&#x2F;lml_bg.jpg<br>tags: </p>
-<ul>
-<li>paper</li>
-<li>Agent</li>
-<li>WM<br>categories: paper</li>
-</ul>
+<h1 id="discussion-and-conclusion">DISCUSSION AND CONCLUSION</h1>
 <p>TWOSOME:</p>
 <ul>
 <li>通过强化学习将LLMs与环境对齐，来解决决策任务，并i企鹅不需要任何准备的数据集或环境的先验知识，同时不会显著损失LLM的原始能力。</li>
@@ -480,8 +475,10 @@
 <li>泛化能力强。</li>
 <li>计算量比较大，批处理规模较小。</li>
 </ul>
-<h1 id="introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><ul>
-<li>大模型在简单决策任务上会失败，原因：<ul>
+<h1 id="introduction">Introduction</h1>
+<ul>
+<li>大模型在简单决策任务上会失败，原因：
+<ul>
 <li>LLM会产生无效动作。</li>
 <li>LLM无法准确的知道环境的动态变化。</li>
 </ul>
@@ -491,24 +488,176 @@
 <li>最近策略优化（PPO）和环境奖励来优化LLM代理，消除动态转换导致的失调。</li>
 <li>提出了基于代词数量和作用词数量的代词归一化和单词归一化来纠正较长的行动往往具有较低的联合概率，从而导致行动分布的不合理不平衡。</li>
 </ul>
-<h1 id="relatedwork"><a href="#RelatedWork" class="headerlink" title="RelatedWork"></a>RelatedWork</h1><h2 id="embodied-agents-with-llms"><a href="#Embodied-Agents-with-LLMs" class="headerlink" title="Embodied Agents with LLMs"></a>Embodied Agents with LLMs</h2><ul>
+<h1 id="relatedwork">RelatedWork</h1>
+<h2 id="embodied-agents-with-llms">Embodied Agents with LLMs</h2>
+<ul>
 <li>过于依赖大模型的故有能力，很难应用到规模较小的模型上。</li>
 <li>专注于玩具环境中的简单原始动作，没有丰富的语义，导致LLM的功能利用不足，并且未能观察到即时设计的影响，并解决动作空间上的不平衡。</li>
 </ul>
-<h2 id="finetuning-llms"><a href="#Finetuning-LLMs" class="headerlink" title="Finetuning LLMs"></a>Finetuning LLMs</h2><ul>
+<h2 id="finetuning-llms">Finetuning LLMs</h2>
+<ul>
 <li>使用监督学习，通过在环境中随机采样来微调具有预先收集的具体经验的LLM，而不是从头开始执行决策任务。</li>
 </ul>
-<h1 id="preliminaries"><a href="#Preliminaries" class="headerlink" title="Preliminaries"></a>Preliminaries</h1><ul>
-<li><p>LLMs：使用无监督学习从文本数据中学习。</p>
+<h1 id="preliminaries">Preliminaries</h1>
+<ul>
+<li>
+<p>LLMs：使用无监督学习从文本数据中学习。</p>
 <ul>
 <li>将可变长度符号序列的联合概率优化为条件概率的乘积。</li>
-<li>$$P (x) &#x3D;  \prod^n  <em>{i&#x3D;1} P (s_i|s_1, …, s</em>{i−1})$$</li>
+<li>$$P (x) =  \prod^n  <em>{i=1} P (s_i|s_1, …, s</em>{i−1})$$</li>
 </ul>
 </li>
-<li><p>LoRA：将可训练秩分解矩阵合并到LLM的每个层中的参数和计算高效微调方法。</p>
+<li>
+<p>LoRA：将可训练秩分解矩阵合并到LLM的每个层中的参数和计算高效微调方法。</p>
 </li>
-<li></li>
+<li>
+<p>RL：将决策问题表示为马尔可夫决策过程（MDP）。MDP由元组（S，A，T，R，γ）定义，其中S是状态空间，A是动作空间，T是状态转移概率，R是奖励函数，γ是折扣因子。智能体据观察结果选择行动，旨在最大化预期折扣累积奖励。</p>
+</li>
+<li>
+<p>PPO：近端策略优化。通过限制策略更新幅度，使得每一步训练都不会偏离当前策略太多，同时高效利用采样数据。</p>
+</li>
+<li>
+<p>Aligning LLMs with Embodied Environments：具体化环境中将LLM部署为交互式代理，其中LLM接收文本观察并生成在环境中执行的文本操作。</p>
+</li>
 </ul>
+<h1 id="twosome">TWOSOME</h1>
+<h2 id="valid-policy-generation">Valid Policy Generation</h2>
+<ul>
+<li><strong>行动提示（Action Prompt）</strong>：将每个行动与唯一语义提示关联，LLMs生成行动的概率，而非直接生成行动。</li>
+<li><strong>策略形成</strong>：通过LLMs的词元概率计算行动的联合概率，并归一化为有效行为策略。</li>
+</ul>
+<p><strong>公式（1）</strong>：计算行动的联合概率</p>
+<p>![](True Knowledge Comes from Practice Aligning LLMs with Embodied Environments via Reinforcement Learning/公式（1）.png)</p>
+<p><strong>解释：</strong></p>
+<ul>
+<li>$a_k$ 是一个行动，由一系列词元（tokens）组成，即$a_k$ =$${w_1^k,w_2^k,…,w_{N_k}^k}$$。</li>
+<li><em>s</em> 是当前的观察状态。</li>
+<li>$$P_{token}(a_k∣s)$$ 是行动 $a_k$ 在状态 <em>s</em> 下的联合概率。</li>
+<li>$$P(w_i^k∣s,w_1^k,…,w_{i−1}^k)$$ 是在状态 <em>s</em> 和已生成词元 $$w_1^k,…,w_{i−1}^k$$  的条件下，生成词元 $$w_i^k$$ 的概率。</li>
+<li>假设行动 $$a_k$$ 是 “pick up the tomato”，由词元 {pick, up, the, tomato} 组成，那么联合概率为：</li>
+</ul>
+<p><strong>公式（2）</strong>：归一化行动概率</p>
+<p>![](True Knowledge Comes from Practice Aligning LLMs with Embodied Environments via Reinforcement Learning/公式（2）.png)</p>
+<p><strong>解释：</strong></p>
+<ul>
+<li>$$P(a_k∣s)$$ 是行动 $$a_k$$ 在状态 <em>s</em> 下的归一化概率。</li>
+<li>$$exp(log P_{token}(a_k∣s))$$ 是联合概率$$P_{token}(a_k∣s))$$的指数形式。</li>
+<li>分母是所有可能行动的指数形式联合概率之和，用于归一化。</li>
+</ul>
+<p><strong>示例：</strong> 假设在状态 <em>s</em> 下，有两个行动 $$a_1$$ 和 $$a_2$$，它们的联合概率分别为 $$P_{token}(a_1∣s)=0.05$$ 和 $$P_{token}(a_2∣s)=0.15$$，那么归一化后的概率为：</p>
+<p>$$P(a_1∣s)=\frac{exp(log0.05)}{exp(log0.05)+exp(log0.15)}=\frac{0.05}{0.05+0.15}=0.25$$</p>
+<p>$$P(a_2∣s)=\frac{exp(log0.15)}{exp(log0.05)+exp(log0.15)}=\frac{0.15}{0.05+0.15}=0.75$$</p>
+<p>通过归一化，确保了所有行动的概率之和为1，便于策略的选择和比较。</p>
+<h2 id="action-prompt-normalization">ACTION PROMPT NORMALIZATION</h2>
+<ul>
+<li>
+<p><strong>公式（1）存在问题</strong>：行动提示（action prompts）的长度差异会导致联合概率（joint probabilities）计算中的不平衡问题。具体来说，较长的行动提示倾向于具有较低的联合概率，即使它们在实际环境中是更合理的行动。这种不平衡会影响策略的稳定性和训练效率</p>
+</li>
+<li>
+<p>解决：</p>
+<ul>
+<li>
+<p>Token  Normalization（词元归一化）</p>
+<ul>
+<li>通过将每个行动提示的联合概率除以该行动提示的词元数（tokens）来调整概率分布。具体公式如下：![](True Knowledge Comes from Practice Aligning LLMs with Embodied Environments via Reinforcement Learning/公式（3）.png)
+<ul>
+<li>$$P_{tn}(a_k∣s)$$ 是归一化后的概率。</li>
+<li>$$P_{token}(a_k∣s)$$ 是原始的联合概率。</li>
+<li>$$N_k$$ 是行动提示 $$a_k$$ 的词元数。</li>
+<li>通过词元归一化，较长的行动提示的联合概率会被调整到与较短的行动提示相同的量级，从而避免因为词元数量不同而导致的不平衡。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Word Normalization（词归一化）</p>
+<ul>
+<li>
+<p>词归一化通过将每个行动提示的联合概率除以该行动提示的词数（words）来调整概率分布。![](True Knowledge Comes from Practice Aligning LLMs with Embodied Environments via Reinforcement Learning/公式（4）.png)</p>
+</li>
+<li>
+<p>$$P_{tn}(a_k∣s)$$ 是归一化后的概率。</p>
+</li>
+<li>
+<p>$$P_{token}(a_k∣s)$$ 是原始的联合概率。</p>
+</li>
+<li>
+<p>$$W_k$$ 是行动提示 $$a_k$$ 的词数。</p>
+</li>
+<li>
+<p>与词元归一化类似，词归一化也通过调整概率分布来避免因为词数不同而导致的不平衡。词归一化更适合处理那些由多个词组成的行动提示，因为它考虑了词的实际数量而不是词元数量。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Comparing the Two Normalizations：</p>
+</li>
+<li>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>对比维度</strong></th>
+<th style="text-align:left"><strong>词元归一化（Token Normalization）</strong></th>
+<th style="text-align:left"><strong>词归一化（Word Normalization）</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>定义</strong></td>
+<td style="text-align:left">基于词元数量的归一化</td>
+<td style="text-align:left">基于词数量的归一化</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>优点</strong></td>
+<td style="text-align:left">简单直接，有效调整</td>
+<td style="text-align:left">更符合语言习惯，更好平衡</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>缺点</strong></td>
+<td style="text-align:left">过度归一化，对词元数量敏感</td>
+<td style="text-align:left">计算稍复杂，对词数敏感</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>实验表现</strong></td>
+<td style="text-align:left">在某些任务中表现较好，但收敛速度可能较慢</td>
+<td style="text-align:left">在大多数任务中表现更好，收敛更快</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="parameter-efficient-ppo-finetuning">Parameter-Efficient PPO Finetuning</h2>
+<h3 id="architecture">Architecture</h3>
+<p>![](True Knowledge Comes from Practice Aligning LLMs with Embodied Environments via Reinforcement Learning/F3.png)</p>
+<ul>
+<li><strong>冻结的LLaMA-7B模型</strong>：
+<ul>
+<li>LLaMA-7B模型是整个架构的基础，其参数在训练过程中保持冻结，不进行更新。</li>
+<li>这部分模型负责生成文本表示，为后续的策略优化提供基础。</li>
+</ul>
+</li>
+<li><strong>额外的MLP层</strong>：
+<ul>
+<li>在冻结的LLaMA-7B模型的最后一个Transformer块之后，添加了一个额外的多层感知器（MLP）网络，用作批评家（critic）。</li>
+<li>批评家的MLP网络的输入是观察提示的最后一个词元，输出是对当前观察提示的估值（value）。</li>
+</ul>
+</li>
+<li><strong>LoRA适配器</strong>：
+<ul>
+<li>在冻结的LLaMA-7B模型中，添加了低秩适配器（LoRA）进行参数化微调。</li>
+<li>LoRA通过引入低秩矩阵来近似参数更新，从而减少需要优化的参数数量，提高训练效率。</li>
+</ul>
+</li>
+<li><strong>动作和价值输出</strong>：
+<ul>
+<li><strong>动作输出</strong>：冻结的LLaMA-7B模型与LoRA适配器结合，生成动作概率。</li>
+<li><strong>价值输出</strong>：额外的MLP网络生成当前状态的价值估计。</li>
+</ul>
+</li>
+</ul>
+<h3 id="training">Training</h3>
 
 
         <hr>
@@ -658,7 +807,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#discussion-and-conclusion"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">DISCUSSION AND CONCLUSION</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#introduction"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Introduction</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#relatedwork"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">RelatedWork</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#embodied-agents-with-llms"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">Embodied Agents with LLMs</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#finetuning-llms"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">Finetuning LLMs</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#preliminaries"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Preliminaries</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#discussion-and-conclusion"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">DISCUSSION AND CONCLUSION</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#introduction"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Introduction</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#relatedwork"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">RelatedWork</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#embodied-agents-with-llms"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">Embodied Agents with LLMs</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#finetuning-llms"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">Finetuning LLMs</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#preliminaries"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Preliminaries</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#twosome"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">TWOSOME</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#valid-policy-generation"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">Valid Policy Generation</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#action-prompt-normalization"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">ACTION PROMPT NORMALIZATION</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#parameter-efficient-ppo-finetuning"><span class="toc-nav-number">5.3.</span> <span class="toc-nav-text">Parameter-Efficient PPO Finetuning</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#architecture"><span class="toc-nav-number">5.3.1.</span> <span class="toc-nav-text">Architecture</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#training"><span class="toc-nav-number">5.3.2.</span> <span class="toc-nav-text">Training</span></a></li></ol></li></ol></li></ol>
         
         </div>
       </aside>
@@ -1246,20 +1395,5 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+	</body>
 </html>
