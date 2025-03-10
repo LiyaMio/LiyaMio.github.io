@@ -395,11 +395,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">4</span> Minutes
+              Estimated Reading Time <span class="post-count">6</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">1.3k</span> In Total
+              Words <span class="post-count">1.8k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -502,11 +502,31 @@
 <li>**动作价值函数(Action-value Function)**：用来度量给定状态st和策略π的情况下，采用动作at的好坏程度。</li>
 </ul>
 <h1 id="算法分类"><a href="#算法分类" class="headerlink" title="算法分类"></a>算法分类</h1><p><img src="/%E7%AC%94%E8%AE%B0/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/%E7%AE%97%E6%B3%95%E5%88%86%E7%B1%BB.jpg"></p>
+<p><strong>按照环境是否已知划分：免模型学习（Model-Free） vs 有模型学习（Model-Based）</strong></p>
+<ul>
+<li>Model-free就是不去学习和理解环境，环境给出什么信息就是什么信息，常见的方法有policy optimization和Q-learning。</li>
+<li>Model-Based是去学习和理解环境，学会用一个模型来模拟环境，通过模拟的环境来得到反馈。Model-Based相当于比Model-Free多了模拟环境这个环节，通过模拟环境预判接下来会发生的所有情况，然后选择最佳的情况。</li>
+</ul>
+<p><strong>按照学习方式划分：在线策略（On-Policy） vs 离线策略（Off-Policy）</strong></p>
+<ul>
+<li><strong>On-Policy</strong>是指agent必须本人在场， 并且一定是本人边玩边学习。典型的算法为Sarsa。</li>
+<li><strong>Off-Policy</strong>是指agent可以选择自己玩， 也可以选择看着别人玩， 通过看别人玩来学习别人的行为准则， 离线学习同样是从过往的经验中学习， 但是这些过往的经历没必要是自己的经历， 任何人的经历都能被学习，也没有必要是边玩边学习，玩和学习的时间可以不同步。典型的方法是Q-learning，以及Deep-Q-Network。</li>
+</ul>
+<p><strong>按照学习目标划分：基于策略（Policy-Based）和基于价值（Value-Based）。</strong></p>
+<ul>
+<li><strong>Policy-Based</strong>的方法直接输出下一步动作的概率，根据概率来选取动作。但不一定概率最高就会选择该动作，还是会从整体进行考虑。适用于非连续和连续的动作。常见的方法有Policy gradients。</li>
+<li><strong>Value-Based</strong>的方法输出的是动作的价值，选择价值最高的动作。适用于非连续的动作。常见的方法有Q-learning、Deep Q Network和Sarsa。</li>
+<li>更为厉害的方法是二者的结合：Actor-Critic，Actor根据概率做出动作，Critic根据动作给出价值，从而加速学习过程，常见的有A2C，A3C，DDPG等。</li>
+</ul>
 
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
+          
+          <li class="previous">
+            <a href="/笔记/强化学习-PPO/" data-toggle="tooltip" data-placement="top" title="强化学习-PPO">&larr; Previous Post</a>
+          </li>
           
           
           <li class="next">
