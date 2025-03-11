@@ -387,7 +387,7 @@
             <h2 class="subheading"></h2>
             <span class="meta">
               Posted by 云起 on
-              2025-03-10
+              2025-03-11
             </span>
 
 
@@ -395,11 +395,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">1</span> Minutes
+              Estimated Reading Time <span class="post-count">4</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">1</span> In Total
+              Words <span class="post-count">1.1k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -462,19 +462,76 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p>[toc]</p>
+<p><strong>PPO（Proximal Policy Optimization，近端策略优化）</strong> 是OpenAI于2017年提出的一种强化学习算法，属于<strong>策略梯度（Policy Gradient）方法</strong>的改进版本。它以<strong>高稳定性和样本高效性</strong>著称，广泛应用于机器人控制、游戏AI等领域（如《Dota 2》AI和《星际争霸II》AI）。</p>
+<h1 id="策略梯度policy-gradient的局限性"><a href="#策略梯度（Policy-Gradient）的局限性" class="headerlink" title="策略梯度（Policy Gradient）的局限性"></a><strong>策略梯度（Policy Gradient）的局限性</strong></h1><ul>
+<li><strong>问题</strong>：传统策略梯度（如REINFORCE）直接通过梯度上升更新策略参数，但存在两大问题：<ol>
+<li><strong>更新步长敏感</strong>：步长过大可能导致策略崩溃（性能骤降）；</li>
+<li><strong>样本效率低</strong>：需要大量与环境交互的数据。</li>
+</ol>
+</li>
+<li><strong>改进方向</strong>：如何<strong>安全地更新策略</strong>，避免性能剧烈波动？</li>
+</ul>
+<h1 id="ppo的核心思想"><a href="#PPO的核心思想" class="headerlink" title="PPO的核心思想"></a><strong>PPO的核心思想</strong></h1><p>PPO通过<strong>限制策略更新的幅度</strong>，确保新策略（更新后的策略）与旧策略（更新前的策略）的差异在可控范围内，从而提升稳定性。<br>其核心是<strong>Clipped Surrogate Objective（裁剪替代目标函数）</strong>，替代传统的策略梯度目标。</p>
+<h1 id="关键公式与机制"><a href="#关键公式与机制" class="headerlink" title="关键公式与机制"></a><strong>关键公式与机制</strong></h1><h2 id="重要性采样importance-sampling"><a href="#重要性采样（Importance-Sampling）" class="headerlink" title="重要性采样（Importance Sampling）"></a><strong>重要性采样（Importance Sampling）</strong></h2><ul>
+<li><p><strong>目的</strong>：利用旧策略收集的数据估计新策略的期望奖励，提升数据复用效率。</p>
+</li>
+<li><p><strong>重要性权重</strong>：<br>$$<br>r_t(θ)&#x3D;\frac{π_θ(a_t∣s_t)}{π_{θold}(a_t∣s_t)}<br>$$<br>其中，$$π_θ$$是新策略，$$π_{θold}$$是旧策略。</p>
+</li>
+</ul>
+<h2 id="替代目标函数surrogate-objective"><a href="#替代目标函数（Surrogate-Objective）" class="headerlink" title="替代目标函数（Surrogate Objective）"></a><strong>替代目标函数（Surrogate Objective）</strong></h2><ul>
+<li><p><strong>原始目标</strong>：最大化新策略的期望优势函数 A^t<em>A</em>^<em>t</em>（如通过蒙特卡洛或TD误差估计）：<br>$$<br>L^{CPI}(θ)&#x3D;E_t[r_t(θ)\hat{A}_t]<br>$$<br>（CPI表示“保守策略迭代”）</p>
+</li>
+<li><p><strong>问题</strong>：若$$ r_t(θ)$$ 过大（策略变化剧烈），会导致更新不稳定。</p>
+</li>
+</ul>
+<h2 id="裁剪机制clipping"><a href="#裁剪机制（Clipping）" class="headerlink" title="裁剪机制（Clipping）"></a><strong>裁剪机制（Clipping）</strong></h2><p>PPO通过裁剪重要性权重，限制策略更新的幅度：<br>$$<br>L^{CLIP}(θ)&#x3D;E_t[min⁡(r_t(θ)\hat{A}_t,clip(r_t(θ),1−ϵ,1+ϵ)\hat{A}t)]<br>$$</p>
+<ul>
+<li>参数 ϵ：通常设为0.1~0.3，控制裁剪范围。</li>
+<li><strong>逻辑解释</strong>：<ul>
+<li>如果优势 $$\hat{A}t&gt;0$$（动作优于平均），限制$$ r_t(θ)≤1+ϵ$$；</li>
+<li>如果优势 $$\hat{A}t&lt;0$$（动作劣于平均），限制 $$r_t(θ)≥1−ϵ$$。</li>
+</ul>
+</li>
+</ul>
+<p>通过这种方式，PPO在鼓励策略改进的同时，防止更新步长过大。</p>
+<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ol>
+<li><strong>收集数据</strong>：使用当前策略 $$π_{θold}$$与环境交互，生成轨迹数据。</li>
+<li><strong>计算优势估计</strong>：通过广义优势估计（GAE, Generalized Advantage Estimation）或其他方法计算 $$\hat{A}t$$。</li>
+<li><strong>优化替代目标函数</strong>：在多个epoch中，用小批量数据重复更新策略参数，最大化 $$L^{CLIP}(θ)$$。</li>
+<li><strong>更新旧策略</strong>：将当前策略参数 θ复制给 θold，进入下一轮数据收集。</li>
+</ol>
+<h2 id="关键参数调优"><a href="#关键参数调优" class="headerlink" title="关键参数调优"></a><strong>关键参数调优</strong></h2><ul>
+<li>**裁剪阈值 ϵ*ϵ***：通常设为0.1~0.3，控制策略更新幅度。</li>
+<li>**GAE参数 λ*λ***：平衡偏差与方差，一般取0.9~0.99。</li>
+<li><strong>学习率</strong>：建议从3e-4开始调整。</li>
+<li><strong>并行环境数量</strong>：增加环境数可提升数据收集速度。</li>
+</ul>
+<p>伪代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.optim <span class="keyword">as</span> optim</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义策略网络（Actor）和价值网络（Critic）</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">PolicyNetwork</span>(torch.nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, state_dim, action_dim</span>):</span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.fc = torch.nn.Linear(state_dim, <span class="number">64</span>)</span><br><span class="line">        self.action_head = torch.nn.Linear(<span class="number">64</span>, action_dim)</span><br><span class="line">        self.value_head = torch.nn.Linear(<span class="number">64</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        x = torch.relu(self.fc(x))</span><br><span class="line">        <span class="keyword">return</span> torch.softmax(self.action_head(x), dim=-<span class="number">1</span>), self.value_head(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># PPO算法核心</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ppo_update</span>(<span class="params">policy, optimizer, states, actions, advantages, old_log_probs, epsilon=<span class="number">0.2</span></span>):</span><br><span class="line">    new_probs, new_values = policy(states)</span><br><span class="line">    new_log_probs = torch.log(new_probs.gather(<span class="number">1</span>, actions))</span><br><span class="line">    ratio = torch.exp(new_log_probs - old_log_probs)</span><br><span class="line">    clipped_ratio = torch.clamp(ratio, <span class="number">1</span>-epsilon, <span class="number">1</span>+epsilon)</span><br><span class="line">    loss = -torch.<span class="built_in">min</span>(ratio * advantages, clipped_ratio * advantages).mean()</span><br><span class="line">    </span><br><span class="line">    optimizer.zero_grad()</span><br><span class="line">    loss.backward()</span><br><span class="line">    optimizer.step()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 训练循环</span></span><br><span class="line">policy = PolicyNetwork(state_dim, action_dim)</span><br><span class="line">optimizer = optim.Adam(policy.parameters(), lr=<span class="number">3e-4</span>)</span><br><span class="line"><span class="keyword">for</span> episode <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000</span>):</span><br><span class="line">    states, actions, rewards, old_log_probs = collect_data(policy)</span><br><span class="line">    advantages = compute_advantages(rewards, policy.values)</span><br><span class="line">    ppo_update(policy, optimizer, states, actions, advantages, old_log_probs)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="ppo-vs-trpotrust-region-policy-optimization"><a href="#PPO-vs-TRPO（Trust-Region-Policy-Optimization）" class="headerlink" title="PPO vs. TRPO（Trust Region Policy Optimization）"></a><strong>PPO vs. TRPO（Trust Region Policy Optimization）</strong></h1><ul>
+<li><strong>共同目标</strong>：限制策略更新幅度，保证稳定性。</li>
+<li><strong>TRPO</strong>：通过<strong>KL散度约束</strong>实现，需计算二阶导数（复杂度高）。</li>
+<li><strong>PPO</strong>：通过<strong>目标函数裁剪</strong>实现，仅需一阶优化（更简单高效）。</li>
+<li><strong>结论</strong>：PPO以更简单的实现达到了与TRPO相近的性能，成为主流算法。</li>
+</ul>
+<h1 id="ppo的优势"><a href="#PPO的优势" class="headerlink" title="PPO的优势"></a><strong>PPO的优势</strong></h1><ol>
+<li><strong>稳定性强</strong>：通过裁剪避免策略突变。</li>
+<li><strong>样本效率高</strong>：支持多轮策略更新（复用旧数据）。</li>
+<li><strong>适应性强</strong>：适用于连续和离散动作空间。</li>
+<li><strong>易于实现</strong>：无需复杂约束（如TRPO的KL散度优化）。</li>
+</ol>
 
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
           
-          <li class="previous">
-            <a href="/leetcode/2012.数组美丽值求和/" data-toggle="tooltip" data-placement="top" title="2012.数组美丽值求和">&larr; Previous Post</a>
-          </li>
-          
           
           <li class="next">
-            <a href="/笔记/强化学习/" data-toggle="tooltip" data-placement="top" title="强化学习">Next Post &rarr;</a>
+            <a href="/leetcode/2012.数组美丽值求和/" data-toggle="tooltip" data-placement="top" title="2012.数组美丽值求和">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -558,7 +615,7 @@
       repo: '',
       owner: '',
       admin: '',
-      id: 'Mon Mar 10 2025 15:55:38 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Tue Mar 11 2025 08:35:52 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -611,7 +668,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="nav">none</ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E7%AD%96%E7%95%A5%E6%A2%AF%E5%BA%A6policy-gradient%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">策略梯度（Policy Gradient）的局限性</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#ppo%E7%9A%84%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">PPO的核心思想</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%85%B3%E9%94%AE%E5%85%AC%E5%BC%8F%E4%B8%8E%E6%9C%BA%E5%88%B6"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">关键公式与机制</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%87%8D%E8%A6%81%E6%80%A7%E9%87%87%E6%A0%B7importance-sampling"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">重要性采样（Importance Sampling）</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9B%BF%E4%BB%A3%E7%9B%AE%E6%A0%87%E5%87%BD%E6%95%B0surrogate-objective"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">替代目标函数（Surrogate Objective）</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%A3%81%E5%89%AA%E6%9C%BA%E5%88%B6clipping"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">裁剪机制（Clipping）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">步骤</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%B3%E9%94%AE%E5%8F%82%E6%95%B0%E8%B0%83%E4%BC%98"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">关键参数调优</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#ppo-vs-trpotrust-region-policy-optimization"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">PPO vs. TRPO（Trust Region Policy Optimization）</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#ppo%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">PPO的优势</span></a></li></ol>
         
         </div>
       </aside>
