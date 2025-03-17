@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Mioz&#39;s blog..."/>
+  <meta name="keyword" content="life,go,livemylife,IT  blog,Blog"/>
+  <link rel="shortcut icon" href="/img/avatar/clound.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="http://yoursite-url/paper/MLM/音视频人格识别深度学习模型基准测试/">
+  <title>
+    
+      An Open-source Benchmark of Deep Learning  Models for Audio-visual Apparent and  Self-reported Personality Recognition - Ride or Die
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'https://github.com/liyamio/liyamio.github.io.git'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Ride or Die</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">HOME</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              TAGS
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>SEARCH</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/lml_bg.jpg'); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/liz.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#paper" title="paper">paper</a>
+              
+              <a class="tag" href="/tags/#MLM" title="MLM">MLM</a>
+              
+            </div>
+            <h1>An Open-source Benchmark of Deep Learning  Models for Audio-visual Apparent and  Self-reported Personality Recognition</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 云起 on
+              2025-03-17
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">20</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">5.8k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <p>[toc]</p>
+<p>只记录要点</p>
+<h1 id="introduction">Introduction</h1>
+<ul>
+<li><strong>问题定义</strong>：
+<ul>
+<li><strong>人格识别</strong>：通过非语言行为（面部表情、语音、姿态等）自动推断个体的性格特质，分为<strong>表观人格（APR）</strong>（外部观察者的印象）和<strong>自我报告人格（SPR）</strong>（个体自我评估的内在特质）。</li>
+<li><strong>挑战</strong>：
+<ul>
+<li><strong>数据异质性</strong>：现有模型依赖复杂的数据预处理（如帧采样、特征工程），导致复现困难。</li>
+<li><strong>评估不一致</strong>：不同论文使用不同训练策略（如超参数、标签分配），难以公平比较模型性能。</li>
+<li><strong>任务差异</strong>：APR与SPR的数据分布、标签生成机制不同，需针对性建模。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>研究目标</strong>：
+<ul>
+<li>构建首个<strong>标准化、可复现的音频-视觉人格识别基准框架</strong>，统一数据预处理、模型训练与评估流程。</li>
+<li>对比现有模型（8种人格计算模型 + 7种通用深度学习模型）在APR和SPR任务中的性能，揭示多模态融合与长期建模的关键问题。</li>
+</ul>
+</li>
+<li><strong>注</strong>：现有工作大部分是依赖于APR数据</li>
+</ul>
+<h1 id="related-work">Related Work</h1>
+<h2 id="自动表观人格识别automatic-apparent-personality-recognition-apr">自动表观人格识别（Automatic Apparent Personality Recognition, APR）</h2>
+<p>表观人格是指外部观察者对目标对象的第一印象或印象人格。这一领域的研究主要集中在如何从非语言的面部行为（如表情、姿态）和音频信号中识别表观人格特质。</p>
+<h3 id="基于静态图像的方法">基于静态图像的方法</h3>
+<ul>
+<li><strong>单帧图像</strong>：许多研究尝试从单帧图像中预测表观人格。例如，Joo等人从650名美国政客的面部图像中提取方向梯度直方图（HOG）特征来预测人格特质。Dhall等人则结合手工特征和深度学习特征来描述Twitter用户头像，并结合背景信息进行人格预测。</li>
+<li><strong>局限性</strong>：这些方法通常忽略了时间动态信息，仅从单帧图像中提取信息可能无法捕捉到人格特质的长期表现。</li>
+</ul>
+<h3 id="基于音频视频的方法">基于音频视频的方法</h3>
+<ul>
+<li><strong>多模态方法</strong>：大多数研究集中在音频视频方法上，这些方法通常比单一模态（如仅视觉或仅音频）表现更好。例如，Zhang等人提出了一种双流残差网络（ResNet），分别从音频和视觉信号中提取特征，并在帧级别进行融合以预测表观人格。</li>
+<li><strong>长期行为建模</strong>：近期的研究开始关注从长期行为中提取人格特征。例如，Beyan等人通过提取关键动态图像来总结视频，并基于这些图像预测表观人格。这种方法避免了将视频级标签直接用于帧级预测的问题，从而提高了模型的可靠性。</li>
+<li><strong>局限性</strong>：尽管这些方法在表观人格识别上取得了进展，但它们大多依赖于帧级或短片段级标签进行训练，这可能导致模型在泛化能力上存在不足。</li>
+</ul>
+<h2 id="自动自我报告人格识别automatic-self-reported-personality-recognition-spr">自动自我报告人格识别（Automatic Self-Reported Personality Recognition, SPR）</h2>
+<p>自我报告人格是指个体对自己人格特质的真实评估，通常通过问卷调查获得。与表观人格识别相比，自我报告人格识别的研究相对较少。</p>
+<h3 id="基于静态图像的方法">基于静态图像的方法</h3>
+<ul>
+<li><strong>手工特征</strong>：一些研究尝试从静态面部图像中提取手工特征（如HOG、LBP等）来预测自我报告人格。例如，Qin等人从面部图像中提取多种手工特征，并使用标准回归器进行人格预测。</li>
+<li><strong>深度学习方法</strong>：近年来，基于深度学习的方法开始应用于自我报告人格识别。例如，Curto等人提出了一种基于Transformer的模型，从短片段中提取个体和人际行为特征，以联合识别自我报告人格。</li>
+</ul>
+<h3 id="基于音频视频的方法">基于音频视频的方法</h3>
+<ul>
+<li><strong>多模态方法</strong>：一些研究尝试从音频视频信号中识别自我报告人格。例如，Song和Shao提出了一种基于神经架构搜索（NAS）的方法，为每个个体探索个性化的网络结构，以预测大五人格特质。</li>
+<li><strong>局限性</strong>：尽管这些方法在自我报告人格识别上取得了一定进展，但大多数研究仅在单一数据集上进行评估，且模型的泛化能力尚未得到充分验证。</li>
+</ul>
+<h2 id="研究空白与挑战">研究空白与挑战</h2>
+<ul>
+<li><strong>缺乏标准化基准</strong>：现有的人格计算方法大多缺乏标准化的基准测试框架，导致不同研究之间的结果难以直接比较。</li>
+<li><strong>代码和数据的可复现性</strong>：许多研究未公开代码或数据，这使得其他研究人员难以复现和扩展这些工作。</li>
+<li><strong>模型性能的局限性</strong>：尽管一些方法在表观人格识别上取得了较好结果，但在自我报告人格识别上，现有模型的性能仍然较低，表明从非语言行为中直接预测自我报告人格是一个更具挑战性的问题。</li>
+<li><strong>长期行为建模的不足</strong>：大多数现有方法依赖于帧级或短片段级标签进行训练，这可能导致模型无法有效捕捉长期行为中的人格特征。</li>
+</ul>
+<hr>
+<h3 id="相关工作部分的核心要点">相关工作部分的核心要点</h3>
+<ol>
+<li>
+<p><strong>表观人格识别（APR）</strong>：</p>
+<ul>
+<li><strong>基于静态图像的方法</strong>：从单帧图像中提取特征，但忽略了时间动态信息。</li>
+<li><strong>基于音频视频的方法</strong>：多模态方法表现优于单一模态，长期行为建模逐渐受到关注。</li>
+<li><strong>局限性</strong>：依赖帧级或短片段级标签，可能导致模型泛化能力不足。</li>
+</ul>
+</li>
+<li>
+<p><strong>自我报告人格识别（SPR）</strong>：</p>
+<ul>
+<li><strong>基于静态图像的方法</strong>：使用手工特征和深度学习方法从静态图像中预测人格。</li>
+<li><strong>基于音频视频的方法</strong>：多模态方法开始应用于自我报告人格识别。</li>
+<li><strong>局限性</strong>：研究较少，模型性能较低，泛化能力有待验证。</li>
+</ul>
+</li>
+<li>
+<p><strong>研究空白与挑战</strong>：</p>
+<ul>
+<li>缺乏标准化基准，导致不同研究结果难以比较。</li>
+<li>许多研究未公开代码或数据，影响了研究的可复现性。</li>
+<li>自我报告人格识别更具挑战性，现有模型性能有待提高。</li>
+<li>长期行为建模不足，需要更有效的方法来捕捉人格特征。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="the-proposed-benchmarking-framework">THE PROPOSED BENCHMARKING FRAMEWORK</h1>
+<h2 id="编码基础设施-coding-infrastructure">编码基础设施 (Coding Infrastructure)</h2>
+<p>基准测试框架的目标是提供一个公平的比较平台，用于评估人格计算模型的性能。为此，作者强调了统一的框架设计，确保所有模型在相同的条件下进行评估。具体来说，框架统一了以下组件：</p>
+<ul>
+<li>数据输入</li>
+<li>数据预处理</li>
+<li>数据后处理</li>
+<li>模型初始化</li>
+<li>训练</li>
+<li>验证</li>
+<li>评估</li>
+<li>编码平台/库</li>
+</ul>
+<h3 id="数据输入和预处理-data-input-and-pre-processing">数据输入和预处理 (Data Input and Pre-processing)</h3>
+<p>为了确保公平性，所有实验都使用相同的数据集划分（训练集、验证集和测试集）。预处理步骤也保持一致，以减少因数据处理差异带来的性能波动。具体步骤如下：</p>
+<ul>
+<li><strong>静态图像模型</strong>：将视频均匀分割为多个短片段，从每个片段中选择一帧（例如，每段的第一帧），使用MTCNN裁剪并对齐面部图像，然后进行数据增强（如随机水平翻转、像素归一化等）。</li>
+<li><strong>时空模型</strong>：将视频分割为短片段或使用视频级序列作为输入。对于短片段，每个片段包含一定数量的帧（如32帧或64帧）。对于视频级序列，从视频中均匀采样一定数量的帧（如32帧）。</li>
+<li><strong>音频模型</strong>：使用FFmpeg从视频中提取原始音频信号，并进行相应的预处理。</li>
+</ul>
+<h3 id="训练-验证和测试协议-training-validation-and-testing-protocol">训练、验证和测试协议 (Training, Validation, and Testing Protocol)</h3>
+<ul>
+<li><strong>训练</strong>：所有模型在训练集上进行训练，使用早停法（early stopping）防止过拟合。</li>
+<li><strong>验证</strong>：在验证集上评估模型性能，选择验证集上表现最佳的模型作为最终模型。</li>
+<li><strong>测试</strong>：使用最终模型在测试集上生成结果，并报告性能指标。</li>
+</ul>
+<h3 id="评估指标-evaluation-metrics">评估指标 (Evaluation Metrics)</h3>
+<p>为了评估模型性能，作者使用了以下指标：</p>
+<ul>
+<li><strong>ACC</strong>（准确率）：用于评估表观人格识别任务。</li>
+<li><strong>MSE</strong>（均方误差）：用于评估自我报告人格识别任务。</li>
+<li><strong>CCC</strong>（一致性相关系数）：用于衡量预测值与真实值之间的相关性。</li>
+</ul>
+<h2 id="基准测试的人格计算模型-benchmarked-personality-computing-models">基准测试的人格计算模型 (Benchmarked Personality Computing Models)</h2>
+<p>作者选择了多种现有人格计算模型和标准深度学习模型进行基准测试。这些模型包括：</p>
+<ul>
+<li><strong>现有人格计算模型</strong>：这些模型已经在人格识别领域被广泛研究和应用。例如，DAN（Descriptor Aggregation Network）、CAM-DAN+、Bi-modal CNN-LSTM等。</li>
+<li><strong>标准深度学习模型</strong>：这些模型广泛用于图像和视频分析任务，但尚未应用于人格识别。例如，SENet、HRNet、VIT（Vision Transformer）等。</li>
+<li><strong>视频级表示生成模型</strong>：这些模型用于将帧级或片段级预测汇总为视频级预测。例如，通过平均帧级预测或使用频谱表示来生成视频级预测。</li>
+</ul>
+<h3 id="模型纳入和排除标准-model-inclusion-and-exclusion-criteria">模型纳入和排除标准 (Model Inclusion and Exclusion Criteria)</h3>
+<ul>
+<li><strong>纳入标准</strong>：
+<ul>
+<li>在ChaLearn第一印象数据集上评估和比较的代表性方法。</li>
+<li>最近三年发表的端到端音频视频深度学习模型。</li>
+<li>可直观展示人格与行为关系的模型。</li>
+</ul>
+</li>
+<li><strong>排除标准</strong>：
+<ul>
+<li>非基于音频视频的深度学习模型。</li>
+<li>无法端到端训练的模型。</li>
+<li>未在ChaLearn第一印象数据集上评估的模型。</li>
+<li>不以大五人格为识别目标的模型。</li>
+<li>非回归任务的模型。</li>
+</ul>
+</li>
+</ul>
+<h3 id="现有人格计算模型-existing-personality-computing-models">现有人格计算模型 (Existing Personality Computing Models)</h3>
+<p>作者详细描述了多种现有人格计算模型，包括视觉模型、音频模型和音频视频模型。这些模型在表观人格识别任务中表现出色，但大多数在自我报告人格识别任务中的表现较差。</p>
+<h3 id="广泛使用的静态时空视觉深度学习模型-widely-used-staticspatio-temporal-visual-deep-learning-models">广泛使用的静态/时空视觉深度学习模型 (Widely-used Static/Spatio-temporal Visual Deep Learning Models)</h3>
+<p>作者还选择了多种标准视觉深度学习模型进行基准测试。这些模型在图像和视频分析任务中表现出色，但尚未应用于人格识别。通过将这些模型纳入基准测试，作者希望探索它们在人格识别任务中的潜力。</p>
+<h3 id="视频级表示生成模型-clip-level-representation-generation-models">视频级表示生成模型 (Clip-level Representation Generation Models)</h3>
+<p>为了将帧级或片段级预测汇总为视频级预测，作者比较了两种方法：</p>
+<ul>
+<li><strong>平均帧/片段级预测 (AFP)</strong>：通过平均所有帧级或片段级预测来生成视频级预测。</li>
+<li><strong>频谱表示 (SFP)</strong>：通过频谱表示来捕捉帧级或片段级预测中的时间依赖关系，并生成视频级预测。</li>
+</ul>
+<h2 id="评估数据集-evaluation-datasets">评估数据集 (Evaluation Datasets)</h2>
+<p>为了评估基准测试模型的性能，作者选择了两个公开可用的音视频人格计算数据集：</p>
+<ul>
+<li><strong>UDIVA数据集</strong>：包含188个双人互动片段，记录了147名志愿者的行为。每个片段包含两个音频视频文件，分别记录了单个参与者的行为。数据集提供了大五人格特质作为每个音频视频片段的标签。</li>
+<li><strong>ChaLearn第一印象数据集</strong>：包含10,000个来自2,764名YouTube用户的视频，每个视频时长约15秒。标签为通过亚马逊机械土耳其人标注的大五人格特质。数据集提供了官方的训练、验证和测试划分。</li>
+</ul>
+<hr>
+<h3 id="the-proposed-benchmarking-framework-的核心要点">THE PROPOSED BENCHMARKING FRAMEWORK 的核心要点</h3>
+<ol>
+<li><strong>统一的编码基础设施</strong>：确保所有模型在相同的条件下进行评估，减少因数据处理和训练策略差异带来的性能波动。</li>
+<li><strong>多种人格计算模型</strong>：涵盖了现有人格计算模型和标准深度学习模型，为研究人员提供了广泛的比较基础。</li>
+<li><strong>标准化的评估流程</strong>：通过统一的数据预处理、训练、验证和测试协议，确保评估结果的公平性和可比性。</li>
+<li><strong>公开的代码和设置</strong>：为了促进研究的可重复性和进一步发展，所有代码和设置均已公开。</li>
+<li><strong>两个公开数据集</strong>：在UDIVA和ChaLearn第一印象数据集上评估模型性能，涵盖了表观人格和自我报告人格识别任务。</li>
+</ol>
+<h1 id="experiments">Experiments</h1>
+<h2 id="基准测试人格计算模型benchmarking-personality-computing-models">基准测试人格计算模型（Benchmarking Personality Computing Models）</h2>
+<p>在这一部分，作者展示了所有基准测试模型在自我报告人格（SPR）和表观人格（APR）识别任务上的性能结果。实验在两个公开数据集上进行：UDIVA数据集（用于SPR）和ChaLearn第一印象数据集（用于APR）。</p>
+<h3 id="自我报告人格识别self-reported-personality-recognition-spr">自我报告人格识别（Self-Reported Personality Recognition, SPR）</h3>
+<ul>
+<li><strong>数据集</strong>：UDIVA数据集，包含188个双人互动片段，记录了147名志愿者的行为。每个片段包含两个音频视频文件，分别记录了单个参与者的行为。标签为基于问卷调查的大五人格特质。</li>
+<li><strong>评估指标</strong>：使用MSE（均方误差）和CCC（一致性相关系数）评估模型性能。</li>
+<li><strong>结果</strong>：
+<ul>
+<li><strong>音频模型</strong>：大多数音频模型的CCC值接近零，表明它们难以从非语言音频信号中提取与自我报告人格相关的线索。</li>
+<li><strong>视觉模型</strong>：一些视觉模型（如SENet、HRNet）在某些人格特质上取得了超过0.15的CCC值，但总体性能仍然较低。</li>
+<li><strong>多模态模型</strong>：CRNet和VGGish等多模态模型在某些特质上表现略好，但整体性能仍然有限。</li>
+</ul>
+</li>
+</ul>
+<h3 id="表观人格识别apparent-personality-recognition-apr">表观人格识别（Apparent Personality Recognition, APR）</h3>
+<ul>
+<li><strong>数据集</strong>：ChaLearn第一印象数据集，包含10,000个来自2,764名YouTube用户的视频，每个视频时长约15秒。标签为通过亚马逊机械土耳其人标注的大五人格特质。</li>
+<li><strong>评估指标</strong>：使用ACC（准确率）和CCC（一致性相关系数）评估模型性能。</li>
+<li><strong>结果</strong>：
+<ul>
+<li><strong>视觉模型</strong>：HRNet和VAT等视觉模型在表观人格识别任务上表现较好，CCC值超过0.6。</li>
+<li><strong>多模态模型</strong>：CRNet和Amb-Fac-VGGish等多模态模型也表现出色，CCC值超过0.5。</li>
+<li><strong>音频模型</strong>：大多数音频模型的性能较低，但VGGish模型在某些特质上表现较好。</li>
+</ul>
+</li>
+</ul>
+<h2 id="消融研究ablation-studies">消融研究（Ablation Studies）</h2>
+<p>在这一部分，作者通过消融研究分析了不同预处理、后处理和模型设置对人格识别性能的影响。主要分析了以下几个方面：</p>
+<h3 id="全帧与面部区域full-frames-vs-face-regions">全帧与面部区域（Full Frames vs. Face Regions）</h3>
+<ul>
+<li><strong>比较</strong>：使用对齐的面部区域和包含背景的全帧作为输入，比较视觉模型的性能。</li>
+<li><strong>结果</strong>：使用面部区域的模型通常比使用全帧的模型表现更好，尤其是在表观人格识别任务中。这表明面部行为比背景信息更可靠地反映了人格特质。</li>
+</ul>
+<h3 id="静态模型与时空模型static-vs-spatio-temporal-models">静态模型与时空模型（Static vs. Spatio-temporal Models）</h3>
+<ul>
+<li><strong>比较</strong>：静态模型（基于单帧图像）与时空模型（基于视频序列）的性能比较。</li>
+<li><strong>结果</strong>：静态模型在大多数情况下优于时空模型，尤其是在表观人格识别任务中。这表明短期行为可能包含更多与人格相关的线索。</li>
+</ul>
+<h3 id="短片段级与视频级建模short-segment-level-vs-video-level-modelling">短片段级与视频级建模（Short Segment-level vs. Video-level Modelling）</h3>
+<ul>
+<li><strong>比较</strong>：短片段级建模（基于短片段）与视频级建模（基于整个视频）的性能比较。</li>
+<li><strong>结果</strong>：短片段级建模在表观人格识别任务中表现更好，而视频级建模在自我报告人格识别任务中表现较差。这表明短片段级建模能够更好地捕捉人格相关的短期行为。</li>
+</ul>
+<h3 id="音频-视觉与多模态模型audio-visual-and-audio-visual-models">音频、视觉与多模态模型（Audio, Visual, and Audio-Visual Models）</h3>
+<ul>
+<li><strong>比较</strong>：音频模型、视觉模型和多模态模型的性能比较。</li>
+<li><strong>结果</strong>：视觉模型在大多数情况下优于音频模型，多模态模型在某些情况下表现更好，尤其是在表观人格识别任务中。这表明视觉信息比音频信息更可靠地反映了人格特质。</li>
+</ul>
+<h3 id="汇总帧片段级预测summarising-framesegment-level-predictions">汇总帧/片段级预测（Summarising Frame/Segment-level Predictions）</h3>
+<ul>
+<li><strong>比较</strong>：使用平均法（AFP）和频谱表示法（SFP）汇总帧/片段级预测的性能比较。</li>
+<li><strong>结果</strong>：频谱表示法（SFP）在表观人格识别任务中表现更好，能够更有效地捕捉时间依赖性线索。</li>
+</ul>
+<h3 id="其他因素other-factors">其他因素（Other Factors）</h3>
+<ul>
+<li><strong>联合预测与单独预测</strong>：联合预测所有五种人格特质比单独预测每种特质表现更好。</li>
+<li><strong>输入的时间尺度</strong>：输入的时间尺度对模型性能有显著影响，尤其是在表观人格识别任务中。</li>
+<li><strong>元数据的影响</strong>：在非语言行为基础上添加受试者的元数据并未显著改善自我报告人格识别的性能。</li>
+</ul>
+<h2 id="讨论discussion">讨论（Discussion）</h2>
+<p>在这一部分，作者讨论了实验结果的意义，并指出了现有方法的局限性和未来研究的方向。</p>
+<h3 id="部分重现方法性能低于原报告some-reproduced-approaches-have-lower-performance-than-originally-reported">部分重现方法性能低于原报告（Some Reproduced Approaches Have Lower Performance Than Originally Reported）</h3>
+<ul>
+<li><strong>原因</strong>：部分重现的模型未能达到原报告的性能，可能是因为原报告中未完整报告训练、评估和预处理细节，或者训练和评估过程中的随机因素。</li>
+</ul>
+<h3 id="人格特质与非语言行为的关系relationships-between-personality-traits-and-non-verbal-behaviours">人格特质与非语言行为的关系（Relationships Between Personality Traits and Non-verbal Behaviours）</h3>
+<ul>
+<li><strong>表观人格与行为的关系</strong>：表观人格特质与非语言行为（如面部表情和姿态）有较强的关联，这使得深度学习模型能够较好地预测表观人格。</li>
+<li><strong>自我报告人格与行为的关系</strong>：自我报告人格特质与非语言行为的关联较弱，这使得模型难以直接从非语言行为中预测自我报告人格。</li>
+</ul>
+<h3 id="自我报告人格识别的低性能poor-performance-in-self-reported-personality-recognition">自我报告人格识别的低性能（Poor Performance in Self-reported Personality Recognition）</h3>
+<ul>
+<li><strong>原因</strong>：自我报告人格标签是基于问卷调查获得的，而表观人格标签是基于行为观察获得的。这导致非语言行为与自我报告人格之间的关联较弱，从而影响了模型的性能。</li>
+</ul>
+<h3 id="挑战与研究空白challenges-and-research-gaps">挑战与研究空白（Challenges and Research Gaps）</h3>
+<ul>
+<li><strong>现有方法的局限性</strong>：现有方法大多依赖于帧级或短片段级标签进行训练，这可能导致模型无法有效捕捉长期行为中的人格特征。</li>
+<li><strong>未来研究方向</strong>：未来的研究需要开发更有效的方法来建模长期行为，并整合人格相关的领域知识，以提高模型的性能和泛化能力。</li>
+</ul>
+<hr>
+<h3 id="实验部分的核心要点">实验部分的核心要点</h3>
+<ol>
+<li>
+<p><strong>基准测试结果</strong>：</p>
+<ul>
+<li>表观人格识别（APR）任务中，视觉模型和多模态模型表现出色，CCC值超过0.5。</li>
+<li>自我报告人格识别（SPR）任务中，所有模型的性能较低，CCC值普遍低于0.2。</li>
+</ul>
+</li>
+<li>
+<p><strong>消融研究</strong>：</p>
+<ul>
+<li>使用面部区域的模型优于使用全帧的模型。</li>
+<li>静态模型在大多数情况下优于时空模型。</li>
+<li>短片段级建模优于视频级建模。</li>
+<li>视觉模型优于音频模型，多模态模型在某些情况下表现更好。</li>
+<li>频谱表示法（SFP）在汇总帧/片段级预测时表现更好。</li>
+</ul>
+</li>
+<li>
+<p><strong>讨论</strong>：</p>
+<ul>
+<li>部分重现的模型未能达到原报告的性能，可能是因为训练和评估过程中的随机因素。</li>
+<li>表观人格与非语言行为的关联较强，而自我报告人格与非语言行为的关联较弱。</li>
+<li>现有方法的局限性在于依赖帧级或短片段级标签进行训练，未来需要开发更有效的方法来建模长期行为。</li>
+</ul>
+</li>
+</ol>
+<h1 id="conclusions">Conclusions</h1>
+<h2 id="研究贡献">研究贡献</h2>
+<p>本文提出了首个音视频人格计算基准测试框架，旨在为表观人格（APR）和自我报告人格（SPR）识别任务提供一个公平且一致的评估环境。主要贡献包括：</p>
+<ol>
+<li><strong>标准化框架</strong>：提出了一个标准化的音视频人格计算基准框架，涵盖了多种人格计算模型和深度学习模型。</li>
+<li><strong>公开代码和设置</strong>：为了促进研究的可重复性和进一步发展，所有代码和设置均已公开。</li>
+<li><strong>两个公开数据集</strong>：在UDIVA数据集（用于SPR）和ChaLearn第一印象数据集（用于APR）上对模型进行了全面评估。</li>
+</ol>
+<h2 id="主要发现">主要发现</h2>
+<p>通过基准测试，作者得出以下主要结论：</p>
+<ol>
+<li><strong>表观人格识别（APR）优于自我报告人格识别（SPR）</strong>：
+<ul>
+<li>表观人格特征（如通过面部表情和姿态预测的第一印象）通常比自我报告人格特征（如通过问卷调查获得的真实人格）更容易被深度学习模型预测。</li>
+<li>在表观人格识别任务中，一些视觉模型（如HRNet和VAT）和多模态模型（如CRNet和Amb-Fac-VGGish）表现出色，CCC值超过0.6。</li>
+<li>在自我报告人格识别任务中，所有模型的性能较低，CCC值普遍低于0.2。</li>
+</ul>
+</li>
+<li><strong>视觉模型优于音频模型</strong>：
+<ul>
+<li>在人格识别任务中，视觉模型通常优于音频模型，表明面部行为比非语言音频行为更可靠地反映了人格特质。</li>
+<li>多模态模型在某些情况下表现更好，尤其是在表观人格识别任务中，但音频模型的性能提升有限。</li>
+</ul>
+</li>
+<li><strong>短期行为比长期行为更有用</strong>：
+<ul>
+<li>短片段级建模（基于短片段）通常优于视频级建模（基于整个视频），表明短期行为可能包含更多与人格相关的线索。</li>
+<li>长期行为建模方法（如视频级表示）在自我报告人格识别任务中表现较差，可能是因为这些方法忽略了短期行为中的重要信息。</li>
+</ul>
+</li>
+<li><strong>频谱表示法（SFP）优于平均法（AFP）</strong>：
+<ul>
+<li>在汇总帧/片段级预测时，频谱表示法（SFP）能够更有效地捕捉时间依赖性线索，从而提高模型性能。</li>
+</ul>
+</li>
+<li><strong>人格特质与非语言行为的关系</strong>：
+<ul>
+<li>每种人格特质与非语言行为的关系不同，某些特质（如尽责性和神经质）更容易通过面部行为预测，而其他特质（如宜人性）的预测难度较大。</li>
+</ul>
+</li>
+</ol>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/笔记/强化学习-PPO/" data-toggle="tooltip" data-placement="top" title="强化学习-PPO">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=An Open-source Benchmark of Deep Learning  Models for Audio-visual Apparent and  Self-reported Personality Recognition&body=Hi,I found this website and thought you might like it http://yoursite-url/paper/MLM/音视频人格识别深度学习模型基准测试/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Mon Mar 17 2025 08:54:29 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#introduction"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Introduction</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#related-work"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Related Work</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%87%AA%E5%8A%A8%E8%A1%A8%E8%A7%82%E4%BA%BA%E6%A0%BC%E8%AF%86%E5%88%ABautomatic-apparent-personality-recognition-apr"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">自动表观人格识别（Automatic Apparent Personality Recognition, APR）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9F%BA%E4%BA%8E%E9%9D%99%E6%80%81%E5%9B%BE%E5%83%8F%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">基于静态图像的方法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9F%BA%E4%BA%8E%E9%9F%B3%E9%A2%91%E8%A7%86%E9%A2%91%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-nav-number">2.1.2.</span> <span class="toc-nav-text">基于音频视频的方法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%87%AA%E5%8A%A8%E8%87%AA%E6%88%91%E6%8A%A5%E5%91%8A%E4%BA%BA%E6%A0%BC%E8%AF%86%E5%88%ABautomatic-self-reported-personality-recognition-spr"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">自动自我报告人格识别（Automatic Self-Reported Personality Recognition, SPR）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9F%BA%E4%BA%8E%E9%9D%99%E6%80%81%E5%9B%BE%E5%83%8F%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">基于静态图像的方法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9F%BA%E4%BA%8E%E9%9F%B3%E9%A2%91%E8%A7%86%E9%A2%91%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">基于音频视频的方法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%A0%94%E7%A9%B6%E7%A9%BA%E7%99%BD%E4%B8%8E%E6%8C%91%E6%88%98"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">研究空白与挑战</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C%E9%83%A8%E5%88%86%E7%9A%84%E6%A0%B8%E5%BF%83%E8%A6%81%E7%82%B9"><span class="toc-nav-number">2.3.1.</span> <span class="toc-nav-text">相关工作部分的核心要点</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#the-proposed-benchmarking-framework"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">THE PROPOSED BENCHMARKING FRAMEWORK</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%BC%96%E7%A0%81%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD-coding-infrastructure"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">编码基础设施 (Coding Infrastructure)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E8%BE%93%E5%85%A5%E5%92%8C%E9%A2%84%E5%A4%84%E7%90%86-data-input-and-pre-processing"><span class="toc-nav-number">3.1.1.</span> <span class="toc-nav-text">数据输入和预处理 (Data Input and Pre-processing)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%AE%AD%E7%BB%83-%E9%AA%8C%E8%AF%81%E5%92%8C%E6%B5%8B%E8%AF%95%E5%8D%8F%E8%AE%AE-training-validation-and-testing-protocol"><span class="toc-nav-number">3.1.2.</span> <span class="toc-nav-text">训练、验证和测试协议 (Training, Validation, and Testing Protocol)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%AF%84%E4%BC%B0%E6%8C%87%E6%A0%87-evaluation-metrics"><span class="toc-nav-number">3.1.3.</span> <span class="toc-nav-text">评估指标 (Evaluation Metrics)</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95%E7%9A%84%E4%BA%BA%E6%A0%BC%E8%AE%A1%E7%AE%97%E6%A8%A1%E5%9E%8B-benchmarked-personality-computing-models"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">基准测试的人格计算模型 (Benchmarked Personality Computing Models)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%A8%A1%E5%9E%8B%E7%BA%B3%E5%85%A5%E5%92%8C%E6%8E%92%E9%99%A4%E6%A0%87%E5%87%86-model-inclusion-and-exclusion-criteria"><span class="toc-nav-number">3.2.1.</span> <span class="toc-nav-text">模型纳入和排除标准 (Model Inclusion and Exclusion Criteria)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%8E%B0%E6%9C%89%E4%BA%BA%E6%A0%BC%E8%AE%A1%E7%AE%97%E6%A8%A1%E5%9E%8B-existing-personality-computing-models"><span class="toc-nav-number">3.2.2.</span> <span class="toc-nav-text">现有人格计算模型 (Existing Personality Computing Models)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B9%BF%E6%B3%9B%E4%BD%BF%E7%94%A8%E7%9A%84%E9%9D%99%E6%80%81%E6%97%B6%E7%A9%BA%E8%A7%86%E8%A7%89%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B-widely-used-staticspatio-temporal-visual-deep-learning-models"><span class="toc-nav-number">3.2.3.</span> <span class="toc-nav-text">广泛使用的静态&#x2F;时空视觉深度学习模型 (Widely-used Static&#x2F;Spatio-temporal Visual Deep Learning Models)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%A7%86%E9%A2%91%E7%BA%A7%E8%A1%A8%E7%A4%BA%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B-clip-level-representation-generation-models"><span class="toc-nav-number">3.2.4.</span> <span class="toc-nav-text">视频级表示生成模型 (Clip-level Representation Generation Models)</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%AF%84%E4%BC%B0%E6%95%B0%E6%8D%AE%E9%9B%86-evaluation-datasets"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">评估数据集 (Evaluation Datasets)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#the-proposed-benchmarking-framework-%E7%9A%84%E6%A0%B8%E5%BF%83%E8%A6%81%E7%82%B9"><span class="toc-nav-number">3.3.1.</span> <span class="toc-nav-text">THE PROPOSED BENCHMARKING FRAMEWORK 的核心要点</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#experiments"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Experiments</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95%E4%BA%BA%E6%A0%BC%E8%AE%A1%E7%AE%97%E6%A8%A1%E5%9E%8Bbenchmarking-personality-computing-models"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">基准测试人格计算模型（Benchmarking Personality Computing Models）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%87%AA%E6%88%91%E6%8A%A5%E5%91%8A%E4%BA%BA%E6%A0%BC%E8%AF%86%E5%88%ABself-reported-personality-recognition-spr"><span class="toc-nav-number">4.1.1.</span> <span class="toc-nav-text">自我报告人格识别（Self-Reported Personality Recognition, SPR）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%A1%A8%E8%A7%82%E4%BA%BA%E6%A0%BC%E8%AF%86%E5%88%ABapparent-personality-recognition-apr"><span class="toc-nav-number">4.1.2.</span> <span class="toc-nav-text">表观人格识别（Apparent Personality Recognition, APR）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%B6%88%E8%9E%8D%E7%A0%94%E7%A9%B6ablation-studies"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">消融研究（Ablation Studies）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%A8%E5%B8%A7%E4%B8%8E%E9%9D%A2%E9%83%A8%E5%8C%BA%E5%9F%9Ffull-frames-vs-face-regions"><span class="toc-nav-number">4.2.1.</span> <span class="toc-nav-text">全帧与面部区域（Full Frames vs. Face Regions）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%9D%99%E6%80%81%E6%A8%A1%E5%9E%8B%E4%B8%8E%E6%97%B6%E7%A9%BA%E6%A8%A1%E5%9E%8Bstatic-vs-spatio-temporal-models"><span class="toc-nav-number">4.2.2.</span> <span class="toc-nav-text">静态模型与时空模型（Static vs. Spatio-temporal Models）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%9F%AD%E7%89%87%E6%AE%B5%E7%BA%A7%E4%B8%8E%E8%A7%86%E9%A2%91%E7%BA%A7%E5%BB%BA%E6%A8%A1short-segment-level-vs-video-level-modelling"><span class="toc-nav-number">4.2.3.</span> <span class="toc-nav-text">短片段级与视频级建模（Short Segment-level vs. Video-level Modelling）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%9F%B3%E9%A2%91-%E8%A7%86%E8%A7%89%E4%B8%8E%E5%A4%9A%E6%A8%A1%E6%80%81%E6%A8%A1%E5%9E%8Baudio-visual-and-audio-visual-models"><span class="toc-nav-number">4.2.4.</span> <span class="toc-nav-text">音频、视觉与多模态模型（Audio, Visual, and Audio-Visual Models）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%B1%87%E6%80%BB%E5%B8%A7%E7%89%87%E6%AE%B5%E7%BA%A7%E9%A2%84%E6%B5%8Bsummarising-framesegment-level-predictions"><span class="toc-nav-number">4.2.5.</span> <span class="toc-nav-text">汇总帧&#x2F;片段级预测（Summarising Frame&#x2F;Segment-level Predictions）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B6%E4%BB%96%E5%9B%A0%E7%B4%A0other-factors"><span class="toc-nav-number">4.2.6.</span> <span class="toc-nav-text">其他因素（Other Factors）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%AE%A8%E8%AE%BAdiscussion"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">讨论（Discussion）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%83%A8%E5%88%86%E9%87%8D%E7%8E%B0%E6%96%B9%E6%B3%95%E6%80%A7%E8%83%BD%E4%BD%8E%E4%BA%8E%E5%8E%9F%E6%8A%A5%E5%91%8Asome-reproduced-approaches-have-lower-performance-than-originally-reported"><span class="toc-nav-number">4.3.1.</span> <span class="toc-nav-text">部分重现方法性能低于原报告（Some Reproduced Approaches Have Lower Performance Than Originally Reported）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BA%BA%E6%A0%BC%E7%89%B9%E8%B4%A8%E4%B8%8E%E9%9D%9E%E8%AF%AD%E8%A8%80%E8%A1%8C%E4%B8%BA%E7%9A%84%E5%85%B3%E7%B3%BBrelationships-between-personality-traits-and-non-verbal-behaviours"><span class="toc-nav-number">4.3.2.</span> <span class="toc-nav-text">人格特质与非语言行为的关系（Relationships Between Personality Traits and Non-verbal Behaviours）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%87%AA%E6%88%91%E6%8A%A5%E5%91%8A%E4%BA%BA%E6%A0%BC%E8%AF%86%E5%88%AB%E7%9A%84%E4%BD%8E%E6%80%A7%E8%83%BDpoor-performance-in-self-reported-personality-recognition"><span class="toc-nav-number">4.3.3.</span> <span class="toc-nav-text">自我报告人格识别的低性能（Poor Performance in Self-reported Personality Recognition）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%8C%91%E6%88%98%E4%B8%8E%E7%A0%94%E7%A9%B6%E7%A9%BA%E7%99%BDchallenges-and-research-gaps"><span class="toc-nav-number">4.3.4.</span> <span class="toc-nav-text">挑战与研究空白（Challenges and Research Gaps）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%AE%9E%E9%AA%8C%E9%83%A8%E5%88%86%E7%9A%84%E6%A0%B8%E5%BF%83%E8%A6%81%E7%82%B9"><span class="toc-nav-number">4.3.5.</span> <span class="toc-nav-text">实验部分的核心要点</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#conclusions"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">Conclusions</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%A0%94%E7%A9%B6%E8%B4%A1%E7%8C%AE"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">研究贡献</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%BB%E8%A6%81%E5%8F%91%E7%8E%B0"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">主要发现</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#paper" title="paper">paper</a>
+            
+            <a class="tag" href="/tags/#MLM" title="MLM">MLM</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="https://syvy.top/" target="_blank">SYVY</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/LiyaMio">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a target="_blank" href="https://twitter.com/LiyaMio">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          云起
+          2025
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='The first step is as good as half over...,Laugh and grow fat...,Man proposes God disposes...,When all else is lost the future still remains...,Wasting time is robbing oneself...,Sharp tools make good work...,Cease to struggle and you cease to live...,A friend in need is a friend indeed...,Faith can move mountains...' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("http://yoursite-url/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
